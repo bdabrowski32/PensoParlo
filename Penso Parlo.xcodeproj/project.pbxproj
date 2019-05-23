@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */; };
+		FFBC07CD2296510E0001EAB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07CC2296510E0001EAB1 /* ViewController.swift */; };
+		FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07CE2296510E0001EAB1 /* Main.storyboard */; };
+		FFBC07D2229651170001EAB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07D1229651170001EAB1 /* Assets.xcassets */; };
+		FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */; };
+		FFBC07E0229651170001EAB1 /* Penso_ParloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07DF229651170001EAB1 /* Penso_ParloTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFBC07DC229651170001EAB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFBC07BF2296510E0001EAB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFBC07C62296510E0001EAB1;
+			remoteInfo = "Penso Parlo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FFBC07C72296510E0001EAB1 /* Penso Parlo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penso Parlo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFBC07CC2296510E0001EAB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFBC07CF2296510E0001EAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFBC07D1229651170001EAB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFBC07D4229651170001EAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFBC07D6229651170001EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFBC07DB229651170001EAB1 /* Penso ParloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Penso ParloTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFBC07DF229651170001EAB1 /* Penso_ParloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penso_ParloTests.swift; sourceTree = "<group>"; };
+		FFBC07E1229651170001EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFBC07C42296510E0001EAB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFBC07D8229651170001EAB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFBC07BE2296510E0001EAB1 = {
+			isa = PBXGroup;
+			children = (
+				FFBC07C92296510E0001EAB1 /* Penso Parlo */,
+				FFBC07DE229651170001EAB1 /* Penso ParloTests */,
+				FFBC07C82296510E0001EAB1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFBC07C82296510E0001EAB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC07C72296510E0001EAB1 /* Penso Parlo.app */,
+				FFBC07DB229651170001EAB1 /* Penso ParloTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFBC07C92296510E0001EAB1 /* Penso Parlo */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */,
+				FFBC07CC2296510E0001EAB1 /* ViewController.swift */,
+				FFBC07CE2296510E0001EAB1 /* Main.storyboard */,
+				FFBC07D1229651170001EAB1 /* Assets.xcassets */,
+				FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */,
+				FFBC07D6229651170001EAB1 /* Info.plist */,
+			);
+			path = "Penso Parlo";
+			sourceTree = "<group>";
+		};
+		FFBC07DE229651170001EAB1 /* Penso ParloTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC07DF229651170001EAB1 /* Penso_ParloTests.swift */,
+				FFBC07E1229651170001EAB1 /* Info.plist */,
+			);
+			path = "Penso ParloTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFBC07C62296510E0001EAB1 /* Penso Parlo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFBC07E4229651170001EAB1 /* Build configuration list for PBXNativeTarget "Penso Parlo" */;
+			buildPhases = (
+				FFBC07C32296510E0001EAB1 /* Sources */,
+				FFBC07C42296510E0001EAB1 /* Frameworks */,
+				FFBC07C52296510E0001EAB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Penso Parlo";
+			productName = "Penso Parlo";
+			productReference = FFBC07C72296510E0001EAB1 /* Penso Parlo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFBC07DA229651170001EAB1 /* Penso ParloTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFBC07E7229651170001EAB1 /* Build configuration list for PBXNativeTarget "Penso ParloTests" */;
+			buildPhases = (
+				FFBC07D7229651170001EAB1 /* Sources */,
+				FFBC07D8229651170001EAB1 /* Frameworks */,
+				FFBC07D9229651170001EAB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFBC07DD229651170001EAB1 /* PBXTargetDependency */,
+			);
+			name = "Penso ParloTests";
+			productName = "Penso ParloTests";
+			productReference = FFBC07DB229651170001EAB1 /* Penso ParloTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFBC07BF2296510E0001EAB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = BDCreative;
+				TargetAttributes = {
+					FFBC07C62296510E0001EAB1 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					FFBC07DA229651170001EAB1 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = FFBC07C62296510E0001EAB1;
+					};
+				};
+			};
+			buildConfigurationList = FFBC07C22296510E0001EAB1 /* Build configuration list for PBXProject "Penso Parlo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFBC07BE2296510E0001EAB1;
+			productRefGroup = FFBC07C82296510E0001EAB1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFBC07C62296510E0001EAB1 /* Penso Parlo */,
+				FFBC07DA229651170001EAB1 /* Penso ParloTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFBC07C52296510E0001EAB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */,
+				FFBC07D2229651170001EAB1 /* Assets.xcassets in Resources */,
+				FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFBC07D9229651170001EAB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFBC07C32296510E0001EAB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBC07CD2296510E0001EAB1 /* ViewController.swift in Sources */,
+				FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFBC07D7229651170001EAB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBC07E0229651170001EAB1 /* Penso_ParloTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFBC07DD229651170001EAB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFBC07C62296510E0001EAB1 /* Penso Parlo */;
+			targetProxy = FFBC07DC229651170001EAB1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFBC07CE2296510E0001EAB1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFBC07CF2296510E0001EAB1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFBC07D4229651170001EAB1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFBC07E2229651170001EAB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFBC07E3229651170001EAB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFBC07E5229651170001EAB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6B5WZ44S;
+				INFOPLIST_FILE = "Penso Parlo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BDCreative.Penso-Parlo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFBC07E6229651170001EAB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6B5WZ44S;
+				INFOPLIST_FILE = "Penso Parlo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BDCreative.Penso-Parlo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FFBC07E8229651170001EAB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6B5WZ44S;
+				INFOPLIST_FILE = "Penso ParloTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BDCreative.Penso-ParloTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Penso Parlo.app/Penso Parlo";
+			};
+			name = Debug;
+		};
+		FFBC07E9229651170001EAB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6B5WZ44S;
+				INFOPLIST_FILE = "Penso ParloTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BDCreative.Penso-ParloTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Penso Parlo.app/Penso Parlo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFBC07C22296510E0001EAB1 /* Build configuration list for PBXProject "Penso Parlo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFBC07E2229651170001EAB1 /* Debug */,
+				FFBC07E3229651170001EAB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFBC07E4229651170001EAB1 /* Build configuration list for PBXNativeTarget "Penso Parlo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFBC07E5229651170001EAB1 /* Debug */,
+				FFBC07E6229651170001EAB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFBC07E7229651170001EAB1 /* Build configuration list for PBXNativeTarget "Penso ParloTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFBC07E8229651170001EAB1 /* Debug */,
+				FFBC07E9229651170001EAB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFBC07BF2296510E0001EAB1 /* Project object */;
+}
