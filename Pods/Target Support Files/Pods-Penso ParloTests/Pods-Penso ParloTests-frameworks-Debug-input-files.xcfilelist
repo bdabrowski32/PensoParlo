@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-Penso ParloTests/Pods-Penso ParloTests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
+${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
