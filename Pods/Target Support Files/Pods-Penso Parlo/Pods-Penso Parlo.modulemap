@@ -1,0 +1,6 @@
+framework module Pods_Penso_Parlo {
+  umbrella header "Pods-Penso Parlo-umbrella.h"
+
+  export *
+  module * { export * }
+}
