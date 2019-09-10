@@ -6,14 +6,13 @@
 //  Copyright © 2019 BDCreative. All rights reserved.
 //
 
-import UIKit
 import Speech
+import UIKit
 
 class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegate {
 
-    @IBOutlet weak var detectedTextLabel: UILabel!
-    @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet private weak var detectedTextLabel: UILabel!
+    @IBOutlet private weak var startButton: UIButton!
 
     let audioEngine = AVAudioEngine()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
@@ -33,7 +32,7 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     func recordAndRecognizeSpeech() {
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
-        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+        node.installTap(onBus: 0, bufferSize: 1_024, format: recordingFormat) { buffer, _ in
             self.request.append(buffer)
         }
 
@@ -78,17 +77,6 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
             self.audioEngine.stop()
             self.startButton.isEnabled = true
         }
-
-//        switch resultString {
-//        case "red":
-//            colorView.backgroundColor = UIColor.red
-//        case "green":
-//            colorView.backgroundColor = UIColor.green
-//        case "blue":
-//            colorView.backgroundColor = UIColor.blue
-//        default:
-//            break
-//        }
     }
 
     private func checkLastString(in bestTranscription: SFTranscription) {

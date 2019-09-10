@@ -4,9 +4,8 @@ platform :ios, '12.2'
 target 'Penso Parlo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for Penso Parlo
-
+    pod 'RealmSwift'
+    pod 'SwiftLint'
   target 'Penso ParloTests' do
     inherit! :search_paths
     pod 'RealmSwift'
