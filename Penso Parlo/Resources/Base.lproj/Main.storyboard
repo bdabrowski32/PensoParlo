@@ -1,57 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FuE-uu-yA0">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FuE-uu-yA0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Checklist View Controller-->
-        <scene sceneID="Aqy-oR-poq">
-            <objects>
-                <tableViewController id="skk-ZD-Rf4" customClass="ChecklistViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nOx-PY-EcG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" tag="1000" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="raO-85-FQD">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="raO-85-FQD" id="5Ix-lt-8Mc">
-                                    <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97m-vw-zU7">
-                                            <rect key="frame" x="20" y="11" width="334" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="97m-vw-zU7" secondAttribute="trailing" constant="16" id="6MO-Tr-Qdg"/>
-                                        <constraint firstAttribute="bottom" secondItem="97m-vw-zU7" secondAttribute="bottom" constant="11.5" id="7bm-Kd-6H7"/>
-                                        <constraint firstItem="97m-vw-zU7" firstAttribute="top" secondItem="5Ix-lt-8Mc" secondAttribute="top" constant="11" id="bnr-Po-8Fc"/>
-                                        <constraint firstItem="97m-vw-zU7" firstAttribute="leading" secondItem="5Ix-lt-8Mc" secondAttribute="leading" constant="20" id="j6r-bo-NIm"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="skk-ZD-Rf4" id="46d-on-m1g"/>
-                            <outlet property="delegate" destination="skk-ZD-Rf4" id="ssw-xC-NwW"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nXt-jt-tem" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5.7971014492753632" y="-16.071428571428569"/>
-        </scene>
         <!--Speech Detection View Controller-->
         <scene sceneID="JMC-Ri-h2U">
             <objects>
@@ -92,18 +48,19 @@
                     <connections>
                         <outlet property="detectedTextLabel" destination="Cy9-54-fp6" id="TzQ-f4-pPW"/>
                         <outlet property="startButton" destination="faP-Kd-q63" id="2YE-fo-HW9"/>
+                        <segue destination="oFg-y6-PUe" kind="presentation" identifier="DoneSpeaking" id="h5B-V4-7UO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4n-R1-P06" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868.11594202898561" y="-16.071428571428569"/>
+            <point key="canvasLocation" x="-1574" y="-966"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SON-Cj-X3E">
             <objects>
                 <navigationController storyboardIdentifier="ToDoNavigationController" id="oFg-y6-PUe" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WWX-Lf-4Oc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.49755101470000002" green="0.78732115359999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -112,6 +69,9 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
+                    <connections>
+                        <segue destination="6Lt-zQ-g9r" kind="relationship" relationship="rootViewController" id="JpT-gN-9qZ"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2Q-9b-aXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,7 +82,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="ToDoListController" id="6Lt-zQ-g9r" customClass="NotesListController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gDu-kG-7VF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -130,7 +90,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ebR-G2-d9i" id="tKG-DD-Wcz">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yId-2k-hRi">
@@ -181,7 +141,7 @@
                     <navigationItem key="navigationItem" title="My ToDo" id="b1f-d4-QpU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NOZ-dR-MDV">
                             <connections>
-                                <action selector="addItem" destination="6Lt-zQ-g9r" id="se2-6e-hSw"/>
+                                <action selector="addItem" destination="6Lt-zQ-g9r" id="iMY-dW-II0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
