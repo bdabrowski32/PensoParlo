@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF3F7D58229B820200B60418 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3F7D57229B820100B60418 /* ChecklistItem.swift */; };
+		5CDBDE58FA4F1642747168AC /* Pods_Penso_ParloTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9816240EEBB34CF5075ABAD /* Pods_Penso_ParloTests.framework */; };
+		E2F9B457644A9DA96AB4EE47 /* Pods_Penso_Parlo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EDD2A7F45945A92E60F6BF /* Pods_Penso_Parlo.framework */; };
+		FF1E5B41232430BC00C794CE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B40232430BC00C794CE /* Podfile */; };
+		FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */; };
+		FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B5023255BC100C794CE /* swiftlint.yml */; };
+		FF5851DE2324283A0099FD5C /* UITableView+RealmChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851DD2324283A0099FD5C /* UITableView+RealmChanges.swift */; };
+		FF5851E2232429DF0099FD5C /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E1232429DF0099FD5C /* NotesTableViewCell.swift */; };
+		FF5851E423242A750099FD5C /* NotesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E323242A750099FD5C /* NotesListController.swift */; };
+		FF5851E623242B860099FD5C /* NotesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E523242B860099FD5C /* NotesItem.swift */; };
 		FFA817FF2311D64200426C8C /* SpeechDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */; };
 		FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */; };
-		FFBC07CD2296510E0001EAB1 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07CC2296510E0001EAB1 /* ChecklistViewController.swift */; };
 		FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07CE2296510E0001EAB1 /* Main.storyboard */; };
 		FFBC07D2229651170001EAB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07D1229651170001EAB1 /* Assets.xcassets */; };
 		FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */; };
-		FFBC07E0229651170001EAB1 /* Penso_ParloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07DF229651170001EAB1 /* Penso_ParloTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,18 +40,24 @@
 		B9816240EEBB34CF5075ABAD /* Pods_Penso_ParloTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Penso_ParloTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30423ECF2DAB8E3700A5F67 /* Pods-Penso ParloTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penso ParloTests.debug.xcconfig"; path = "Target Support Files/Pods-Penso ParloTests/Pods-Penso ParloTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF36DC2F76D3159B7A9EA182 /* Pods-Penso Parlo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penso Parlo.debug.xcconfig"; path = "Target Support Files/Pods-Penso Parlo/Pods-Penso Parlo.debug.xcconfig"; sourceTree = "<group>"; };
-		FF3F7D57229B820100B60418 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		FF1E5B40232430BC00C794CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "swiftlint-autocorrect.yml"; sourceTree = SOURCE_ROOT; };
+		FF1E5B5023255BC100C794CE /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		FF5851DD2324283A0099FD5C /* UITableView+RealmChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RealmChanges.swift"; sourceTree = "<group>"; };
+		FF5851E1232429DF0099FD5C /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
+		FF5851E323242A750099FD5C /* NotesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListController.swift; sourceTree = "<group>"; };
+		FF5851E523242B860099FD5C /* NotesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItem.swift; sourceTree = "<group>"; };
 		FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDetectionViewController.swift; sourceTree = "<group>"; };
 		FFBC07C72296510E0001EAB1 /* Penso Parlo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penso Parlo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFBC07CC2296510E0001EAB1 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		FFBC07CF2296510E0001EAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFBC07D1229651170001EAB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFBC07D4229651170001EAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFBC07D6229651170001EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFBC07DB229651170001EAB1 /* Penso ParloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Penso ParloTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFBC07DF229651170001EAB1 /* Penso_ParloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penso_ParloTests.swift; sourceTree = "<group>"; };
 		FFBC07E1229651170001EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDDF4D723242EC50036A431 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDDF4D923242EC60036A431 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F9B457644A9DA96AB4EE47 /* Pods_Penso_Parlo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDBDE58FA4F1642747168AC /* Pods_Penso_ParloTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +83,8 @@
 		00C0DE51618DE1454ACC92CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFDDF4D723242EC50036A431 /* Realm.framework */,
+				FFDDF4D923242EC60036A431 /* RealmSwift.framework */,
 				99EDD2A7F45945A92E60F6BF /* Pods_Penso_Parlo.framework */,
 				B9816240EEBB34CF5075ABAD /* Pods_Penso_ParloTests.framework */,
 			);
@@ -84,6 +100,61 @@
 				4E1714D273DCAD323796C441 /* Pods-Penso ParloTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF1E5B3F232430AD00C794CE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF1E5B5023255BC100C794CE /* swiftlint.yml */,
+				FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */,
+				FFBC07D6229651170001EAB1 /* Info.plist */,
+				FF1E5B40232430BC00C794CE /* Podfile */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		FF1E5B45232434F600C794CE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FF1E5B462324353000C794CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC07CE2296510E0001EAB1 /* Main.storyboard */,
+				FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */,
+				FFBC07D1229651170001EAB1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FF1E5B472324357300C794CE /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */,
+			);
+			path = Speech;
+			sourceTree = "<group>";
+		};
+		FF1E5B48232435D800C794CE /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				FF5851E1232429DF0099FD5C /* NotesTableViewCell.swift */,
+				FF5851E323242A750099FD5C /* NotesListController.swift */,
+				FF5851E523242B860099FD5C /* NotesItem.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		FF1E5B49232435E600C794CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF5851DD2324283A0099FD5C /* UITableView+RealmChanges.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FFBC07BE2296510E0001EAB1 = {
@@ -109,14 +180,12 @@
 		FFBC07C92296510E0001EAB1 /* Penso Parlo */ = {
 			isa = PBXGroup;
 			children = (
-				FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */,
-				FFBC07CC2296510E0001EAB1 /* ChecklistViewController.swift */,
-				FFBC07CE2296510E0001EAB1 /* Main.storyboard */,
-				FFBC07D1229651170001EAB1 /* Assets.xcassets */,
-				FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */,
-				FFBC07D6229651170001EAB1 /* Info.plist */,
-				FF3F7D57229B820100B60418 /* ChecklistItem.swift */,
-				FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */,
+				FF1E5B45232434F600C794CE /* Application */,
+				FF1E5B49232435E600C794CE /* Extensions */,
+				FF1E5B48232435D800C794CE /* Notes */,
+				FF1E5B462324353000C794CE /* Resources */,
+				FF1E5B472324357300C794CE /* Speech */,
+				FF1E5B3F232430AD00C794CE /* Support Files */,
 			);
 			path = "Penso Parlo";
 			sourceTree = "<group>";
@@ -124,7 +193,6 @@
 		FFBC07DE229651170001EAB1 /* Penso ParloTests */ = {
 			isa = PBXGroup;
 			children = (
-				FFBC07DF229651170001EAB1 /* Penso_ParloTests.swift */,
 				FFBC07E1229651170001EAB1 /* Info.plist */,
 			);
 			path = "Penso ParloTests";
@@ -141,6 +209,8 @@
 				FFBC07C32296510E0001EAB1 /* Sources */,
 				FFBC07C42296510E0001EAB1 /* Frameworks */,
 				FFBC07C52296510E0001EAB1 /* Resources */,
+				CE0C0FFBA53A18EB4ACFECC9 /* [CP] Embed Pods Frameworks */,
+				FF1E5B4D2324382B00C794CE /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -186,6 +256,7 @@
 					};
 					FFBC07DA229651170001EAB1 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 						TestTargetID = FFBC07C62296510E0001EAB1;
 					};
 				};
@@ -215,7 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */,
+				FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */,
 				FFBC07D2229651170001EAB1 /* Assets.xcassets in Resources */,
+				FF1E5B41232430BC00C794CE /* Podfile in Resources */,
+				FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */,
 				FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +365,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CE0C0FFBA53A18EB4ACFECC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Penso Parlo/Pods-Penso Parlo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Penso Parlo/Pods-Penso Parlo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Penso Parlo/Pods-Penso Parlo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF1E5B4D2324382B00C794CE /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint lint --config swiftlint.yml\n${PODS_ROOT}/SwiftLint/swiftlint autocorrect --config swiftlint-autocorrect.yml\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -299,9 +408,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFA817FF2311D64200426C8C /* SpeechDetectionViewController.swift in Sources */,
-				FFBC07CD2296510E0001EAB1 /* ChecklistViewController.swift in Sources */,
-				FF3F7D58229B820200B60418 /* ChecklistItem.swift in Sources */,
+				FF5851E423242A750099FD5C /* NotesListController.swift in Sources */,
+				FF5851E2232429DF0099FD5C /* NotesTableViewCell.swift in Sources */,
 				FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */,
+				FF5851E623242B860099FD5C /* NotesItem.swift in Sources */,
+				FF5851DE2324283A0099FD5C /* UITableView+RealmChanges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +420,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFBC07E0229651170001EAB1 /* Penso_ParloTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +576,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T6B5WZ44S;
-				INFOPLIST_FILE = "Penso Parlo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Penso Parlo/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,7 +595,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T6B5WZ44S;
-				INFOPLIST_FILE = "Penso Parlo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Penso Parlo/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,6 +613,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T6B5WZ44S;
 				INFOPLIST_FILE = "Penso ParloTests/Info.plist";
@@ -513,6 +624,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BDCreative.Penso-ParloTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Penso Parlo.app/Penso Parlo";
@@ -525,6 +637,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T6B5WZ44S;
 				INFOPLIST_FILE = "Penso ParloTests/Info.plist";

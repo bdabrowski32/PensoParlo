@@ -1,0 +1,54 @@
+included:
+  - Penso Parlo
+  - Penso ParloTests
+excluded:
+  - Pods
+disabled_rules:
+  - function_body_length
+  - function_parameter_count
+  - type_name
+opt_in_rules:
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - empty_count
+  - explicit_init
+  - extension_access_modifier
+  - fatal_error_message
+  - file_header
+  - first_where
+  - let_var_whitespace
+  - nimble_operator
+  - number_separator
+  - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - sorted_imports
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment_on_call
+file_header:
+  required_pattern: |
+                    \/\/
+                    \/\/  .*?\.swift
+                    \/\/  .*?
+                    \/\/
+                    \/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{2}\.
+                    \/\/  Copyright © \d{4} BDCreative\. All rights reserved\.
+                    \/\/
+identifier_name:
+  min_length: 1
+  max_length: 9999
+type_name:
+  min_length: 1
+  max_length: 9999
+line_length: 200
+number_separator:
+  minimum_length: 4
+file_length:
+  warning: 500
+  error: 1200
+cyclomatic_complexity:
+  ignores_case_statements: true
