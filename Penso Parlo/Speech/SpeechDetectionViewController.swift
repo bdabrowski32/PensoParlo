@@ -17,8 +17,7 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     /// Displays the text that the user says.
     @IBOutlet private weak var detectedTextLabel: UILabel!
 
-    /// Starts the workflow to begin detecting speech.
-    @IBOutlet private weak var startButton: UIButton!
+    @IBOutlet private weak var speechIndicator: UIView!
 
     /// Used to generate and process audio signals and perform audio input and output.
     private let audioEngine = AVAudioEngine()
@@ -32,22 +31,18 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     /// Task object used to monitor the speech recognition progress.
     private var recognitionTask: SFSpeechRecognitionTask?
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.speechIndicator.backgroundColor = UIColor.green
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestSpeechAuthorization()
+        self.dictateSpeech()
     }
 
     deinit {
         self.recognitionTask = nil
-    }
-
-    /**
-     Action to take place when the user presses the start button on the view controller
-
-     - parameter sender: The button on the view.
-     */
-    @IBAction func startButtonTapped(_ sender: UIButton) {
-        self.dictateSpeech()
     }
 
     /**
@@ -70,7 +65,7 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     /**
      Performs speech dictation and updates the labels on the view.
      */
-    private func dictateSpeech() {
+    func dictateSpeech() {
         self.startAudioEngine()
 
         guard let speechRecognizer = SFSpeechRecognizer() else {
@@ -83,7 +78,6 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
             return
         }
 
-        self.startButton.isEnabled = false
         self.recognitionTask = speechRecognizer.recognitionTask(with: self.request, resultHandler: { result, error in
             if let result = result {
                 let bestString = result.bestTranscription.formattedString
@@ -123,9 +117,13 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
      Turns off the audio engine and other tasks when speech dictation is ended.
      */
     private func performStop() {
+        self.speechIndicator.backgroundColor = UIColor.red
         self.audioEngine.stop()
-        self.performSegue(withIdentifier: "DoneSpeaking", sender: self)
         self.recognitionTask?.cancel()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     /**
@@ -135,18 +133,15 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
         SFSpeechRecognizer.requestAuthorization { authStatus in
             OperationQueue.main.addOperation {
                 switch authStatus {
-                case .notDetermined:
-                    self.startButton.isEnabled = false
+                case .authorized,
+                     .notDetermined:
+                    break
                 case .denied:
-                    self.startButton.isEnabled = false
                     self.detectedTextLabel.text = "User denied access to speech recognizer"
                 case .restricted:
-                    self.startButton.isEnabled = false
                     self.detectedTextLabel.text = "Speech recognition restricted on this device"
-                case .authorized:
-                    self.startButton.isEnabled = true
                 @unknown default:
-                    self.startButton.isEnabled = false
+                    break
                 }
             }
         }
