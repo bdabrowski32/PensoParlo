@@ -19,6 +19,26 @@ class NotesListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         items = NotesItem.all()
+
+        // create a button or any UIView and add to subview
+        let button = UIButton(type: .system)
+        button.setTitle("PENSO", for: .normal)
+        button.frame.size = CGSize(width: 700, height: 500)
+        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.darkGray
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        self.view.addSubview(button)
+
+        //set constrains
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.rightAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
+        button.bottomAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        button.widthAnchor.constraint(equalTo: tableView.widthAnchor, multiplier: 1).isActive = true
+    }
+
+    @objc
+    func buttonAction(sender: UIButton!) {
+        self.performSegue(withIdentifier: "StartSpeaking", sender: self)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -38,14 +58,10 @@ class NotesListController: UITableViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        itemsToken?.invalidate()
+        self.itemsToken?.invalidate()
     }
 
     // MARK: - Actions
-
-    @IBAction func addItem() {
-        // TO-DO: Add action when the user wants to add something manually to the list.
-    }
 
     func toggleItem(_ item: NotesItem) {
         item.toggleCompleted()
@@ -54,40 +70,36 @@ class NotesListController: UITableViewController {
     func deleteItem(_ item: NotesItem) {
         item.delete()
     }
+
+// MARK: - Table View Data Source
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items?.count ?? 0
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? NotesTableViewCell,
+            let item = items?[indexPath.row] else {
+                return NotesTableViewCell(frame: .zero)
+        }
+
+        cell.configureWith(item) { [weak self] item in
+            self?.toggleItem(item)
+        }
+
+        return cell
+    }
+
+// MARK: - Table View Delegate
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let item = items?[indexPath.row], editingStyle == .delete else { return }
+        self.deleteItem(item)
+    }
 }
 
-    // MARK: - Table View Data Source
 
-    extension NotesListController {
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return items?.count ?? 0
-        }
-
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? NotesTableViewCell,
-                let item = items?[indexPath.row] else {
-                    return NotesTableViewCell(frame: .zero)
-            }
-
-            cell.configureWith(item) { [weak self] item in
-                self?.toggleItem(item)
-            }
-
-            return cell
-        }
-    }
-
-    // MARK: - Table View Delegate
-
-    extension NotesListController {
-        override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-            return true
-        }
-
-        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            guard let item = items?[indexPath.row],
-                editingStyle == .delete else { return }
-
-            deleteItem(item)
-        }
-    }
