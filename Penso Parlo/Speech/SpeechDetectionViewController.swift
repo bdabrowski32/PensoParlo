@@ -15,7 +15,7 @@ import UIKit
 class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegate {
 
     /// Displays the text that the user says.
-    @IBOutlet private weak var detectedTextLabel: UILabel!
+    @IBOutlet private weak var detectedTextView: UITextView!
 
     @IBOutlet private weak var speechIndicator: UIView!
 
@@ -81,7 +81,7 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
         self.recognitionTask = speechRecognizer.recognitionTask(with: self.request, resultHandler: { result, error in
             if let result = result {
                 let bestString = result.bestTranscription.formattedString
-                self.detectedTextLabel.text = bestString
+                self.detectedTextView.text = bestString
 
                 var lastString = ""
                 for segment in result.bestTranscription.segments {
@@ -90,8 +90,8 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
                 }
 
                 guard self.checkForStop(resultString: lastString) == false else {
-                    self.detectedTextLabel.text = bestString.components(separatedBy: " ").dropLast().joined(separator: " ")
-                    NotesItem.add(text: self.detectedTextLabel.text ?? "nil")
+                    self.detectedTextView.text = bestString.components(separatedBy: " ").dropLast().joined(separator: " ")
+                    NotesItem.add(text: self.detectedTextView.text ?? "nil")
                     print("Already stopped recording.")
                     return
                 }
@@ -137,9 +137,9 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
                      .notDetermined:
                     break
                 case .denied:
-                    self.detectedTextLabel.text = "User denied access to speech recognizer"
+                    self.detectedTextView.text = "User denied access to speech recognizer"
                 case .restricted:
-                    self.detectedTextLabel.text = "Speech recognition restricted on this device"
+                    self.detectedTextView.text = "Speech recognition restricted on this device"
                 @unknown default:
                     break
                 }

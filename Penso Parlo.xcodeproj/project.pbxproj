@@ -16,11 +16,13 @@
 		FF5851E2232429DF0099FD5C /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E1232429DF0099FD5C /* NotesTableViewCell.swift */; };
 		FF5851E423242A750099FD5C /* NotesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E323242A750099FD5C /* NotesListController.swift */; };
 		FF5851E623242B860099FD5C /* NotesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E523242B860099FD5C /* NotesItem.swift */; };
+		FF705CC723494A1500C527C0 /* AddNotesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF705CC623494A1500C527C0 /* AddNotesButton.swift */; };
 		FFA817FF2311D64200426C8C /* SpeechDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */; };
 		FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */; };
 		FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07CE2296510E0001EAB1 /* Main.storyboard */; };
-		FFBC07D2229651170001EAB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07D1229651170001EAB1 /* Assets.xcassets */; };
 		FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */; };
+		FFC29F172370E7D100D55F1F /* AddNotesButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC29F162370E7D100D55F1F /* AddNotesButton.xib */; };
+		FFEB2581234A3C56003879F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEB2580234A3C56003879F6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,17 +49,19 @@
 		FF5851E1232429DF0099FD5C /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		FF5851E323242A750099FD5C /* NotesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListController.swift; sourceTree = "<group>"; };
 		FF5851E523242B860099FD5C /* NotesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItem.swift; sourceTree = "<group>"; };
+		FF705CC623494A1500C527C0 /* AddNotesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesButton.swift; sourceTree = "<group>"; };
 		FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDetectionViewController.swift; sourceTree = "<group>"; };
 		FFBC07C72296510E0001EAB1 /* Penso Parlo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penso Parlo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFBC07CF2296510E0001EAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FFBC07D1229651170001EAB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFBC07D4229651170001EAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFBC07D6229651170001EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFBC07DB229651170001EAB1 /* Penso ParloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Penso ParloTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBC07E1229651170001EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFC29F162370E7D100D55F1F /* AddNotesButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNotesButton.xib; sourceTree = "<group>"; };
 		FFDDF4D723242EC50036A431 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDDF4D923242EC60036A431 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFEB2580234A3C56003879F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +128,10 @@
 		FF1E5B462324353000C794CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FFEB2580234A3C56003879F6 /* Assets.xcassets */,
+				FFC29F162370E7D100D55F1F /* AddNotesButton.xib */,
 				FFBC07CE2296510E0001EAB1 /* Main.storyboard */,
 				FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */,
-				FFBC07D1229651170001EAB1 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -155,6 +160,14 @@
 				FF5851DD2324283A0099FD5C /* UITableView+RealmChanges.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF705CC5234949EC00C527C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF705CC623494A1500C527C0 /* AddNotesButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FFBC07BE2296510E0001EAB1 = {
@@ -186,6 +199,7 @@
 				FF1E5B462324353000C794CE /* Resources */,
 				FF1E5B472324357300C794CE /* Speech */,
 				FF1E5B3F232430AD00C794CE /* Support Files */,
+				FF705CC5234949EC00C527C0 /* Views */,
 			);
 			path = "Penso Parlo";
 			sourceTree = "<group>";
@@ -287,8 +301,9 @@
 			files = (
 				FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */,
 				FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */,
-				FFBC07D2229651170001EAB1 /* Assets.xcassets in Resources */,
 				FF1E5B41232430BC00C794CE /* Podfile in Resources */,
+				FFEB2581234A3C56003879F6 /* Assets.xcassets in Resources */,
+				FFC29F172370E7D100D55F1F /* AddNotesButton.xib in Resources */,
 				FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */,
 				FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */,
 			);
@@ -413,6 +428,7 @@
 				FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */,
 				FF5851E623242B860099FD5C /* NotesItem.swift in Sources */,
 				FF5851DE2324283A0099FD5C /* UITableView+RealmChanges.swift in Sources */,
+				FF705CC723494A1500C527C0 /* AddNotesButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

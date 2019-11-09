@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Table view cell that handles showing the note items.
+ */
 class NotesTableViewCell: UITableViewCell {
 
     private var onToggleCompleted: ((NotesItem) -> Void)?
