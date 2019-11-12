@@ -83,3 +83,4 @@ class NotesItem: Object {
             realm.delete(self)
         }
     }
+}
