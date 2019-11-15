@@ -14,6 +14,8 @@ import UIKit
  */
 class NotesListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    private static let addNoteShortcutImageName = "LightbulbFAB_1"
+
     /// The notes items displayed on the table view.
     private var items: Results<NotesItem>?
 
@@ -35,6 +37,7 @@ class NotesListController: UIViewController, UITableViewDelegate, UITableViewDat
 
         self.addNoteButton.onButtonPressHandler = {
             self.performSegue(withIdentifier: "StartSpeaking", sender: self)
+            self.newNoteWasTapped()
         }
     }
 
@@ -56,6 +59,18 @@ class NotesListController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.itemsToken?.invalidate()
+    }
+
+    @objc
+    func newNoteWasTapped() {
+        let speechDetectionViewController = SpeechDetectionViewController()
+
+        let activity = NotesItem.newNoteShortcut(thumbnail: UIImage(named: NotesListController.addNoteShortcutImageName))
+        speechDetectionViewController.userActivity = activity
+
+        activity.becomeCurrent()
+
+        navigationController?.pushViewController(speechDetectionViewController, animated: true)
     }
 
     // MARK: - Actions

@@ -6,8 +6,11 @@
 //  Copyright © 2019 BDCreative. All rights reserved.
 //
 
-import Foundation
+import CoreSpotlight
+import Intents
+import MobileCoreServices
 import RealmSwift
+import UIKit
 
 /**
  The note items that the user creates with speech dictation. 
@@ -17,6 +20,8 @@ class NotesItem: Object {
     enum Property: String {
         case id, text, isCompleted
     }
+
+    public static let newNoteActivityType = "com.bdcreative.NewNote"
 
     /// Unique string for each note item.
     dynamic var id = UUID().uuidString
@@ -36,6 +41,24 @@ class NotesItem: Object {
     convenience init(_ text: String) {
         self.init()
         self.text = text
+    }
+
+    public static func newNoteShortcut(thumbnail: UIImage?) -> NSUserActivity {
+        let activity = NSUserActivity(activityType: NotesItem.newNoteActivityType)
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(NotesItem.newNoteActivityType)
+
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+
+        let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
+
+        activity.title = "Add a New Thought"
+        attributes.contentDescription = "Jot it down before you forget!"
+        attributes.thumbnailData = thumbnail?.jpegData(compressionQuality: 1.0)
+        activity.suggestedInvocationPhrase = "Thought" // maybe make this Penso if you can figure out how to get siri to understand it.
+        activity.contentAttributeSet = attributes
+
+        return activity
     }
 
     // MARK: - CRUD methods
