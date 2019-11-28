@@ -12,7 +12,7 @@ import UIKit
  Button that handles starting speech dictation.
  */
 @IBDesignable
-public class AddNotesButton: UIView {
+public class AddThoughtButton: UIView {
 
     // MARK: Properties
 
@@ -68,7 +68,7 @@ public class AddNotesButton: UIView {
      Loads xib file and adds it to the view.
      */
     private func loadFromXib() {
-        let bundle = Bundle(for: AddNotesButton.self)
+        let bundle = Bundle(for: AddThoughtButton.self)
 
         bundle.loadNibNamed("AddNotesButton", owner: self, options: nil)
         self.addSubview(contentView)

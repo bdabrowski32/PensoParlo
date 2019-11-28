@@ -41,6 +41,10 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
         self.dictateSpeech()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.recognitionTask = nil
+    }
+
     deinit {
         self.recognitionTask = nil
     }
@@ -91,7 +95,7 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
 
                 guard self.checkForStop(resultString: lastString) == false else {
                     self.detectedTextView.text = bestString.components(separatedBy: " ").dropLast().joined(separator: " ")
-                    NotesItem.add(text: self.detectedTextView.text ?? "nil")
+                    ThoughtItem.add(text: self.detectedTextView.text ?? "nil")
                     print("Already stopped recording.")
                     return
                 }
@@ -122,7 +126,7 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
         self.recognitionTask?.cancel()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 
