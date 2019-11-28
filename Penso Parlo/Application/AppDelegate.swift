@@ -16,11 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// - Note: Screen is black when commenting this line out.
     var window: UIWindow?
 
+    var nav: UINavigationController?
+
+    let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NotesListController") as UIViewController
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        nav = UINavigationController(rootViewController: rootVC)
+        window?.rootViewController = nav
+        window?.makeKeyAndVisible()
+
         SyncManager.shared.logLevel = .off
         self.removeNavBarBorder()
 
         self.initializeRealm()
+        return true
+    }
+
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        let speechDetectionViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SpeechDetectionViewController") as UIViewController
+        nav?.pushViewController(speechDetectionViewController, animated: false)
         return true
     }
 
