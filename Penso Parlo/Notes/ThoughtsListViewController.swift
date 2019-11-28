@@ -1,5 +1,5 @@
 //
-//  NotesListController.swift
+//  ThoughtsListViewController.swift
 //  Penso Parlo
 //
 //  Created by Dabrowski,Brendyn on 9/7/19.
@@ -12,35 +12,48 @@ import UIKit
 /**
  View controller for displaying note items.
  */
-class NotesListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    /// The notes items displayed on the table view.
-    private var items: Results<NotesItem>?
+    // MARK: - Static Properties
 
-    /// Listens to changes in the NotesItem realm.
-    private var itemsToken: NotificationToken?
+    /// The name of the cell that displays thought text.
+    private static let thoughtCell = "ThoughtCell"
+
+    /// The identifier for the segue to the Speech Detection View Controller
+    private static let speechDetectionViewSegue = "StartSpeaking"
+
+    // MARK: - Member Properties
+
+    /// The thought items displayed on the table view.
+    private var thoughtItems: Results<ThoughtItem>?
+
+    /// Listens to changes in the ThoughtsItem realm.
+    private var thoughtItemToken: NotificationToken?
+
+    // MARK: - IBOutlets
 
     /// The tableview that displays the notes items
     @IBOutlet private weak var tableView: UITableView!
 
     /// The button that kicks off speech dictation.
-    @IBOutlet private weak var addNoteButton: AddNotesButton!
+    @IBOutlet private weak var addThoughtButton: AddThoughtButton!
 
     // MARK: - ViewController life-cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
-        self.items = NotesItem.all()
+        self.thoughtItems = ThoughtItem.all()
 
-        self.addNoteButton.onButtonPressHandler = {
-            self.performSegue(withIdentifier: "StartSpeaking", sender: self)
+        self.addThoughtButton.onButtonPressHandler = {
+            self.performSegue(withIdentifier: Self.speechDetectionViewSegue, sender: self)
         }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        itemsToken = items?.observe { [weak tableView] changes in
+
+        thoughtItemToken = thoughtItems?.observe { [weak tableView] changes in
             guard let tableView = tableView else { return }
 
             switch changes {
@@ -55,12 +68,12 @@ class NotesListController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.itemsToken?.invalidate()
+        self.thoughtItemToken?.invalidate()
     }
 
     // MARK: - Actions
 
-    func toggleItem(_ item: NotesItem) {
+    func toggleItem(_ item: ThoughtItem) {
         item.toggleCompleted()
     }
 
@@ -68,20 +81,20 @@ class NotesListController: UIViewController, UITableViewDelegate, UITableViewDat
      Deletes the item.
      - parameter item: The item to delete.
      */
-    func deleteItem(_ item: NotesItem) {
+    func deleteItem(_ item: ThoughtItem) {
         item.delete()
     }
 
     // MARK: - Table View Data Source
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items?.count ?? 0
+        return self.thoughtItems?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? NotesTableViewCell,
-            let item = items?[indexPath.row] else {
-                return NotesTableViewCell(frame: .zero)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Self.thoughtCell, for: indexPath) as? ThoughtTableViewCell,
+            let item = self.thoughtItems?[indexPath.row] else {
+                return ThoughtTableViewCell(frame: .zero)
         }
 
         cell.configureWith(item) { [weak self] item in
@@ -98,8 +111,20 @@ class NotesListController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard let item = items?[indexPath.row], editingStyle == .delete else { return }
+        guard let item = self.thoughtItems?[indexPath.row], editingStyle == .delete else { return }
         self.deleteItem(item)
+    }
+
+    // MARK: - Segue
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let editThoughtViewController = segue.destination as? EditThoughtViewController,
+            let index = self.tableView.indexPathForSelectedRow?.row else {
+                print("Unable to get a reference to the selected row.")
+                return
+        }
+
+        editThoughtViewController.thoughtItem = thoughtItems?[index]
     }
 
     // MARK: - Helper Functions

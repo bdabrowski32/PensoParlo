@@ -13,7 +13,7 @@ import RealmSwift
  The note items that the user creates with speech dictation. 
  */
 @objcMembers
-class NotesItem: Object {
+class ThoughtItem: Object {
     enum Property: String {
         case id, text, isCompleted
     }
@@ -27,7 +27,7 @@ class NotesItem: Object {
     dynamic var isCompleted = false
 
     override static func primaryKey() -> String? {
-        return NotesItem.Property.id.rawValue
+        return ThoughtItem.Property.id.rawValue
     }
 
     /**
@@ -46,9 +46,9 @@ class NotesItem: Object {
      - parameter realm: The realm where the note items are saved.
      - returns: All of the note items in a realm consumable object.
      */
-    class func all(in realm: Realm = try! Realm()) -> Results<NotesItem> {
-        return realm.objects(NotesItem.self)
-            .sorted(byKeyPath: NotesItem.Property.isCompleted.rawValue)
+    class func all(in realm: Realm = try! Realm()) -> Results<ThoughtItem> {
+        return realm.objects(ThoughtItem.self)
+            .sorted(byKeyPath: ThoughtItem.Property.isCompleted.rawValue)
     }
 
     /**
@@ -59,9 +59,9 @@ class NotesItem: Object {
      - returns: The note item that was added to the realm.
      */
     @discardableResult
-    class func add(text: String, in realm: Realm = try! Realm()) -> NotesItem {
-        let item = NotesItem(text)
-        try! realm.write {
+    class func add(text: String, in realm: Realm = try! Realm()) -> ThoughtItem {
+        let item = ThoughtItem(text)
+        try? realm.write {
             realm.add(item)
         }
         return item
@@ -69,7 +69,7 @@ class NotesItem: Object {
 
     func toggleCompleted() {
         guard let realm = realm else { return }
-        try! realm.write {
+        try? realm.write {
             isCompleted = !isCompleted
         }
     }
@@ -79,8 +79,15 @@ class NotesItem: Object {
      */
     func delete() {
         guard let realm = realm else { return }
-        try! realm.write {
+        try? realm.write {
             realm.delete(self)
+        }
+    }
+
+    func update(text: String) {
+        guard let realm = realm else { return }
+        try? realm.write {
+            self.text = text
         }
     }
 }
