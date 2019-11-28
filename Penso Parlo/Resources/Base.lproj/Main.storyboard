@@ -8,20 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Speech Detection View Controller-->
+        <!--Edit Thought-->
         <scene sceneID="JMC-Ri-h2U">
             <objects>
-                <viewController id="FuE-uu-yA0" customClass="SpeechDetectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeectDetectionViewController" id="FuE-uu-yA0" customClass="SpeechDetectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zui-Mj-BIA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvq-O8-Fek">
-                                <rect key="frame" x="87" y="595" width="240" height="128"/>
+                                <rect key="frame" x="87" y="727" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Rhq-ee-Nng"/>
+                                </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Text View" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-6P-fr5">
-                                <rect key="frame" x="20" y="20" width="374" height="567"/>
+                                <rect key="frame" x="20" y="64" width="374" height="577"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -30,18 +33,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Rvq-O8-Fek" firstAttribute="top" secondItem="Zui-Mj-BIA" secondAttribute="top" constant="595" id="0WY-Aq-zCj"/>
-                            <constraint firstItem="oEo-6P-fr5" firstAttribute="top" secondItem="soJ-cI-33J" secondAttribute="top" constant="20" id="8N8-NG-kOR"/>
-                            <constraint firstItem="soJ-cI-33J" firstAttribute="bottom" secondItem="Rvq-O8-Fek" secondAttribute="bottom" constant="85" id="Jzk-l8-Z8B"/>
-                            <constraint firstItem="Rvq-O8-Fek" firstAttribute="leading" secondItem="soJ-cI-33J" secondAttribute="leading" constant="87" id="fcM-6V-a3r"/>
-                            <constraint firstItem="soJ-cI-33J" firstAttribute="trailing" secondItem="Rvq-O8-Fek" secondAttribute="trailing" constant="87" id="o9N-48-GR9"/>
-                            <constraint firstItem="oEo-6P-fr5" firstAttribute="leading" secondItem="Zui-Mj-BIA" secondAttribute="leadingMargin" id="pcm-Xk-MZ1"/>
-                            <constraint firstItem="Rvq-O8-Fek" firstAttribute="top" secondItem="oEo-6P-fr5" secondAttribute="bottom" constant="8" id="sIW-Zu-Iik"/>
-                            <constraint firstItem="oEo-6P-fr5" firstAttribute="centerX" secondItem="Rvq-O8-Fek" secondAttribute="centerX" id="tWd-R8-j7G"/>
+                            <constraint firstItem="soJ-cI-33J" firstAttribute="trailing" secondItem="Rvq-O8-Fek" secondAttribute="trailing" constant="87" id="05T-Fm-anB"/>
+                            <constraint firstItem="oEo-6P-fr5" firstAttribute="top" secondItem="soJ-cI-33J" secondAttribute="top" constant="20" id="15A-4O-4T8"/>
+                            <constraint firstItem="oEo-6P-fr5" firstAttribute="leading" secondItem="soJ-cI-33J" secondAttribute="leading" constant="20" id="EyS-3H-U2E"/>
+                            <constraint firstItem="soJ-cI-33J" firstAttribute="bottom" secondItem="Rvq-O8-Fek" secondAttribute="bottom" constant="85" id="Fh0-2j-QZx"/>
+                            <constraint firstItem="soJ-cI-33J" firstAttribute="trailing" secondItem="oEo-6P-fr5" secondAttribute="trailing" constant="20" id="WVh-cA-uFe"/>
+                            <constraint firstItem="Rvq-O8-Fek" firstAttribute="leading" secondItem="soJ-cI-33J" secondAttribute="leading" constant="87" id="aq2-gV-29w"/>
+                            <constraint firstItem="Rvq-O8-Fek" firstAttribute="top" secondItem="oEo-6P-fr5" secondAttribute="bottom" constant="86" id="wxJ-xq-Rj1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="soJ-cI-33J"/>
                     </view>
-                    <navigationItem key="navigationItem" id="p75-MF-2Lx"/>
+                    <navigationItem key="navigationItem" title="Edit Thought" largeTitleDisplayMode="always" id="p75-MF-2Lx"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="detectedTextView" destination="oEo-6P-fr5" id="PoZ-BB-JnZ"/>
@@ -52,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="1286.9565217391305" y="-966.29464285714278"/>
         </scene>
-        <!--Notes List Controller-->
+        <!--Thoughts List View Controller-->
         <scene sceneID="Jl4-KY-pHA">
             <objects>
-                <viewController id="Pjl-fH-0iz" customClass="NotesListController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotesListController" id="Pjl-fH-0iz" customClass="ThoughtsListViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9UG-5i-ySa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +66,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="ebR-G2-d9i" customClass="NotesTableViewCell" customModule="Penso_Parlo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThoughtCell" rowHeight="80" id="ebR-G2-d9i" customClass="ThoughtTableViewCell" customModule="Penso_Parlo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ebR-G2-d9i" id="tKG-DD-Wcz">
@@ -108,6 +110,7 @@
                                         <connections>
                                             <outlet property="button" destination="MTL-3k-9tc" id="lpt-8G-mkN"/>
                                             <outlet property="label" destination="9kL-ZH-HKO" id="tjV-1R-OiR"/>
+                                            <segue destination="FIX-JN-mGj" kind="show" id="wlB-nf-PTy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -116,38 +119,81 @@
                                     <outlet property="delegate" destination="Pjl-fH-0iz" id="k8I-2u-dXd"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-2x-9kW" customClass="AddNotesButton" customModule="Penso_Parlo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-2x-9kW" customClass="AddThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
                                 <rect key="frame" x="282" y="648" width="92" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="aA3-Cq-j3s"/>
+                                    <constraint firstAttribute="width" constant="92" id="mVe-j9-Ia6"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ABf-RY-ehT" firstAttribute="bottom" secondItem="5LN-2x-9kW" secondAttribute="bottom" constant="34" id="0tE-2h-nIt"/>
                             <constraint firstItem="gDu-kG-7VF" firstAttribute="leading" secondItem="ABf-RY-ehT" secondAttribute="leading" id="4Od-yQ-gg1"/>
-                            <constraint firstItem="5LN-2x-9kW" firstAttribute="top" secondItem="ABf-RY-ehT" secondAttribute="top" constant="648" id="5GH-6V-XhV"/>
+                            <constraint firstItem="ABf-RY-ehT" firstAttribute="bottom" secondItem="5LN-2x-9kW" secondAttribute="bottom" constant="34" id="Afd-zo-YOB"/>
+                            <constraint firstItem="ABf-RY-ehT" firstAttribute="trailing" secondItem="5LN-2x-9kW" secondAttribute="trailing" constant="40" id="H8g-nc-QU0"/>
                             <constraint firstItem="gDu-kG-7VF" firstAttribute="top" secondItem="ABf-RY-ehT" secondAttribute="top" id="HjR-3Y-9va"/>
                             <constraint firstItem="gDu-kG-7VF" firstAttribute="trailing" secondItem="ABf-RY-ehT" secondAttribute="trailing" id="YK0-04-IQy"/>
-                            <constraint firstItem="5LN-2x-9kW" firstAttribute="leading" secondItem="ABf-RY-ehT" secondAttribute="leading" constant="282" id="ab9-Xu-UMY"/>
                             <constraint firstAttribute="bottom" secondItem="gDu-kG-7VF" secondAttribute="bottom" id="rLA-HH-Og8"/>
-                            <constraint firstItem="ABf-RY-ehT" firstAttribute="trailing" secondItem="5LN-2x-9kW" secondAttribute="trailing" constant="40" id="ulN-0I-bLA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ABf-RY-ehT"/>
                     </view>
                     <navigationItem key="navigationItem" id="62e-c2-IYK"/>
                     <connections>
-                        <outlet property="addNoteButton" destination="5LN-2x-9kW" id="d6d-gx-4HV"/>
+                        <outlet property="addThoughtButton" destination="5LN-2x-9kW" id="d6d-gx-4HV"/>
                         <outlet property="tableView" destination="gDu-kG-7VF" id="ooc-TK-6yZ"/>
-                        <segue destination="FuE-uu-yA0" kind="presentation" identifier="StartSpeaking" id="QSL-UB-4H6"/>
+                        <segue destination="FuE-uu-yA0" kind="show" identifier="StartSpeaking" id="bh1-Ia-0X6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIw-6V-9QA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="324.63768115942031" y="-966.96428571428567"/>
         </scene>
+        <!--Edit Thought View Controller-->
+        <scene sceneID="ai6-F2-ZgZ">
+            <objects>
+                <viewController id="FIX-JN-mGj" customClass="EditThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vWw-x9-xqA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Note Item Text View" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yN3-x3-zHb">
+                                <rect key="frame" x="20" y="0.0" width="374" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yN3-x3-zHb" firstAttribute="bottom" secondItem="RRF-RS-VLR" secondAttribute="bottom" id="EPe-DD-yi8"/>
+                            <constraint firstItem="RRF-RS-VLR" firstAttribute="trailing" secondItem="yN3-x3-zHb" secondAttribute="trailing" constant="20" id="XBO-fx-vzd"/>
+                            <constraint firstItem="yN3-x3-zHb" firstAttribute="leading" secondItem="RRF-RS-VLR" secondAttribute="leading" constant="20" id="Y10-jh-sd4"/>
+                            <constraint firstItem="yN3-x3-zHb" firstAttribute="top" secondItem="RRF-RS-VLR" secondAttribute="top" id="vwb-yd-800"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RRF-RS-VLR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A06-Fy-ifK">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" style="plain" id="0CK-aT-khr">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="back:" destination="FIX-JN-mGj" id="kld-3S-LDQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentTextView" destination="yN3-x3-zHb" id="U6M-Hb-BUp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gT2-mV-cCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324.63768115942031" y="-256.47321428571428"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="SON-Cj-X3E">
             <objects>
-                <navigationController storyboardIdentifier="ToDoNavigationController" id="oFg-y6-PUe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PensoNavigationController" id="oFg-y6-PUe" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WWX-Lf-4Oc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -167,4 +213,7 @@
             <point key="canvasLocation" x="-649" y="-965"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="46" height="64"/>
+    </resources>
 </document>

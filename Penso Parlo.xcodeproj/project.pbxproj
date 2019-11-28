@@ -12,11 +12,12 @@
 		FF1E5B41232430BC00C794CE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B40232430BC00C794CE /* Podfile */; };
 		FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */; };
 		FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B5023255BC100C794CE /* swiftlint.yml */; };
+		FF2F6018237FB83900F9608B /* EditThoughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F6017237FB83900F9608B /* EditThoughtViewController.swift */; };
 		FF5851DE2324283A0099FD5C /* UITableView+RealmChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851DD2324283A0099FD5C /* UITableView+RealmChanges.swift */; };
-		FF5851E2232429DF0099FD5C /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E1232429DF0099FD5C /* NotesTableViewCell.swift */; };
-		FF5851E423242A750099FD5C /* NotesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E323242A750099FD5C /* NotesListController.swift */; };
-		FF5851E623242B860099FD5C /* NotesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E523242B860099FD5C /* NotesItem.swift */; };
-		FF705CC723494A1500C527C0 /* AddNotesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF705CC623494A1500C527C0 /* AddNotesButton.swift */; };
+		FF5851E2232429DF0099FD5C /* ThoughtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E1232429DF0099FD5C /* ThoughtTableViewCell.swift */; };
+		FF5851E423242A750099FD5C /* ThoughtsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E323242A750099FD5C /* ThoughtsListViewController.swift */; };
+		FF5851E623242B860099FD5C /* ThoughtItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E523242B860099FD5C /* ThoughtItem.swift */; };
+		FF705CC723494A1500C527C0 /* AddThoughtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF705CC623494A1500C527C0 /* AddThoughtButton.swift */; };
 		FFA817FF2311D64200426C8C /* SpeechDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */; };
 		FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */; };
 		FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07CE2296510E0001EAB1 /* Main.storyboard */; };
@@ -45,11 +46,12 @@
 		FF1E5B40232430BC00C794CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "swiftlint-autocorrect.yml"; sourceTree = SOURCE_ROOT; };
 		FF1E5B5023255BC100C794CE /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		FF2F6017237FB83900F9608B /* EditThoughtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditThoughtViewController.swift; sourceTree = "<group>"; };
 		FF5851DD2324283A0099FD5C /* UITableView+RealmChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RealmChanges.swift"; sourceTree = "<group>"; };
-		FF5851E1232429DF0099FD5C /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
-		FF5851E323242A750099FD5C /* NotesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListController.swift; sourceTree = "<group>"; };
-		FF5851E523242B860099FD5C /* NotesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItem.swift; sourceTree = "<group>"; };
-		FF705CC623494A1500C527C0 /* AddNotesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesButton.swift; sourceTree = "<group>"; };
+		FF5851E1232429DF0099FD5C /* ThoughtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtTableViewCell.swift; sourceTree = "<group>"; };
+		FF5851E323242A750099FD5C /* ThoughtsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsListViewController.swift; sourceTree = "<group>"; };
+		FF5851E523242B860099FD5C /* ThoughtItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtItem.swift; sourceTree = "<group>"; };
+		FF705CC623494A1500C527C0 /* AddThoughtButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtButton.swift; sourceTree = "<group>"; };
 		FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDetectionViewController.swift; sourceTree = "<group>"; };
 		FFBC07C72296510E0001EAB1 /* Penso Parlo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penso Parlo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,9 +149,10 @@
 		FF1E5B48232435D800C794CE /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				FF5851E1232429DF0099FD5C /* NotesTableViewCell.swift */,
-				FF5851E323242A750099FD5C /* NotesListController.swift */,
-				FF5851E523242B860099FD5C /* NotesItem.swift */,
+				FF5851E1232429DF0099FD5C /* ThoughtTableViewCell.swift */,
+				FF5851E323242A750099FD5C /* ThoughtsListViewController.swift */,
+				FF5851E523242B860099FD5C /* ThoughtItem.swift */,
+				FF2F6017237FB83900F9608B /* EditThoughtViewController.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -165,7 +168,7 @@
 		FF705CC5234949EC00C527C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FF705CC623494A1500C527C0 /* AddNotesButton.swift */,
+				FF705CC623494A1500C527C0 /* AddThoughtButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,12 +426,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFA817FF2311D64200426C8C /* SpeechDetectionViewController.swift in Sources */,
-				FF5851E423242A750099FD5C /* NotesListController.swift in Sources */,
-				FF5851E2232429DF0099FD5C /* NotesTableViewCell.swift in Sources */,
+				FF5851E423242A750099FD5C /* ThoughtsListViewController.swift in Sources */,
+				FF2F6018237FB83900F9608B /* EditThoughtViewController.swift in Sources */,
+				FF5851E2232429DF0099FD5C /* ThoughtTableViewCell.swift in Sources */,
 				FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */,
-				FF5851E623242B860099FD5C /* NotesItem.swift in Sources */,
+				FF5851E623242B860099FD5C /* ThoughtItem.swift in Sources */,
 				FF5851DE2324283A0099FD5C /* UITableView+RealmChanges.swift in Sources */,
-				FF705CC723494A1500C527C0 /* AddNotesButton.swift in Sources */,
+				FF705CC723494A1500C527C0 /* AddThoughtButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
