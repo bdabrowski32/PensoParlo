@@ -16,15 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// - Note: Screen is black when commenting this line out.
     var window: UIWindow?
 
-    var nav: UINavigationController?
+    var navigationController: UINavigationController?
 
-    let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NotesListController") as UIViewController
+    let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtsListViewController") as? ThoughtsListViewController
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        nav = UINavigationController(rootViewController: rootVC)
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
+        self.setupRootViewController()
 
         SyncManager.shared.logLevel = .off
         self.removeNavBarBorder()
@@ -34,8 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        let speechDetectionViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SpeechDetectionViewController") as UIViewController
-        nav?.pushViewController(speechDetectionViewController, animated: false)
+        self.rootViewController?.performSegue(withIdentifier: ThoughtsListViewController.speechDetectionViewSegue, sender: self)
         return true
     }
 
@@ -51,7 +47,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Removes the shadow under the nav bar.
      */
     private func removeNavBarBorder() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    }
+
+    private func setupRootViewController() {
+        guard let thoughtsListViewController = self.rootViewController else {
+            print("Unable to setup Thoughts List View Controller.")
+            return
+        }
+
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.navigationController = UINavigationController(rootViewController: thoughtsListViewController)
+        self.window?.rootViewController = self.navigationController
+        self.window?.makeKeyAndVisible()
     }
 }

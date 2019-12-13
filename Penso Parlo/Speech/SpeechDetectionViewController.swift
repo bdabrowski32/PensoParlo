@@ -31,6 +31,8 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     /// Task object used to monitor the speech recognition progress.
     private var recognitionTask: SFSpeechRecognitionTask?
 
+    var addSiriShortcutPrompt: (() -> Void)?
+
     override func viewWillAppear(_ animated: Bool) {
         self.speechIndicator.backgroundColor = UIColor.green
     }
@@ -39,14 +41,17 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
         super.viewDidLoad()
         self.requestSpeechAuthorization()
         self.dictateSpeech()
+        self.performStop() // Adding this so I don't have to say stop everytime.
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         self.recognitionTask = nil
+        print("View will disappear called. Recognition task: \(self.recognitionTask.debugDescription)")
     }
 
     deinit {
         self.recognitionTask = nil
+        print("Deinit called. Recognition task: \(self.recognitionTask.debugDescription)")
     }
 
     /**
@@ -121,12 +126,15 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
      Turns off the audio engine and other tasks when speech dictation is ended.
      */
     private func performStop() {
+        ThoughtItem.add(text: "Test Text") // Adding this to test edit thought vc
         self.speechIndicator.backgroundColor = UIColor.red
         self.audioEngine.stop()
         self.recognitionTask?.cancel()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true) {
+                self.addSiriShortcutPrompt?()
+            }
         }
     }
 

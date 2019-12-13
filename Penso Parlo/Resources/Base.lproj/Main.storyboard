@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oFg-y6-PUe">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -13,18 +13,18 @@
             <objects>
                 <viewController storyboardIdentifier="SpeectDetectionViewController" id="FuE-uu-yA0" customClass="SpeechDetectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zui-Mj-BIA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvq-O8-Fek">
-                                <rect key="frame" x="87" y="727" width="240" height="50"/>
+                                <rect key="frame" x="87" y="673" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Rhq-ee-Nng"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Text View" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-6P-fr5">
-                                <rect key="frame" x="20" y="64" width="374" height="577"/>
+                                <rect key="frame" x="20" y="20" width="374" height="567"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="1286.9565217391305" y="-966.29464285714278"/>
         </scene>
-        <!--Thoughts List View Controller-->
+        <!--My Thoughts-->
         <scene sceneID="Jl4-KY-pHA">
             <objects>
-                <viewController storyboardIdentifier="NotesListController" id="Pjl-fH-0iz" customClass="ThoughtsListViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThoughtsListViewController" id="Pjl-fH-0iz" customClass="ThoughtsListViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9UG-5i-ySa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-2x-9kW" customClass="AddThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="282" y="648" width="92" height="92"/>
+                                <rect key="frame" x="312" y="648" width="92" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="aA3-Cq-j3s"/>
                                     <constraint firstAttribute="width" constant="92" id="mVe-j9-Ia6"/>
@@ -131,25 +131,25 @@
                         <constraints>
                             <constraint firstItem="gDu-kG-7VF" firstAttribute="leading" secondItem="ABf-RY-ehT" secondAttribute="leading" id="4Od-yQ-gg1"/>
                             <constraint firstItem="ABf-RY-ehT" firstAttribute="bottom" secondItem="5LN-2x-9kW" secondAttribute="bottom" constant="34" id="Afd-zo-YOB"/>
-                            <constraint firstItem="ABf-RY-ehT" firstAttribute="trailing" secondItem="5LN-2x-9kW" secondAttribute="trailing" constant="40" id="H8g-nc-QU0"/>
+                            <constraint firstItem="ABf-RY-ehT" firstAttribute="trailing" secondItem="5LN-2x-9kW" secondAttribute="trailing" constant="10" id="H8g-nc-QU0"/>
                             <constraint firstItem="gDu-kG-7VF" firstAttribute="top" secondItem="ABf-RY-ehT" secondAttribute="top" id="HjR-3Y-9va"/>
                             <constraint firstItem="gDu-kG-7VF" firstAttribute="trailing" secondItem="ABf-RY-ehT" secondAttribute="trailing" id="YK0-04-IQy"/>
                             <constraint firstAttribute="bottom" secondItem="gDu-kG-7VF" secondAttribute="bottom" id="rLA-HH-Og8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ABf-RY-ehT"/>
                     </view>
-                    <navigationItem key="navigationItem" id="62e-c2-IYK"/>
+                    <navigationItem key="navigationItem" title="My Thoughts" id="62e-c2-IYK"/>
                     <connections>
                         <outlet property="addThoughtButton" destination="5LN-2x-9kW" id="d6d-gx-4HV"/>
                         <outlet property="tableView" destination="gDu-kG-7VF" id="ooc-TK-6yZ"/>
-                        <segue destination="FuE-uu-yA0" kind="show" identifier="StartSpeaking" id="bh1-Ia-0X6"/>
+                        <segue destination="FuE-uu-yA0" kind="presentation" identifier="StartSpeaking" id="bh1-Ia-0X6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIw-6V-9QA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="324.63768115942031" y="-966.96428571428567"/>
         </scene>
-        <!--Edit Thought View Controller-->
+        <!--Edit Thought-->
         <scene sceneID="ai6-F2-ZgZ">
             <objects>
                 <viewController id="FIX-JN-mGj" customClass="EditThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
@@ -174,7 +174,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RRF-RS-VLR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="A06-Fy-ifK">
+                    <navigationItem key="navigationItem" title="Edit Thought" largeTitleDisplayMode="never" id="A06-Fy-ifK">
                         <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" style="plain" id="0CK-aT-khr">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

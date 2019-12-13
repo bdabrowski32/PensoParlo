@@ -44,8 +44,8 @@ class ThoughtItem: Object {
     }
 
     public static func newNoteShortcut(thumbnail: UIImage?) -> NSUserActivity {
-        let activity = NSUserActivity(activityType: NotesItem.newNoteActivityType)
-        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(NotesItem.newNoteActivityType)
+        let activity = NSUserActivity(activityType: ThoughtItem.newNoteActivityType)
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(ThoughtItem.newNoteActivityType)
 
         activity.isEligibleForSearch = true
         activity.isEligibleForPrediction = true

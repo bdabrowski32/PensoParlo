@@ -6,6 +6,8 @@
 //  Copyright © 2019 BDCreative. All rights reserved.
 //
 
+import Intents
+import IntentsUI
 import RealmSwift
 import UIKit
 
@@ -20,10 +22,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     private static let thoughtCell = "ThoughtCell"
 
     /// The identifier for the segue to the Speech Detection View Controller
-    private static let speechDetectionViewSegue = "StartSpeaking"
-
-    /// The image shown on the shortcut activity.
-    private static let addThoughtShortcutImageName = "LightbulbFAB_1"
+    static let speechDetectionViewSegue = "StartSpeaking"
 
     // MARK: - Member Properties
 
@@ -49,8 +48,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
         self.thoughtItems = ThoughtItem.all()
 
         self.addThoughtButton.onButtonPressHandler = {
-//            self.performSegue(withIdentifier: Self.speechDetectionViewSegue, sender: self)
-            self.newNoteWasTapped()
+            self.performSegue(withIdentifier: Self.speechDetectionViewSegue, sender: self)
         }
     }
 
@@ -73,18 +71,6 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.thoughtItemToken?.invalidate()
-    }
-
-    @objc
-    func newNoteWasTapped() {
-        let speechDetectionViewController = SpeechDetectionViewController()
-
-        let activity = ThoughtItem.newNoteShortcut(thumbnail: UIImage(named: ThoughtsListViewController.addThoughtShortcutImageName))
-        speechDetectionViewController.userActivity = activity
-
-        activity.becomeCurrent()
-
-        navigationController?.pushViewController(speechDetectionViewController, animated: true)
     }
 
     // MARK: - Actions
@@ -134,13 +120,19 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     // MARK: - Segue
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let editThoughtViewController = segue.destination as? EditThoughtViewController,
-            let index = self.tableView.indexPathForSelectedRow?.row else {
-                print("Unable to get a reference to the selected row.")
-                return
+        if let editThoughtViewController = segue.destination as? EditThoughtViewController,
+            let index = self.tableView.indexPathForSelectedRow?.row {
+                editThoughtViewController.thoughtItem = self.thoughtItems?[index]
+        } else if let speechDetectionViewController = segue.destination as? SpeechDetectionViewController {
+            self.addUserActivity(to: speechDetectionViewController)
+            speechDetectionViewController.addSiriShortcutPrompt = {
+                if let showShortcut = self.showShortcut() {
+                    self.present(showShortcut, animated: true, completion: nil)
+                }
+            }
+        } else {
+            print("Unable to get a reference to a view controller to segue to.")
         }
-
-        editThoughtViewController.thoughtItem = thoughtItems?[index]
     }
 
     // MARK: - Helper Functions

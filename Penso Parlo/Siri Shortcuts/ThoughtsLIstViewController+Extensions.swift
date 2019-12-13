@@ -1,5 +1,5 @@
 //
-//  SiriShortcutDelegate.swift
+//  ThoughtsLIstViewController+Extensions.swift
 //  Penso Parlo
 //
 //  Created by Dabrowski,Brendyn on 11/29/19.
@@ -15,6 +15,8 @@ extension ThoughtsListViewController: INUIAddVoiceShortcutViewControllerDelegate
     /// The image shown on the shortcut activity.
     private static let addThoughtShortcutImageName = "LightbulbFAB_1"
 
+    private static let suggestedInvocationPhrase = "Add a Thought"
+
     func addUserActivity(to viewController: UIViewController) {
         let activity = ThoughtItem.newNoteShortcut(thumbnail: UIImage(named: Self.addThoughtShortcutImageName))
         viewController.userActivity = activity
@@ -23,12 +25,12 @@ extension ThoughtsListViewController: INUIAddVoiceShortcutViewControllerDelegate
 
     func addNewThoughtShortcutPrompt() -> UIViewController {
         let activity = ThoughtItem.newNoteShortcut(thumbnail: UIImage(named: Self.addThoughtShortcutImageName))
-        activity.suggestedInvocationPhrase = "Add a Thought"
+        activity.suggestedInvocationPhrase = Self.suggestedInvocationPhrase
 
-        let vc = INUIAddVoiceShortcutViewController(shortcut: INShortcut(userActivity: activity))
-        vc.delegate = self
+        let siriShortCutViewController = INUIAddVoiceShortcutViewController(shortcut: INShortcut(userActivity: activity))
+        siriShortCutViewController.delegate = self
 
-        return vc
+        return siriShortCutViewController
     }
 
     func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
@@ -47,10 +49,32 @@ extension ThoughtsListViewController: INUIAddVoiceShortcutViewControllerDelegate
     }
 
     func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        // Dismisses Add Shortcut View.
         self.dismiss(animated: true, completion: nil)
+
+        let alert = UIAlertController(title: "Create a Shortcut Later",
+                                      message: """
+                                                If you change your mind in the future, you can go to Settings within Penso Parlo
+                                                to add a shortcut for easy, voice activated note-taking
+                                               """,
+                                      preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Add Shortcut", style: .default, handler: { _ in
+            if let showShortcut = self.showShortcut() {
+                self.present(showShortcut, animated: true, completion: nil)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            UserDefaults.standard.set(true, forKey: "canceledSiriShortcut")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 
-    func showShortcut() -> UIViewController {
+    func showShortcut() -> UIViewController? {
+        guard UserDefaults.standard.bool(forKey: "canceledSiriShortcut") == false else {
+            print("User has previously declined siri shortcut.")
+            return nil
+        }
+
         guard let shortcutId = UUID(uuidString: UserDefaults.standard.string(forKey: "AddThoughtShortcutIdentifier") ?? ""), !shortcutId.uuidString.isEmpty else {
             print("There is currently no shortcut set in user defaults.")
             return self.addNewThoughtShortcutPrompt()
@@ -62,6 +86,7 @@ extension ThoughtsListViewController: INUIAddVoiceShortcutViewControllerDelegate
                 vc = self.addNewThoughtShortcutPrompt()
             }
         }
-        return vc!
+
+        return vc
     }
 }
