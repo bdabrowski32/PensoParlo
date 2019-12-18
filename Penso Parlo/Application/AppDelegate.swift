@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// - Note: Screen is black when commenting this line out.
     var window: UIWindow?
 
+    /// The navigation controller to use for presenting and navigating view.
     var navigationController: UINavigationController?
 
+    /// The first view to appear.
     let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtsListViewController") as? ThoughtsListViewController
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -52,6 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
     }
 
+    /**
+     Configures view hierarchy.
+     */
     private func setupRootViewController() {
         guard let thoughtsListViewController = self.rootViewController else {
             print("Unable to setup Thoughts List View Controller.")

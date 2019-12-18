@@ -7,7 +7,6 @@
 //
 
 import Intents
-import IntentsUI
 import RealmSwift
 import UIKit
 
