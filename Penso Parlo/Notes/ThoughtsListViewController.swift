@@ -32,6 +32,9 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     /// Listens to changes in the ThoughtsItem realm.
     private var thoughtItemToken: NotificationToken?
 
+    /// Collection of Siri Shortcuts.
+    var voiceShortcuts: [INVoiceShortcut]?
+
     // MARK: - IBOutlets
 
     /// The tableview that displays the notes items
@@ -45,6 +48,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
+        self.updateVoiceShortcuts()
         self.thoughtItems = ThoughtItem.all()
 
         self.addThoughtButton.onButtonPressHandler = {
