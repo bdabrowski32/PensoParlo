@@ -20,27 +20,33 @@ extension ThoughtsListViewController: INUIAddVoiceShortcutViewControllerDelegate
     /// The image shown on the shortcut activity.
     private static let addThoughtShortcutImageName = "LightbulbFAB_1"
 
-    /// The activity type for the 'New Thought' Siri Shortcut.
+    /// The activity type for the 'Add Thought' Siri Shortcut.
     private static let addThoughtActivityType = "com.bdcreative.NewThought"
 
     /// Name of the 'Add Thought' Activity for Siri Shortcuts.
-    private static let addThoughtActivityName = NSLocalizedString("ACCOUNT_LIST_ITEM_FEEDBACK",
+    private static let addThoughtActivityName = NSLocalizedString("ADD_THOUGHT_SIRI_SHORTCUT",
                                                                   tableName: "PensoParlo",
                                                                   bundle: Bundle.main,
                                                                   value: "Add a Thought",
-                                                                  comment: "The feedback string in the list item")
+                                                                  comment: "The name of the Siri Shortcut for adding a thought.")
+
+    private static let shortcutCreationErrorMessage = NSLocalizedString("SHORTCUT_CREATION_ERROR",
+                                                                  tableName: "PensoParlo",
+                                                                  bundle: Bundle.main,
+                                                                  value: "Sorry, we were not able to create a Siri Shortcut.",
+                                                                  comment: "The error message to display when the shortcut is not created successfully.")
 
     // MARK: - Voice Shortcut View Controller Delegate Methods
 
     func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
         if let error = error {
-            let alert = UIAlertController(title: "Error", message: "Sorry, we were not able to create a Siri Shortcut.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: Self.shortcutCreationErrorMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
 
             self.addVoiceShortcutViewControllerDidCancel(controller)
 
-            print("Error creating siri shortcut: \(error)")
+            os_log("Error creating siri shortcut: %@", log: OSLog.default, type: .error, error as NSError)
         } else {
             // Add the newly created shortcut to the array of shortcuts, so we don't continue to prompt the user to create a shortcut.
             if let newShortcut = voiceShortcut {
@@ -62,7 +68,7 @@ extension ThoughtsListViewController: INUIAddVoiceShortcutViewControllerDelegate
                                                """,
                                       preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Add Shortcut", style: .default, handler: { _ in
-            if let showShortcut = self.showShortcut() {
+            if let showShortcut = self.showSystemCreateShortcutView() {
                 self.present(showShortcut, animated: true, completion: nil)
             }
         }))
