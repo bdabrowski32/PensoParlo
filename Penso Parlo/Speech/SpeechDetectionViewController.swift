@@ -31,6 +31,7 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     /// Task object used to monitor the speech recognition progress.
     private var recognitionTask: SFSpeechRecognitionTask?
 
+    /// Starts the siri shortcut workflow.
     var addSiriShortcutPrompt: (() -> Void)?
 
     override func viewWillAppear(_ animated: Bool) {

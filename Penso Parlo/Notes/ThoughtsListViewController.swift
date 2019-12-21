@@ -31,8 +31,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     /// Listens to changes in the ThoughtsItem realm.
     private var thoughtItemToken: NotificationToken?
 
-    /// Collection of Siri Shortcuts.
-    var voiceShortcuts: [INVoiceShortcut]?
+    private var siriShortcutViewController: SiriShortcutHandler?
 
     // MARK: - IBOutlets
 
@@ -47,8 +46,8 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
-        self.updateVoiceShortcuts()
         self.thoughtItems = ThoughtItem.all()
+        self.siriShortcutViewController = SiriShortcutHandler(parentViewController: self)
 
         self.addThoughtButton.onButtonPressHandler = {
             self.performSegue(withIdentifier: Self.speechDetectionViewSegue, sender: self)
@@ -127,9 +126,9 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
             let index = self.tableView.indexPathForSelectedRow?.row {
                 editThoughtViewController.thoughtItem = self.thoughtItems?[index]
         } else if let speechDetectionViewController = segue.destination as? SpeechDetectionViewController {
-            self.addUserActivity(to: speechDetectionViewController)
+            self.siriShortcutViewController?.add(userActivity: .addThoughtActivityType, to: speechDetectionViewController)
             speechDetectionViewController.addSiriShortcutPrompt = {
-                if let showShortcut = self.showShortcut() {
+                if let showShortcut = self.siriShortcutViewController?.showCreateShortcutView(for: .addThoughtActivityType) {
                     self.present(showShortcut, animated: true, completion: nil)
                 }
             }
