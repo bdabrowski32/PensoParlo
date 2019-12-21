@@ -31,6 +31,9 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     /// Task object used to monitor the speech recognition progress.
     private var recognitionTask: SFSpeechRecognitionTask?
 
+    /// Starts the siri shortcut workflow.
+    var addSiriShortcutPrompt: (() -> Void)?
+
     override func viewWillAppear(_ animated: Bool) {
         self.speechIndicator.backgroundColor = UIColor.green
     }
@@ -126,7 +129,9 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
         self.recognitionTask?.cancel()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true) {
+                self.addSiriShortcutPrompt?()
+            }
         }
     }
 

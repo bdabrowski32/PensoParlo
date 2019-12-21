@@ -16,11 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// - Note: Screen is black when commenting this line out.
     var window: UIWindow?
 
+    /// The navigation controller to use for presenting and navigating view.
+    var navigationController: UINavigationController?
+
+    /// The first view to appear.
+    let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtsListViewController") as? ThoughtsListViewController
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.setupRootViewController()
+
         SyncManager.shared.logLevel = .off
         self.removeNavBarBorder()
 
         self.initializeRealm()
+        return true
+    }
+
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        self.rootViewController?.performSegue(withIdentifier: ThoughtsListViewController.speechDetectionViewSegue, sender: self)
         return true
     }
 
@@ -36,7 +49,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Removes the shadow under the nav bar.
      */
     private func removeNavBarBorder() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    }
+
+    /**
+     Configures view hierarchy.
+     */
+    private func setupRootViewController() {
+        guard let thoughtsListViewController = self.rootViewController else {
+            print("Unable to setup Thoughts List View Controller.")
+            return
+        }
+
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.navigationController = UINavigationController(rootViewController: thoughtsListViewController)
+        self.window?.rootViewController = self.navigationController
+        self.window?.makeKeyAndVisible()
     }
 }

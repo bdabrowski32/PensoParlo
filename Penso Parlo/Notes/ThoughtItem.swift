@@ -1,13 +1,13 @@
 //
-//  NotesItem.swift
+//  ThoughtItem.swift
 //  Penso Parlo
 //
 //  Created by Dabrowski,Brendyn on 9/7/19.
 //  Copyright © 2019 BDCreative. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
+import UIKit
 
 /**
  The note items that the user creates with speech dictation. 
@@ -17,6 +17,8 @@ class ThoughtItem: Object {
     enum Property: String {
         case id, text, isCompleted
     }
+
+    // MARK: - Member Properties
 
     /// Unique string for each note item.
     dynamic var id = UUID().uuidString

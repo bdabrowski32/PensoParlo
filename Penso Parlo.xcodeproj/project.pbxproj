@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5CDBDE58FA4F1642747168AC /* Pods_Penso_ParloTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9816240EEBB34CF5075ABAD /* Pods_Penso_ParloTests.framework */; };
 		E2F9B457644A9DA96AB4EE47 /* Pods_Penso_Parlo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EDD2A7F45945A92E60F6BF /* Pods_Penso_Parlo.framework */; };
+		FF11A3E123A05FAE004B66DB /* AlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF11A3E023A05FAE004B66DB /* AlertController.xib */; };
 		FF1E5B41232430BC00C794CE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B40232430BC00C794CE /* Podfile */; };
 		FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */; };
 		FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B5023255BC100C794CE /* swiftlint.yml */; };
@@ -19,6 +20,7 @@
 		FF5851E623242B860099FD5C /* ThoughtItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E523242B860099FD5C /* ThoughtItem.swift */; };
 		FF705CC723494A1500C527C0 /* AddThoughtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF705CC623494A1500C527C0 /* AddThoughtButton.swift */; };
 		FFA817FF2311D64200426C8C /* SpeechDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */; };
+		FFBB7F9923918C650073F37B /* ThoughtsListViewController+ShortcutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB7F9823918C650073F37B /* ThoughtsListViewController+ShortcutDelegate.swift */; };
 		FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */; };
 		FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07CE2296510E0001EAB1 /* Main.storyboard */; };
 		FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */; };
@@ -43,6 +45,7 @@
 		B9816240EEBB34CF5075ABAD /* Pods_Penso_ParloTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Penso_ParloTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30423ECF2DAB8E3700A5F67 /* Pods-Penso ParloTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penso ParloTests.debug.xcconfig"; path = "Target Support Files/Pods-Penso ParloTests/Pods-Penso ParloTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF36DC2F76D3159B7A9EA182 /* Pods-Penso Parlo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penso Parlo.debug.xcconfig"; path = "Target Support Files/Pods-Penso Parlo/Pods-Penso Parlo.debug.xcconfig"; sourceTree = "<group>"; };
+		FF11A3E023A05FAE004B66DB /* AlertController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertController.xib; sourceTree = "<group>"; };
 		FF1E5B40232430BC00C794CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "swiftlint-autocorrect.yml"; sourceTree = SOURCE_ROOT; };
 		FF1E5B5023255BC100C794CE /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = SOURCE_ROOT; };
@@ -53,6 +56,7 @@
 		FF5851E523242B860099FD5C /* ThoughtItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtItem.swift; sourceTree = "<group>"; };
 		FF705CC623494A1500C527C0 /* AddThoughtButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtButton.swift; sourceTree = "<group>"; };
 		FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDetectionViewController.swift; sourceTree = "<group>"; };
+		FFBB7F9823918C650073F37B /* ThoughtsListViewController+ShortcutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThoughtsListViewController+ShortcutDelegate.swift"; sourceTree = "<group>"; };
 		FFBC07C72296510E0001EAB1 /* Penso Parlo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penso Parlo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFBC07CF2296510E0001EAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				FFC29F162370E7D100D55F1F /* AddNotesButton.xib */,
 				FFBC07CE2296510E0001EAB1 /* Main.storyboard */,
 				FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */,
+				FF11A3E023A05FAE004B66DB /* AlertController.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -173,6 +178,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FFBB7F9723918C400073F37B /* Siri Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB7F9823918C650073F37B /* ThoughtsListViewController+ShortcutDelegate.swift */,
+			);
+			path = "Siri Shortcuts";
+			sourceTree = "<group>";
+		};
 		FFBC07BE2296510E0001EAB1 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +209,7 @@
 		FFBC07C92296510E0001EAB1 /* Penso Parlo */ = {
 			isa = PBXGroup;
 			children = (
+				FFBB7F9723918C400073F37B /* Siri Shortcuts */,
 				FF1E5B45232434F600C794CE /* Application */,
 				FF1E5B49232435E600C794CE /* Extensions */,
 				FF1E5B48232435D800C794CE /* Notes */,
@@ -302,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF11A3E123A05FAE004B66DB /* AlertController.xib in Resources */,
 				FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */,
 				FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */,
 				FF1E5B41232430BC00C794CE /* Podfile in Resources */,
@@ -429,6 +444,7 @@
 				FF5851E423242A750099FD5C /* ThoughtsListViewController.swift in Sources */,
 				FF2F6018237FB83900F9608B /* EditThoughtViewController.swift in Sources */,
 				FF5851E2232429DF0099FD5C /* ThoughtTableViewCell.swift in Sources */,
+				FFBB7F9923918C650073F37B /* ThoughtsListViewController+ShortcutDelegate.swift in Sources */,
 				FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */,
 				FF5851E623242B860099FD5C /* ThoughtItem.swift in Sources */,
 				FF5851DE2324283A0099FD5C /* UITableView+RealmChanges.swift in Sources */,

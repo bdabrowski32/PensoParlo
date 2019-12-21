@@ -20,6 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Your speech will be detected after tapping the start button.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Speak and watch your words become text</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>AddThoughtIntent</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -39,9 +47,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Speak and watch your words become text</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Your speech will be detected after tapping the start button.</string>
 </dict>
 </plist>
