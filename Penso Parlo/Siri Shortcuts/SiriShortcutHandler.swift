@@ -12,15 +12,11 @@ import os
 
 class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate {
 
-    // MARK: - Static Properties
-
-    private static let shortcutCreationErrorMessage = NSLocalizedString("SHORTCUT_CREATION_ERROR",
-                                                                        tableName: "PensoParlo",
-                                                                        bundle: Bundle.main,
-                                                                        value: "Sorry, we were not able to create a Siri Shortcut.",
-                                                                        comment: "The error message to display when the shortcut is not created successfully.")
-
     // MARK: - Member Properties
+
+    /// Keeps track of the shortcut that is currently displaying to the user.
+    /// This is so we can give the user another chance to create a shortcut if they cancel it.
+    private var inProgressShortcutType: SiriShortcutActivityType?
 
     /// The view controller to display the Siri Shortcut view.
     var parentViewController: UIViewController?
@@ -52,7 +48,10 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
 
             self.addVoiceShortcutViewControllerDidCancel(controller)
 
-            os_log("Error creating siri shortcut: %@", log: OSLog.default, type: .error, error as NSError)
+            os_log("Error creating siri shortcut: %@",
+                   log: OSLog.default,
+                   type: .error,
+                   error as NSError)
         } else {
             // Add the newly created shortcut to the array of shortcuts, so we don't continue to prompt the user to create a shortcut.
             if let newShortcut = voiceShortcut {
@@ -67,15 +66,22 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
         // Dismisses Add Shortcut View.
         self.parentViewController?.dismiss(animated: true, completion: nil)
 
-        let alert = UIAlertController(title: "Create a Shortcut Later",
-                                      message: """
-                                                If you change your mind in the future, you can go to Settings within Penso Parlo
-                                                to add a shortcut.
-                                               """,
+        let alert = UIAlertController(title: Self.canceledShortcutTitle,
+                                      message: Self.canceledShortcutBody,
                                       preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            UserDefaults.standard.set(true, forKey: "canceledSiriShortcut")
+
+        alert.addAction(UIAlertAction(title: Self.addShortcutButtonLabel, style: .default, handler: { _ in
+            if let inProgressShortcutType = self.inProgressShortcutType {
+                if let showShortcut = self.showCreateShortcutView(for: inProgressShortcutType) {
+                    self.parentViewController?.present(showShortcut, animated: true, completion: nil)
+                }
+            }
         }))
+
+        alert.addAction(UIAlertAction(title: Self.cancelShortcutButtonLabel, style: .cancel, handler: { _ in
+            UserDefaults.standard.set(true, forKey: Self.canceledSiriShortcutKey)
+        }))
+
         self.parentViewController?.present(alert, animated: true, completion: nil)
     }
 
@@ -102,16 +108,12 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
      - returns: The system UI to create the Siri Shortcut.
      */
     func showCreateShortcutView(for activityType: SiriShortcutActivityType) -> UIViewController? {
-        guard UserDefaults.standard.bool(forKey: "canceledSiriShortcut") == false else {
-            print("User has previously declined siri shortcut.")
+        if self.shouldShowCreateShortcutView(for: activityType) {
+            self.inProgressShortcutType = activityType
+            return self.getCreateShortcutView(for: activityType)
+        } else {
             return nil
         }
-
-        guard self.isShortcutAlreadyCreated(for: activityType) else {
-            return self.getCreateShortcutView(for: activityType)
-        }
-
-        return nil
     }
 
     /**
@@ -136,8 +138,18 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
      - parameter activityType: The activity type that is being checked for creation.
      - returns: If the shortcut is already created or not.
      */
-    private func isShortcutAlreadyCreated(for activityType: SiriShortcutActivityType) -> Bool {
-        guard self.voiceShortcuts?.filter({ $0.shortcut.userActivity?.activityType == activityType.rawValue }).isEmpty == false else {
+    private func shouldShowCreateShortcutView(for activityType: SiriShortcutActivityType) -> Bool {
+        // If the canceled siri shortcut key is false then continue, if it is true then we do not want to
+        // show the 'Create Shortcut' view because the user does not want to create the shortcut.
+        guard UserDefaults.standard.bool(forKey: Self.canceledSiriShortcutKey) == false else {
+            os_log("User has previously declined siri shortcut.",
+                   log: OSLog.default,
+                   type: .info)
+            return false
+        }
+
+        // If there is no activity type that matches the passed in activity type, then we want to show the 'Create Shortcut' view.
+        guard self.voiceShortcuts?.filter({ $0.shortcut.userActivity?.activityType == activityType.rawValue }).isEmpty == true else {
             os_log("There are currently no voice shortcuts created with activity type: %@",
                    log: OSLog.default,
                    type: .info,

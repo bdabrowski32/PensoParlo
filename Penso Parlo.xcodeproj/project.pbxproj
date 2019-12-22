@@ -15,6 +15,7 @@
 		FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B5023255BC100C794CE /* swiftlint.yml */; };
 		FF1FBAC823AEBE0600573C84 /* SiriShortcutActivityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBAC723AEBE0600573C84 /* SiriShortcutActivityFactory.swift */; };
 		FF1FBACA23AEBE8A00573C84 /* SiriShortcutActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBAC923AEBE8A00573C84 /* SiriShortcutActivityType.swift */; };
+		FF1FBACC23AFEEDF00573C84 /* SiriShortcutHandler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBACB23AFEEDF00573C84 /* SiriShortcutHandler+Extensions.swift */; };
 		FF2F6018237FB83900F9608B /* EditThoughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F6017237FB83900F9608B /* EditThoughtViewController.swift */; };
 		FF5851DE2324283A0099FD5C /* UITableView+RealmChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851DD2324283A0099FD5C /* UITableView+RealmChanges.swift */; };
 		FF5851E2232429DF0099FD5C /* ThoughtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E1232429DF0099FD5C /* ThoughtTableViewCell.swift */; };
@@ -53,6 +54,7 @@
 		FF1E5B5023255BC100C794CE /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		FF1FBAC723AEBE0600573C84 /* SiriShortcutActivityFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutActivityFactory.swift; sourceTree = "<group>"; };
 		FF1FBAC923AEBE8A00573C84 /* SiriShortcutActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutActivityType.swift; sourceTree = "<group>"; };
+		FF1FBACB23AFEEDF00573C84 /* SiriShortcutHandler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SiriShortcutHandler+Extensions.swift"; sourceTree = "<group>"; };
 		FF2F6017237FB83900F9608B /* EditThoughtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditThoughtViewController.swift; sourceTree = "<group>"; };
 		FF5851DD2324283A0099FD5C /* UITableView+RealmChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RealmChanges.swift"; sourceTree = "<group>"; };
 		FF5851E1232429DF0099FD5C /* ThoughtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtTableViewCell.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				FFBB7F9823918C650073F37B /* SiriShortcutHandler.swift */,
 				FF1FBAC723AEBE0600573C84 /* SiriShortcutActivityFactory.swift */,
 				FF1FBAC923AEBE8A00573C84 /* SiriShortcutActivityType.swift */,
+				FF1FBACB23AFEEDF00573C84 /* SiriShortcutHandler+Extensions.swift */,
 			);
 			path = "Siri Shortcuts";
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				FF1FBACA23AEBE8A00573C84 /* SiriShortcutActivityType.swift in Sources */,
 				FF5851DE2324283A0099FD5C /* UITableView+RealmChanges.swift in Sources */,
 				FF705CC723494A1500C527C0 /* AddThoughtButton.swift in Sources */,
+				FF1FBACC23AFEEDF00573C84 /* SiriShortcutHandler+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
