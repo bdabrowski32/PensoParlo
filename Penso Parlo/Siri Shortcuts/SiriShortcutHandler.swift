@@ -150,13 +150,18 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
 
         // If there is no activity type that matches the passed in activity type, then we want to show the 'Create Shortcut' view.
         guard self.voiceShortcuts?.filter({ $0.shortcut.userActivity?.activityType == activityType.rawValue }).isEmpty == true else {
-            os_log("There are currently no voice shortcuts created with activity type: %@",
+            os_log("This shortcut is already created for activity type: %@",
                    log: OSLog.default,
                    type: .info,
                    activityType.rawValue)
 
             return false
         }
+
+        os_log("There are currently no voice shortcuts created with activity type: %@",
+               log: OSLog.default,
+               type: .info,
+               activityType.rawValue)
 
         return true
     }
@@ -170,7 +175,10 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
                 self.voiceShortcuts = voiceShortcutsFromCenter
             } else {
                 if let error = error as NSError? {
-                    os_log("Failed to fetch voice shortcuts with error: %@", log: OSLog.default, type: .error, error)
+                    os_log("Failed to fetch voice shortcuts with error: %@",
+                           log: OSLog.default,
+                           type: .error,
+                           error)
                 }
             }
         }

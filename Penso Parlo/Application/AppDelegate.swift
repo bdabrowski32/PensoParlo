@@ -6,6 +6,7 @@
 //  Copyright © 2019 BDCreative. All rights reserved.
 //
 
+import os
 import RealmSwift
 import UIKit
 
@@ -59,7 +60,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     private func setupRootViewController() {
         guard let thoughtsListViewController = self.rootViewController else {
-            print("Unable to setup Thoughts List View Controller.")
+            os_log("Unable to setup Thoughts List View Controller.",
+                   log: OSLog.default,
+                   type: .error)
             return
         }
 
