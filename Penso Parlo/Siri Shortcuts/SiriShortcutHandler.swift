@@ -10,7 +10,15 @@ import Intents
 import IntentsUI
 import os
 
-class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate {
+/**
+ This class handles all Siri Shortcut related actions. It handles displaying views related to Siri Shortcuts and donating shortcuts to the system.
+ */
+class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate, INUIEditVoiceShortcutViewControllerDelegate {
+
+    // MARK: - Static Properties
+
+    /// Notification that is posted when a siri shortcut is updated.
+    public static let shortcutUpdatedNotification = Notification.Name("ShortcutUpdated")
 
     // MARK: - Member Properties
 
@@ -19,10 +27,14 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
     private var inProgressShortcutType: SiriShortcutActivityType?
 
     /// The view controller to display the Siri Shortcut view.
-    var parentViewController: UIViewController?
+    private var parentViewController: UIViewController?
 
     /// Collection of Siri Shortcuts.
     var voiceShortcuts: [INVoiceShortcut]?
+
+    private var isThoughtsListView: Bool {
+        return self.parentViewController?.title == Self.thoughtsListViewName
+    }
 
     // MARK: - Initialization
 
@@ -38,7 +50,7 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
         self.updateVoiceShortcuts()
     }
 
-    // MARK: - Voice Shortcut View Controller Delegate Methods
+    // MARK: - Add Voice Shortcut View Controller Delegate Methods
 
     func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
         if let error = error {
@@ -58,31 +70,50 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
                 self.voiceShortcuts?.append(newShortcut)
             }
 
+            self.postShortcutUpdateNotification()
             self.parentViewController?.dismiss(animated: true, completion: nil)
         }
     }
 
     func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
         // Dismisses Add Shortcut View.
+        self.postShortcutUpdateNotification()
         self.parentViewController?.dismiss(animated: true, completion: nil)
 
-        let alert = UIAlertController(title: Self.canceledShortcutTitle,
-                                      message: Self.canceledShortcutBody,
-                                      preferredStyle: .actionSheet)
+        // Only want to display this alert if the user is not in the Settings menu.
+        if self.isThoughtsListView {
+            let alert = UIAlertController(title: Self.canceledShortcutTitle,
+                                          message: Self.canceledShortcutBody,
+                                          preferredStyle: .actionSheet)
 
-        alert.addAction(UIAlertAction(title: Self.addShortcutButtonLabel, style: .default, handler: { _ in
-            if let inProgressShortcutType = self.inProgressShortcutType {
-                if let showShortcut = self.showCreateShortcutView(for: inProgressShortcutType) {
-                    self.parentViewController?.present(showShortcut, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: Self.addShortcutButtonLabel, style: .default, handler: { _ in
+                if let inProgressShortcutType = self.inProgressShortcutType {
+                    if let showShortcut = self.showCreateShortcutView(for: inProgressShortcutType) {
+                        self.parentViewController?.present(showShortcut, animated: true, completion: nil)
+                    }
                 }
-            }
-        }))
+            }))
 
-        alert.addAction(UIAlertAction(title: Self.cancelShortcutButtonLabel, style: .cancel, handler: { _ in
-            UserDefaults.standard.set(true, forKey: Self.canceledSiriShortcutKey)
-        }))
+            alert.addAction(UIAlertAction(title: Self.cancelShortcutButtonLabel, style: .cancel, handler: { _ in
+                UserDefaults.standard.set(true, forKey: Self.canceledSiriShortcutKey)
+            }))
 
-        self.parentViewController?.present(alert, animated: true, completion: nil)
+            self.parentViewController?.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    // MARK: - Edit Voice Shortcut View Controller Methods
+
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didUpdate voiceShortcut: INVoiceShortcut?, error: Error?) {
+        self.shortcutWasEdited()
+    }
+
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didDeleteVoiceShortcutWithIdentifier deletedVoiceShortcutIdentifier: UUID) {
+        self.shortcutWasEdited()
+    }
+
+    func editVoiceShortcutViewControllerDidCancel(_ controller: INUIEditVoiceShortcutViewController) {
+        self.parentViewController?.dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Helper Methods
@@ -111,9 +142,11 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
         if self.shouldShowCreateShortcutView(for: activityType) {
             self.inProgressShortcutType = activityType
             return self.getCreateShortcutView(for: activityType)
-        } else {
-            return nil
+        } else if !self.isThoughtsListView {
+            return self.getEditShortcutView(for: activityType)
         }
+
+        return nil
     }
 
     /**
@@ -133,6 +166,23 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
     }
 
     /**
+     Configures the systems 'Edit Shortcut' view.
+
+     - parameter activityType:The activity type to display on the 'Edit Shortcut' view.
+     - returns: The systems 'Edit Shortcut' view
+     */
+    private func getEditShortcutView(for activityType: SiriShortcutActivityType) -> UIViewController? {
+        guard let voiceShortcutToEdit = self.voiceShortcuts?.first(where: { $0.shortcut.userActivity?.activityType == activityType.rawValue }) else {
+            return nil
+        }
+
+        let siriShortCutViewController = INUIEditVoiceShortcutViewController(voiceShortcut: voiceShortcutToEdit)
+        siriShortCutViewController.delegate = self
+
+        return siriShortCutViewController
+    }
+
+    /**
      Checks the system to see if the shortcut is already created.
 
      - parameter activityType: The activity type that is being checked for creation.
@@ -141,7 +191,7 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
     private func shouldShowCreateShortcutView(for activityType: SiriShortcutActivityType) -> Bool {
         // If the canceled siri shortcut key is false then continue, if it is true then we do not want to
         // show the 'Create Shortcut' view because the user does not want to create the shortcut.
-        guard UserDefaults.standard.bool(forKey: Self.canceledSiriShortcutKey) == false else {
+        guard !self.isThoughtsListView || UserDefaults.standard.bool(forKey: Self.canceledSiriShortcutKey) == false else {
             os_log("User has previously declined siri shortcut.",
                    log: OSLog.default,
                    type: .info)
@@ -169,18 +219,43 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate 
     /**
      Fetches all shortcuts from the system and updates the voice shortcuts member variable.
      */
-    private func updateVoiceShortcuts() {
+    private func updateVoiceShortcuts(completion: ((NSError?) -> Void)? = nil) {
         INVoiceShortcutCenter.shared.getAllVoiceShortcuts { voiceShortcutsFromCenter, error in
             if let voiceShortcutsFromCenter = voiceShortcutsFromCenter {
                 self.voiceShortcuts = voiceShortcutsFromCenter
+                DispatchQueue.main.async {
+                    completion?(nil)
+                }
             } else {
                 if let error = error as NSError? {
                     os_log("Failed to fetch voice shortcuts with error: %@",
                            log: OSLog.default,
                            type: .error,
                            error)
+                    DispatchQueue.main.async {
+                        completion?(error)
+                    }
                 }
             }
         }
+    }
+
+    /**
+     Actions to perform after shortcut was edited.
+     */
+    private func shortcutWasEdited() {
+        self.updateVoiceShortcuts { error in
+            if error == nil {
+                self.postShortcutUpdateNotification()
+            }
+            self.parentViewController?.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    /**
+     Posts the shortcut updated notification.
+     */
+    private func postShortcutUpdateNotification() {
+        NotificationCenter.default.post(name: Self.shortcutUpdatedNotification, object: nil)
     }
 }

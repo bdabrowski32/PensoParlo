@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oFg-y6-PUe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oFg-y6-PUe">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Edit Thought-->
+        <!--Speech Dictation-->
         <scene sceneID="JMC-Ri-h2U">
             <objects>
-                <viewController storyboardIdentifier="SpeectDetectionViewController" id="FuE-uu-yA0" customClass="SpeechDetectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeectDetectionViewController" title="Speech Dictation" id="FuE-uu-yA0" customClass="SpeechDetectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zui-Mj-BIA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,12 +52,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4n-R1-P06" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286.9565217391305" y="-966.29464285714278"/>
+            <point key="canvasLocation" x="1343" y="-702"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="pHS-Ao-s0y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="HOq-hD-QU8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="adz-zU-97k"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o22-xM-1Rr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131" y="-1244"/>
         </scene>
         <!--My Thoughts-->
         <scene sceneID="Jl4-KY-pHA">
             <objects>
-                <viewController storyboardIdentifier="ThoughtsListViewController" id="Pjl-fH-0iz" customClass="ThoughtsListViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThoughtsListViewController" title="My Thoughts" id="Pjl-fH-0iz" customClass="ThoughtsListViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9UG-5i-ySa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,11 +148,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ABf-RY-ehT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Thoughts" id="62e-c2-IYK"/>
+                    <navigationItem key="navigationItem" title="My Thoughts" id="Pdx-fp-VEe">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="Ist-Fr-jrG">
+                            <view key="customView" contentMode="scaleToFill" id="uAE-KP-9Nc" customClass="SettingsButton" customModule="Penso_Parlo" customModuleProvider="target">
+                                <rect key="frame" x="350" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9gE-bQ-cBa"/>
+                                    <constraint firstAttribute="width" constant="44" id="Lh1-Df-DJ7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addThoughtButton" destination="5LN-2x-9kW" id="d6d-gx-4HV"/>
+                        <outlet property="navigationItem" destination="Pdx-fp-VEe" id="OOU-K5-JE7"/>
+                        <outlet property="settingsButton" destination="uAE-KP-9Nc" id="wWY-Qg-h0n"/>
                         <outlet property="tableView" destination="gDu-kG-7VF" id="ooc-TK-6yZ"/>
                         <segue destination="FuE-uu-yA0" kind="presentation" identifier="StartSpeaking" id="bh1-Ia-0X6"/>
+                        <segue destination="HOq-hD-QU8" kind="show" identifier="Settings" id="6wD-JQ-NrP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIw-6V-9QA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,7 +179,7 @@
         <!--Edit Thought-->
         <scene sceneID="ai6-F2-ZgZ">
             <objects>
-                <viewController id="FIX-JN-mGj" customClass="EditThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Thought" id="FIX-JN-mGj" customClass="EditThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vWw-x9-xqA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,10 +217,10 @@
             </objects>
             <point key="canvasLocation" x="324.63768115942031" y="-256.47321428571428"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Penso Navigation Controller-->
         <scene sceneID="SON-Cj-X3E">
             <objects>
-                <navigationController storyboardIdentifier="PensoNavigationController" id="oFg-y6-PUe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PensoNavigationController" id="oFg-y6-PUe" customClass="PensoNavigationController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WWX-Lf-4Oc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -214,6 +241,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.left" catalog="system" width="46" height="64"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
     </resources>
 </document>
