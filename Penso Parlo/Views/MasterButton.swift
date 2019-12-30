@@ -1,5 +1,5 @@
 //
-//  AddNotesButton.swift
+//  MasterButton.swift
 //  Penso Parlo
 //
 //  Created by Dabrowski,Brendyn on 10/5/19.
@@ -44,7 +44,7 @@ public class MasterButton: UIView {
     // MARK: IBAction Methods
 
     /// Called when the button is pressed normally
-    @IBAction private func onTouchUpInside() {
+    @IBAction func onTouchUpInside() {
         self.onButtonPressHandler?()
     }
 
@@ -67,11 +67,8 @@ public class MasterButton: UIView {
     /**
      Loads xib file and adds it to the view.
      */
-    private func loadFromXib() {
-        let bundle = Bundle(for: MasterButton.self)
-
-        bundle.loadNibNamed("AddNotesButton", owner: self, options: nil)
-        self.addSubview(contentView)
+    func loadFromXib() {
+        self.addSubview(self.contentView)
         self.contentView.frame = self.bounds
         self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }

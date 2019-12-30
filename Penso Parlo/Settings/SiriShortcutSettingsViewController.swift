@@ -34,7 +34,7 @@ class SiriShortcutSettingsViewController: UITableViewController {
     /**
       Updates the thought item and returns back to the previous view controller.
 
-      - parameter sender:The back button on the navigation controller.
+      - parameter sender: The back button on the navigation controller.
      */
     @IBAction private func back(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)

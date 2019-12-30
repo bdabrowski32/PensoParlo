@@ -168,7 +168,7 @@ class SiriShortcutHandler: NSObject, INUIAddVoiceShortcutViewControllerDelegate,
     /**
      Configures the systems 'Edit Shortcut' view.
 
-     - parameter activityType:The activity type to display on the 'Edit Shortcut' view.
+     - parameter activityType: The activity type to display on the 'Edit Shortcut' view.
      - returns: The systems 'Edit Shortcut' view
      */
     private func getEditShortcutView(for activityType: SiriShortcutActivityType) -> UIViewController? {
