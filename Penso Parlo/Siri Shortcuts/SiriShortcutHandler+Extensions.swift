@@ -16,6 +16,9 @@ extension SiriShortcutHandler {
     /// If they cancel and do not create one, then we don't want to continue prompting them to create one.
     static let canceledSiriShortcutKey = "canceledSiriShortcut"
 
+    /// The identifier for the Thoughts List view.
+    static let thoughtsListViewName = "My Thoughts"
+
     /// The error message to show when not able to create the Siri Shortcut.
     static let shortcutCreationErrorMessage = NSLocalizedString("SHORTCUT_CREATION_ERROR",
                                                                 tableName: "PensoParlo",

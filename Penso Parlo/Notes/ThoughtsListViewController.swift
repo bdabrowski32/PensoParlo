@@ -21,6 +21,9 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     private static let thoughtCell = "ThoughtCell"
 
     /// The identifier for the segue to the Speech Detection View Controller
+    private static let settingsViewSegue = "Settings"
+
+    /// The identifier for the segue to the Speech Detection View Controller
     static let speechDetectionViewSegue = "StartSpeaking"
 
     // MARK: - Member Properties
@@ -42,17 +45,19 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     /// The button that kicks off speech dictation.
     @IBOutlet private weak var addThoughtButton: AddThoughtButton!
 
+    /// The button that shows the app settings menu.
+    @IBOutlet private weak var settingsButton: SettingsButton!
+
     // MARK: - ViewController life-cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupTableView()
+
+        self.setupViewController(largeTitle: .always)
+        self.tableView.setupTableView()
+        self.setupButtonActions()
         self.thoughtItems = ThoughtItem.all()
         self.siriShortcutHandler = SiriShortcutHandler(parentViewController: self)
-
-        self.addThoughtButton.onButtonPressHandler = {
-            self.performSegue(withIdentifier: Self.speechDetectionViewSegue, sender: self)
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -122,6 +127,19 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
 
     // MARK: - Segue
 
+    /**
+     Helper method to setup the actions for the buttons on the this view to take.
+     */
+    private func setupButtonActions() {
+        self.addThoughtButton.onButtonPressHandler = {
+            self.performSegue(withIdentifier: Self.speechDetectionViewSegue, sender: self)
+        }
+
+        self.settingsButton.onButtonPressHandler = {
+            self.performSegue(withIdentifier: Self.settingsViewSegue, sender: self)
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editThoughtViewController = segue.destination as? EditThoughtViewController,
             let index = self.tableView.indexPathForSelectedRow?.row {
@@ -136,15 +154,5 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
         } else {
             print("Unable to get a reference to a view controller to segue to.")
         }
-    }
-
-    // MARK: - Helper Functions
-
-    /**
-     UI Configuration for the table view.
-     */
-    private func setupTableView() {
-        self.tableView.rowHeight = 80
-        self.tableView.separatorStyle = .none
     }
 }

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     /// The navigation controller to use for presenting and navigating view.
-    var navigationController: UINavigationController?
+    var navigationController: PensoNavigationController?
 
     /// The first view to appear.
     let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtsListViewController") as? ThoughtsListViewController
@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setupRootViewController()
 
         SyncManager.shared.logLevel = .off
-        self.removeNavBarBorder()
+
+        self.navigationController?.removeNavBarBorder()
 
         self.initializeRealm()
         return true
@@ -47,15 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     /**
-     Removes the shadow under the nav bar.
-     */
-    private func removeNavBarBorder() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-    }
-
-    /**
      Configures view hierarchy.
      */
     private func setupRootViewController() {
@@ -67,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.navigationController = UINavigationController(rootViewController: thoughtsListViewController)
+        self.navigationController = PensoNavigationController(rootViewController: thoughtsListViewController)
         self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
     }
