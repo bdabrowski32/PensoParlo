@@ -182,7 +182,7 @@
 			path = Speech;
 			sourceTree = "<group>";
 		};
-		FF1E5B48232435D800C794CE /* Notes */ = {
+		FF1E5B48232435D800C794CE /* Thoughts */ = {
 			isa = PBXGroup;
 			children = (
 				FF5851E1232429DF0099FD5C /* ThoughtTableViewCell.swift */,
@@ -191,7 +191,7 @@
 				FF5851E523242B860099FD5C /* ThoughtItem.swift */,
 				FF2F6017237FB83900F9608B /* EditThoughtViewController.swift */,
 			);
-			path = Notes;
+			path = Thoughts;
 			sourceTree = "<group>";
 		};
 		FF1E5B49232435E600C794CE /* Extensions */ = {
@@ -262,7 +262,7 @@
 				FFBB7F9723918C400073F37B /* Siri Shortcuts */,
 				FF1E5B45232434F600C794CE /* Application */,
 				FF1E5B49232435E600C794CE /* Extensions */,
-				FF1E5B48232435D800C794CE /* Notes */,
+				FF1E5B48232435D800C794CE /* Thoughts */,
 				FF1E5B462324353000C794CE /* Resources */,
 				FF1E5B472324357300C794CE /* Speech */,
 				FF1E5B3F232430AD00C794CE /* Support Files */,
