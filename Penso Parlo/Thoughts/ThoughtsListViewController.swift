@@ -19,6 +19,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
 
     /// The name of the cell that displays thought text.
     private static let thoughtCell = "ThoughtCell"
+    
 
     /// The identifier for the segue to the Speech Detection View Controller
     private static let settingsViewSegue = "Settings"
