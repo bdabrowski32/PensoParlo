@@ -32,13 +32,15 @@
 		FF6EEEA623B431FE002C39E1 /* PensoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6EEEA523B431FE002C39E1 /* PensoNavigationController.swift */; };
 		FF6EEEA923B435EE002C39E1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6EEEA823B435EE002C39E1 /* SettingsViewController.swift */; };
 		FF705CC723494A1500C527C0 /* MasterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF705CC623494A1500C527C0 /* MasterButton.swift */; };
-		FFA817FF2311D64200426C8C /* SpeechDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */; };
+		FFA817FF2311D64200426C8C /* SpeechDictationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */; };
 		FFBB7F9923918C650073F37B /* SiriShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB7F9823918C650073F37B /* SiriShortcutHandler.swift */; };
 		FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */; };
 		FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07CE2296510E0001EAB1 /* Main.storyboard */; };
 		FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */; };
 		FFC29F172370E7D100D55F1F /* AddNotesButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC29F162370E7D100D55F1F /* AddNotesButton.xib */; };
 		FFC2A45723B715F500230093 /* SiriShortcutSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2A45623B715F500230093 /* SiriShortcutSettingsTableViewCell.swift */; };
+		FFC2A46823BB775A00230093 /* SpeechDictationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2A46723BB775A00230093 /* SpeechDictationHandler.swift */; };
+		FFD226D423BC0383004E69F0 /* SpeechDictationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD226D323BC0383004E69F0 /* SpeechDictationDelegate.swift */; };
 		FFEB2581234A3C56003879F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEB2580234A3C56003879F6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +84,7 @@
 		FF6EEEA523B431FE002C39E1 /* PensoNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PensoNavigationController.swift; sourceTree = "<group>"; };
 		FF6EEEA823B435EE002C39E1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FF705CC623494A1500C527C0 /* MasterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterButton.swift; sourceTree = "<group>"; };
-		FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDetectionViewController.swift; sourceTree = "<group>"; };
+		FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationViewController.swift; sourceTree = "<group>"; };
 		FFBB7F9823918C650073F37B /* SiriShortcutHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutHandler.swift; sourceTree = "<group>"; };
 		FFBC07C72296510E0001EAB1 /* Penso Parlo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penso Parlo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,8 @@
 		FFBC07E1229651170001EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC29F162370E7D100D55F1F /* AddNotesButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNotesButton.xib; sourceTree = "<group>"; };
 		FFC2A45623B715F500230093 /* SiriShortcutSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		FFC2A46723BB775A00230093 /* SpeechDictationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationHandler.swift; sourceTree = "<group>"; };
+		FFD226D323BC0383004E69F0 /* SpeechDictationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationDelegate.swift; sourceTree = "<group>"; };
 		FFDDF4D723242EC50036A431 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDDF4D923242EC60036A431 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEB2580234A3C56003879F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,7 +181,9 @@
 		FF1E5B472324357300C794CE /* Speech */ = {
 			isa = PBXGroup;
 			children = (
-				FFA817FE2311D64200426C8C /* SpeechDetectionViewController.swift */,
+				FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */,
+				FFC2A46723BB775A00230093 /* SpeechDictationHandler.swift */,
+				FFD226D323BC0383004E69F0 /* SpeechDictationDelegate.swift */,
 			);
 			path = Speech;
 			sourceTree = "<group>";
@@ -493,7 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFA817FF2311D64200426C8C /* SpeechDetectionViewController.swift in Sources */,
+				FFA817FF2311D64200426C8C /* SpeechDictationViewController.swift in Sources */,
 				FF5851E423242A750099FD5C /* ThoughtsListViewController.swift in Sources */,
 				FF2F6018237FB83900F9608B /* EditThoughtViewController.swift in Sources */,
 				FF483BE623B43D6F002D621D /* SiriShortcutSettingsViewController.swift in Sources */,
@@ -507,8 +513,10 @@
 				FF5B6EEE23B3F76B00781762 /* SettingsButton.swift in Sources */,
 				FF6EEEA423B42E50002C39E1 /* IndexPath+Extensions.swift in Sources */,
 				FF1FBACA23AEBE8A00573C84 /* SiriShortcutActivityType.swift in Sources */,
+				FFD226D423BC0383004E69F0 /* SpeechDictationDelegate.swift in Sources */,
 				FF6EEEA923B435EE002C39E1 /* SettingsViewController.swift in Sources */,
 				FF5851DE2324283A0099FD5C /* UITableView+Extensions.swift in Sources */,
+				FFC2A46823BB775A00230093 /* SpeechDictationHandler.swift in Sources */,
 				FF5B6EEC23B3F37A00781762 /* AddThoughtButton.swift in Sources */,
 				FFC2A45723B715F500230093 /* SiriShortcutSettingsTableViewCell.swift in Sources */,
 				FF705CC723494A1500C527C0 /* MasterButton.swift in Sources */,

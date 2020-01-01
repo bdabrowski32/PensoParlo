@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oFg-y6-PUe">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,20 +9,20 @@
         <!--Speech Dictation-->
         <scene sceneID="JMC-Ri-h2U">
             <objects>
-                <viewController storyboardIdentifier="SpeectDetectionViewController" title="Speech Dictation" id="FuE-uu-yA0" customClass="SpeechDetectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeectDetectionViewController" title="Speech Dictation" id="FuE-uu-yA0" customClass="SpeechDictationViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zui-Mj-BIA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvq-O8-Fek">
-                                <rect key="frame" x="87" y="673" width="240" height="50"/>
+                                <rect key="frame" x="87" y="445" width="426" height="50"/>
                                 <color key="backgroundColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Rhq-ee-Nng"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Text View" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-6P-fr5">
-                                <rect key="frame" x="20" y="20" width="374" height="567"/>
+                                <rect key="frame" x="20" y="20" width="560" height="339"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -68,26 +66,26 @@
         <scene sceneID="Jl4-KY-pHA">
             <objects>
                 <viewController storyboardIdentifier="ThoughtsListViewController" title="My Thoughts" id="Pjl-fH-0iz" customClass="ThoughtsListViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9UG-5i-ySa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="9UG-5i-ySa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-kG-7VF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThoughtCell" rowHeight="80" id="ebR-G2-d9i" customClass="ThoughtTableViewCell" customModule="Penso_Parlo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ebR-G2-d9i" id="tKG-DD-Wcz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yId-2k-hRi">
-                                                    <rect key="frame" x="16" y="25" width="382" height="30"/>
+                                                    <rect key="frame" x="16" y="25" width="568" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-ZH-HKO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="342" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="528" height="30"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Label">
                                                                     <attributes>
@@ -98,7 +96,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTL-3k-9tc">
-                                                            <rect key="frame" x="342" y="0.0" width="40" height="30"/>
+                                                            <rect key="frame" x="528" y="0.0" width="40" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="1M1-X4-oae"/>
                                                             </constraints>
@@ -130,7 +128,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-2x-9kW" customClass="AddThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="312" y="648" width="92" height="92"/>
+                                <rect key="frame" x="498" y="430" width="92" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="aA3-Cq-j3s"/>
                                     <constraint firstAttribute="width" constant="92" id="mVe-j9-Ia6"/>
@@ -180,12 +178,12 @@
         <scene sceneID="ai6-F2-ZgZ">
             <objects>
                 <viewController title="Edit Thought" id="FIX-JN-mGj" customClass="EditThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vWw-x9-xqA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="vWw-x9-xqA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Note Item Text View" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yN3-x3-zHb">
-                                <rect key="frame" x="20" y="0.0" width="374" height="774"/>
+                                <rect key="frame" x="20" y="0.0" width="560" height="556"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
