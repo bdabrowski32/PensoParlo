@@ -14,11 +14,16 @@ import Speech
  */
 class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
 
+    // MARK: - IBOutlets
+
     /// Displays the text that the user says.
     @IBOutlet private weak var detectedTextView: UITextView!
 
     @IBOutlet private weak var speechIndicator: UIView!
 
+    // MARK: - Member Properties
+    
+    /// Handles speech dictation.
     private var speechDictationHandler: SpeechDictationHandler?
 
     /// Starts the siri shortcut workflow.
