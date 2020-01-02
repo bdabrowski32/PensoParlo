@@ -15,19 +15,21 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="190" height="85"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbj-s7-3NT">
+                    <rect key="frame" x="40" y="52" width="110" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnL-tz-03B">
-                    <rect key="frame" x="2" y="2" width="40" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="9DU-FT-IEU"/>
-                        <constraint firstAttribute="height" constant="40" id="xmf-Bo-WZJ"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="-0.5" width="190" height="52"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <size key="titleShadowOffset" width="0.0" height="3"/>
-                    <state key="normal" image="text.justify" catalog="system">
-                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15" scale="large" weight="regular"/>
+                    <state key="normal" image="gear" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="33" scale="large" weight="regular"/>
                     </state>
                     <connections>
                         <action selector="onTouchUpInside" destination="-1" eventType="touchUpInside" id="hCF-Lz-kiW"/>
@@ -36,14 +38,18 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="UnL-tz-03B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="Y73-3Y-Off"/>
-                <constraint firstItem="UnL-tz-03B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pRb-bF-LOE"/>
+                <constraint firstItem="vbj-s7-3NT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2j9-7q-oN1"/>
+                <constraint firstItem="UnL-tz-03B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9Lu-1W-hnS"/>
+                <constraint firstItem="UnL-tz-03B" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-17" id="tiw-Rw-zB9"/>
+                <constraint firstAttribute="trailing" secondItem="UnL-tz-03B" secondAttribute="trailing" id="u9T-gb-dWD"/>
+                <constraint firstItem="vbj-s7-3NT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="vZ3-J1-s2n"/>
+                <constraint firstItem="UnL-tz-03B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yFq-Q5-e9M"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-131.8840579710145" y="-220.3125"/>
+            <point key="canvasLocation" x="40.579710144927539" y="-197.87946428571428"/>
         </view>
     </objects>
     <resources>
-        <image name="text.justify" catalog="system" width="64" height="50"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
 </document>

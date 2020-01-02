@@ -18,7 +18,7 @@ protocol SpeechDictationDelegate: class {
 
      - parameter dictatedText: The words that were spoken into the microphone by the user.
      */
-    func setDetectedText(with dictatedText: String)
+    func setDetectedText(to dictatedText: String)
 
     /**
      The view that indicates that the microphone is listening

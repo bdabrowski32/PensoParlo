@@ -17,6 +17,8 @@ class SiriShortcutSettingsViewController: UITableViewController {
     var siriShortcutHandler: SiriShortcutHandler?
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         self.siriShortcutHandler = SiriShortcutHandler(parentViewController: self)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.reloadTableView(_:)),

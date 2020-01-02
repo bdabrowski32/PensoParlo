@@ -41,6 +41,10 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate {
     init(delegate: SpeechDictationDelegate, dictationCompleted: @escaping () -> Void) {
         self.delegate = delegate
         self.dictationCompleted = dictationCompleted
+
+        super.init()
+
+        self.speechRecognizer?.delegate = self
     }
 
     /**
@@ -76,7 +80,7 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate {
         self.recognitionTask = speechRecognizer.recognitionTask(with: self.request) { result, error in
             if let result = result {
                 let bestString = result.bestTranscription.formattedString
-                self.delegate?.setDetectedText(with: bestString)
+                self.delegate?.setDetectedText(to: bestString)
 
                 var lastString = ""
                 for segment in result.bestTranscription.segments {
@@ -86,7 +90,7 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate {
 
                 guard self.checkForStop(resultString: lastString) == false else {
                     let finalBestString = bestString.components(separatedBy: " ").dropLast().joined(separator: " ")
-                    self.delegate?.setDetectedText(with: finalBestString)
+                    self.delegate?.setDetectedText(to: finalBestString)
                     ThoughtItem.add(text: finalBestString)
                     print("Already stopped recording.")
                     return

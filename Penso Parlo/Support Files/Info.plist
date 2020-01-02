@@ -21,9 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Your speech will be detected after tapping the start button.</string>
+	<string>Your speech will be detected after tapping the microphone button.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Speak and watch your words become text</string>
+	<string>The app uses speech recognition for dictating notes.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>AddThoughtIntent</string>
