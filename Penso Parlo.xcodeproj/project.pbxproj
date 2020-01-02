@@ -41,6 +41,8 @@
 		FFC2A45723B715F500230093 /* SiriShortcutSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2A45623B715F500230093 /* SiriShortcutSettingsTableViewCell.swift */; };
 		FFC2A46823BB775A00230093 /* SpeechDictationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2A46723BB775A00230093 /* SpeechDictationHandler.swift */; };
 		FFD226D423BC0383004E69F0 /* SpeechDictationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD226D323BC0383004E69F0 /* SpeechDictationDelegate.swift */; };
+		FFD226D923BD3B6C004E69F0 /* SystemSettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */; };
+		FFD226DB23BD3CE1004E69F0 /* SystemSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */; };
 		FFEB2581234A3C56003879F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEB2580234A3C56003879F6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		FFC2A45623B715F500230093 /* SiriShortcutSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		FFC2A46723BB775A00230093 /* SpeechDictationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationHandler.swift; sourceTree = "<group>"; };
 		FFD226D323BC0383004E69F0 /* SpeechDictationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationDelegate.swift; sourceTree = "<group>"; };
+		FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SystemSettingsButton.xib; sourceTree = "<group>"; };
+		FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsButton.swift; sourceTree = "<group>"; };
 		FFDDF4D723242EC50036A431 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDDF4D923242EC60036A431 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEB2580234A3C56003879F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				FFEB2580234A3C56003879F6 /* Assets.xcassets */,
 				FFC29F162370E7D100D55F1F /* AddNotesButton.xib */,
 				FF5B6EE623B3EE8700781762 /* SettingsButton.xib */,
+				FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */,
 				FFBC07CE2296510E0001EAB1 /* Main.storyboard */,
 				FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */,
 				FF11A3E023A05FAE004B66DB /* AlertController.xib */,
@@ -225,6 +230,7 @@
 			children = (
 				FF705CC623494A1500C527C0 /* MasterButton.swift */,
 				FF5B6EEB23B3F37A00781762 /* AddThoughtButton.swift */,
+				FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */,
 				FF5B6EED23B3F76B00781762 /* SettingsButton.swift */,
 			);
 			path = Views;
@@ -379,6 +385,7 @@
 				FF1E5B41232430BC00C794CE /* Podfile in Resources */,
 				FFEB2581234A3C56003879F6 /* Assets.xcassets in Resources */,
 				FFC29F172370E7D100D55F1F /* AddNotesButton.xib in Resources */,
+				FFD226D923BD3B6C004E69F0 /* SystemSettingsButton.xib in Resources */,
 				FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */,
 				FF5B6EE723B3EE8700781762 /* SettingsButton.xib in Resources */,
 				FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */,
@@ -511,6 +518,7 @@
 				FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */,
 				FF5851E623242B860099FD5C /* ThoughtItem.swift in Sources */,
 				FF5B6EEE23B3F76B00781762 /* SettingsButton.swift in Sources */,
+				FFD226DB23BD3CE1004E69F0 /* SystemSettingsButton.swift in Sources */,
 				FF6EEEA423B42E50002C39E1 /* IndexPath+Extensions.swift in Sources */,
 				FF1FBACA23AEBE8A00573C84 /* SiriShortcutActivityType.swift in Sources */,
 				FFD226D423BC0383004E69F0 /* SpeechDictationDelegate.swift in Sources */,

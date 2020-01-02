@@ -81,4 +81,3 @@ public class AddNotesButton: UIView {
         self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 }
-

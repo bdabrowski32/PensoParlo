@@ -44,7 +44,7 @@ public class MasterButton: UIView {
     // MARK: IBAction Methods
 
     /// Called when the button is pressed normally
-    @IBAction func onTouchUpInside() {
+    @IBAction private func onTouchUpInside() {
         self.onButtonPressHandler?()
     }
 
