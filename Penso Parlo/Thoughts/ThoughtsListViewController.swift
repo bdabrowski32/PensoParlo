@@ -45,6 +45,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     /// The button that kicks off speech dictation.
     @IBOutlet private weak var speakThoughtButton: SpeakThoughtButton!
 
+    /// The button that kicks off adding a new thought by typing it.
     @IBOutlet private weak var typeThoughtButton: TypeThoughtButton!
 
     /// The button that shows the app settings menu.
