@@ -43,7 +43,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet private weak var tableView: UITableView!
 
     /// The button that kicks off speech dictation.
-    @IBOutlet private weak var addThoughtButton: AddThoughtButton!
+    @IBOutlet private weak var speakThoughtButton: SpeakThoughtButton!
 
     @IBOutlet private weak var typeThoughtButton: TypeThoughtButton!
 
@@ -133,7 +133,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
      Helper method to setup the actions for the buttons on the this view to take.
      */
     private func setupButtonActions() {
-        self.addThoughtButton.onButtonPressHandler = {
+        self.speakThoughtButton.onButtonPressHandler = {
             self.performSegue(withIdentifier: Self.speechDetectionViewSegue, sender: self)
         }
 
@@ -147,7 +147,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let editThoughtViewController = segue.destination as? EditThoughtViewController,
+        if let editThoughtViewController = segue.destination as? TypeThoughtViewController,
             let index = self.tableView.indexPathForSelectedRow?.row {
                 editThoughtViewController.thoughtItem = self.thoughtItems?[index]
         } else if let speechDetectionViewController = segue.destination as? SpeechDictationViewController {

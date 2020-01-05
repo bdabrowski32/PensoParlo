@@ -1,5 +1,5 @@
 //
-//  AddThoughtButton.swift
+//  SpeakThoughtButton.swift
 //  Penso Parlo
 //
 //  Created by Dabrowski,Brendyn on 12/25/19.
@@ -12,15 +12,15 @@ import UIKit
  Button that handles starting speech dictation.
  */
 @IBDesignable
-public class AddThoughtButton: MasterButton {
+public class SpeakThoughtButton: MasterButton {
 
     /**
      Loads xib file and adds it to the view.
      */
     override func loadFromXib() {
-        let bundle = Bundle(for: AddThoughtButton.self)
+        let bundle = Bundle(for: SpeakThoughtButton.self)
 
-        bundle.loadNibNamed("AddNotesButton", owner: self, options: nil)
+        bundle.loadNibNamed("SpeakThoughtButton", owner: self, options: nil)
         super.loadFromXib()
     }
 }

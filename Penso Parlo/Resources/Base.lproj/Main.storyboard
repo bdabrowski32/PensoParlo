@@ -139,7 +139,7 @@
                                     <outlet property="delegate" destination="Pjl-fH-0iz" id="k8I-2u-dXd"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-2x-9kW" customClass="AddThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-2x-9kW" customClass="SpeakThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
                                 <rect key="frame" x="327" y="668" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="aA3-Cq-j3s"/>
@@ -147,7 +147,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0x-AJ-e01" userLabel="Type Thought Button" customClass="TypeThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="327" y="566" width="72" height="72"/>
+                                <rect key="frame" x="327" y="591" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="ggL-gp-t9b"/>
                                     <constraint firstAttribute="height" constant="72" id="ivJ-VF-gVc"/>
@@ -183,9 +183,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addThoughtButton" destination="5LN-2x-9kW" id="d6d-gx-4HV"/>
                         <outlet property="navigationItem" destination="Pdx-fp-VEe" id="OOU-K5-JE7"/>
                         <outlet property="settingsButton" destination="uAE-KP-9Nc" id="wWY-Qg-h0n"/>
+                        <outlet property="speakThoughtButton" destination="5LN-2x-9kW" id="McN-Py-r6d"/>
                         <outlet property="tableView" destination="gDu-kG-7VF" id="ooc-TK-6yZ"/>
                         <outlet property="typeThoughtButton" destination="f0x-AJ-e01" id="Vgb-Zg-bRE"/>
                         <segue destination="FuE-uu-yA0" kind="presentation" identifier="StartSpeaking" id="bh1-Ia-0X6"/>
@@ -199,7 +199,7 @@
         <!--Edit Thought-->
         <scene sceneID="ai6-F2-ZgZ">
             <objects>
-                <viewController title="Edit Thought" id="FIX-JN-mGj" customClass="EditThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TypeThoughtView" title="Edit Thought" id="FIX-JN-mGj" customClass="TypeThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vWw-x9-xqA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
