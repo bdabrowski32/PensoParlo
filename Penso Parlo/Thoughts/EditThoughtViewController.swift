@@ -21,7 +21,18 @@ class EditThoughtViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.contentTextView.text = self.thoughtItem?.text
+
+        guard let thoughtItem = self.thoughtItem else {
+            self.contentTextView.text = ""
+            self.navigationItem.title = "Add Thought"
+            return
+        }
+        self.contentTextView.text = thoughtItem.text
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.contentTextView.becomeFirstResponder()
     }
 
     /**
@@ -38,7 +49,11 @@ class EditThoughtViewController: UIViewController {
       - parameter sender:The back button on the navigation controller.
      */
     @IBAction private func back(_ sender: UIBarButtonItem) {
-        self.thoughtItem?.update(text: self.contentTextView.text)
+        if self.navigationItem.title == "Add Thought" && !self.contentTextView.text.isEmpty {
+            ThoughtItem.add(text: self.contentTextView.text)
+        } else {
+            self.thoughtItem?.update(text: self.contentTextView.text)
+        }
         self.navigationController?.popViewController(animated: true)
     }
 }

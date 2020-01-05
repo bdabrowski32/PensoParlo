@@ -45,6 +45,8 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     /// The button that kicks off speech dictation.
     @IBOutlet private weak var addThoughtButton: AddThoughtButton!
 
+    @IBOutlet private weak var typeThoughtButton: TypeThoughtButton!
+
     /// The button that shows the app settings menu.
     @IBOutlet private weak var settingsButton: SettingsButton!
 
@@ -137,6 +139,10 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
 
         self.settingsButton.onButtonPressHandler = {
             self.performSegue(withIdentifier: Self.settingsViewSegue, sender: self)
+        }
+
+        self.typeThoughtButton.onButtonPressHandler = {
+            self.performSegue(withIdentifier: "typeThought", sender: self)
         }
     }
 

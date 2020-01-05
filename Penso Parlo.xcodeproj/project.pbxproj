@@ -33,6 +33,8 @@
 		FF6EEEA923B435EE002C39E1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6EEEA823B435EE002C39E1 /* SettingsViewController.swift */; };
 		FF705CC723494A1500C527C0 /* MasterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF705CC623494A1500C527C0 /* MasterButton.swift */; };
 		FFA817FF2311D64200426C8C /* SpeechDictationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */; };
+		FFB2D8AB23C2620900062078 /* TypeThoughtButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */; };
+		FFB2D8AD23C2642D00062078 /* TypeThoughtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */; };
 		FFBB7F9923918C650073F37B /* SiriShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB7F9823918C650073F37B /* SiriShortcutHandler.swift */; };
 		FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */; };
 		FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC07CE2296510E0001EAB1 /* Main.storyboard */; };
@@ -87,6 +89,8 @@
 		FF6EEEA823B435EE002C39E1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FF705CC623494A1500C527C0 /* MasterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterButton.swift; sourceTree = "<group>"; };
 		FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationViewController.swift; sourceTree = "<group>"; };
+		FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypeThoughtButton.xib; sourceTree = "<group>"; };
+		FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeThoughtButton.swift; sourceTree = "<group>"; };
 		FFBB7F9823918C650073F37B /* SiriShortcutHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutHandler.swift; sourceTree = "<group>"; };
 		FFBC07C72296510E0001EAB1 /* Penso Parlo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penso Parlo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBC07CA2296510E0001EAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 			children = (
 				FFEB2580234A3C56003879F6 /* Assets.xcassets */,
 				FFC29F162370E7D100D55F1F /* AddNotesButton.xib */,
+				FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */,
 				FF5B6EE623B3EE8700781762 /* SettingsButton.xib */,
 				FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */,
 				FFBC07CE2296510E0001EAB1 /* Main.storyboard */,
@@ -230,6 +235,7 @@
 			children = (
 				FF705CC623494A1500C527C0 /* MasterButton.swift */,
 				FF5B6EEB23B3F37A00781762 /* AddThoughtButton.swift */,
+				FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */,
 				FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */,
 				FF5B6EED23B3F76B00781762 /* SettingsButton.swift */,
 			);
@@ -385,6 +391,7 @@
 				FF1E5B41232430BC00C794CE /* Podfile in Resources */,
 				FFEB2581234A3C56003879F6 /* Assets.xcassets in Resources */,
 				FFC29F172370E7D100D55F1F /* AddNotesButton.xib in Resources */,
+				FFB2D8AB23C2620900062078 /* TypeThoughtButton.xib in Resources */,
 				FFD226D923BD3B6C004E69F0 /* SystemSettingsButton.xib in Resources */,
 				FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */,
 				FF5B6EE723B3EE8700781762 /* SettingsButton.xib in Resources */,
@@ -517,6 +524,7 @@
 				FFBB7F9923918C650073F37B /* SiriShortcutHandler.swift in Sources */,
 				FFBC07CB2296510E0001EAB1 /* AppDelegate.swift in Sources */,
 				FF5851E623242B860099FD5C /* ThoughtItem.swift in Sources */,
+				FFB2D8AD23C2642D00062078 /* TypeThoughtButton.swift in Sources */,
 				FF5B6EEE23B3F76B00781762 /* SettingsButton.swift in Sources */,
 				FFD226DB23BD3CE1004E69F0 /* SystemSettingsButton.swift in Sources */,
 				FF6EEEA423B42E50002C39E1 /* IndexPath+Extensions.swift in Sources */,
