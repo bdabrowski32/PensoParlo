@@ -45,7 +45,7 @@ public class SiriShortcutActivityFactory {
                                                               bundle: Bundle.main,
                                                               value: "Jot it down before you forget!",
                                                               comment: "This appears under the headline of the shortcut notification.")
-            attributes.thumbnailData = #imageLiteral(resourceName: "LightbulbFAB_1").jpegData(compressionQuality: 1.0)
+            attributes.thumbnailData = #imageLiteral(resourceName: "SpeakFAB").jpegData(compressionQuality: 1.0)
 
             activity.contentAttributeSet = attributes
             return activity
