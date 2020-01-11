@@ -28,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         SyncManager.shared.logLevel = .off
 
-        self.navigationController?.removeNavBarBorder()
-
         self.initializeRealm()
         return true
     }

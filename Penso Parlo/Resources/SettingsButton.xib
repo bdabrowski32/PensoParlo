@@ -27,7 +27,7 @@
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <size key="titleShadowOffset" width="0.0" height="3"/>
                     <state key="normal" image="text.justify" catalog="system">
-                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15" scale="large" weight="regular"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15" scale="large" weight="light"/>
                     </state>
                     <connections>
                         <action selector="onTouchUpInside" destination="-1" eventType="touchUpInside" id="hCF-Lz-kiW"/>

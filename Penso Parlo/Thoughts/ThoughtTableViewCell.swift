@@ -31,6 +31,6 @@ class ThoughtTableViewCell: UITableViewCell {
 
         label.attributedText = NSAttributedString(string: item.text,
                                                   attributes: item.isCompleted ? [.strikethroughStyle: true] : [:])
-        button.setTitle(item.isCompleted ? "☑️": "⏺", for: .normal)
+        button.setImage(item.isCompleted ? #imageLiteral(resourceName: "Checkmark_Green") : #imageLiteral(resourceName: "Box_Green"), for: .normal)
     }
 }

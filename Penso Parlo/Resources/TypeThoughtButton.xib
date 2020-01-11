@@ -26,7 +26,7 @@
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <size key="titleShadowOffset" width="100" height="100"/>
-                    <state key="normal" image="TypeFAB">
+                    <state key="normal" image="Type_Thin">
                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="68" scale="large"/>
@@ -46,6 +46,6 @@
         </view>
     </objects>
     <resources>
-        <image name="TypeFAB" width="142" height="142"/>
+        <image name="Type_Thin" width="138" height="138"/>
     </resources>
 </document>
