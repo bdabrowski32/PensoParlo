@@ -24,7 +24,7 @@
                         <constraint firstAttribute="width" constant="72" id="9DU-FT-IEU"/>
                         <constraint firstAttribute="height" constant="72" id="xmf-Bo-WZJ"/>
                     </constraints>
-                    <state key="normal" image="SpeakFAB"/>
+                    <state key="normal" image="Mic_Green"/>
                     <connections>
                         <action selector="onTouchUpInside" destination="-1" eventType="touchUpInside" id="hCF-Lz-kiW"/>
                     </connections>
@@ -40,6 +40,6 @@
         </view>
     </objects>
     <resources>
-        <image name="SpeakFAB" width="142" height="142"/>
+        <image name="Mic_Green" width="137" height="137"/>
     </resources>
 </document>
