@@ -8,6 +8,7 @@
 
 import Speech
 import UIKit
+import Lottie
 
 /**
  This class displays the speech detection view within the storyboard.
@@ -18,9 +19,6 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
 
     /// Displays the text that the user says.
     @IBOutlet private weak var detectedTextView: UITextView!
-
-    /// The view that displays if the app is available to transcribe speech.
-    @IBOutlet private weak var speechIndicator: UIView!
 
     /// The button that takes the user to the system settings when pressed
     /// Note: This is hidden by default and is only displayed when the user doesn't have the proper
@@ -43,13 +41,31 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
                                                              value: "Cancel",
                                                              comment: "The button title to cancel the alert.")
 
+    /// The animation speed to play the animation when it is going up in frames.
+    private static let animationUpSpeed: CGFloat = 3
+
+    /// The animation speed to play the animation when it is going down in frames.
+    private static let animationDownSpeed: CGFloat = 1
+
+    /// The last frame to play for the animation.
+    private static let animationEndFrame: AnimationFrameTime = 24
+
+    /// The first frame to play for the animation.
+    private static let animationStartFrame: AnimationFrameTime = 0
+
     // MARK: - Member Properties
+
+    /// Starts the siri shortcut workflow.
+    var addSiriShortcutPrompt: (() -> Void)?
 
     /// Handles speech dictation.
     private var speechDictationHandler: SpeechDictationHandler?
 
-    /// Starts the siri shortcut workflow.
-    var addSiriShortcutPrompt: (() -> Void)?
+    /// The animation to show on-screen
+    private var animationView = AnimationView(name: "audio_visualizer")
+
+    /// The previous decibel power value that was used to animatie the audio visualizer.
+    private var previousPowerValue: Float?
 
     // MARK: - View Lifecycle
 
@@ -69,6 +85,7 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupAudioVisualizer()
         self.speechDictationHandler = SpeechDictationHandler(delegate: self) { [weak self] in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                  self?.dismiss(animated: true) {
@@ -100,9 +117,50 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
         self.detectedTextView.text = dictatedText
     }
 
-    func setSpeechIndicatorColor(to color: UIColor) {
-        self.speechIndicator.backgroundColor = color
+    func updateAudioVisualizer(with newPowerValue: Float) {
+        if let previousPowerValue = self.previousPowerValue {
+            if previousPowerValue < newPowerValue {
+                animationView.animationSpeed = Self.animationUpSpeed
+                self.playAnimation(to: Self.animationEndFrame)
+            } else if previousPowerValue > newPowerValue {
+                animationView.animationSpeed = Self.animationDownSpeed
+                self.playAnimation(to: Self.animationStartFrame)
+            }
+        }
+
+        self.previousPowerValue = newPowerValue
     }
+
+    // MARK: - Audio Visualizer Helper Methods
+
+    /**
+     Plays the animation to the frame that is passed in. The animation always starts at the frame that the animation was at when this method was last called.
+     This ensures a smooth animation, so that it doesn't start from the beginning every time and maintains responsiveness to the audio input.
+
+     - parameter frame: The animation frame to play the animation to.
+     */
+    private func playAnimation(to frame: AnimationFrameTime) {
+        self.animationView.play(fromFrame: self.animationView.realtimeAnimationFrame, toFrame: frame, loopMode: .playOnce) { animationCompleted in
+            if animationCompleted {
+                self.animationView.animationSpeed = Self.animationDownSpeed
+                self.animationView.play(fromFrame: self.animationView.realtimeAnimationFrame, toFrame: Self.animationStartFrame, loopMode: .playOnce, completion: nil)
+            }
+        }
+    }
+
+    /**
+     Positions the audio visualizer animation on the view.
+     */
+    private func setupAudioVisualizer() {
+        self.animationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        self.animationView.center.x = self.view.center.x
+        self.animationView.center.y = self.view.center.y + 200
+        self.animationView.contentMode = .scaleAspectFill
+
+        self.view.addSubview(self.animationView)
+    }
+
+    // MARK: - Permission Handling Methods
 
     /**
      Requests users authorization for speech dictation and updates views accordingly.
@@ -116,14 +174,14 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
                     break
                 case .denied:
                     self.showPermissionNotEnabledAlert(for: "Speech Recognition")
-                    self.setSpeechIndicatorColor(to: UIColor.red)
+                    // TODO: PENSO-28 Play animation showing that we aren't able to record audio like how google does it.
                 case .restricted:
                     self.setDetectedText(to: NSLocalizedString("HARDWARE_PERMISSION_RESTRICTED_MESSAGE",
                                                                tableName: "PensoParlo",
                                                                bundle: Bundle.main,
                                                                value: "Speech Recognition is restricted on this device.",
                                                                comment: "The message to display when speech recognition is restricted."))
-                    self.setSpeechIndicatorColor(to: UIColor.red)
+                    // TODO: PENSO-28 Play animation showing that we aren't able to record audio like how google does it.
                 @unknown default:
                     break
                 }
@@ -139,11 +197,12 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
             switch AVAudioSession.sharedInstance().recordPermission {
             case .denied:
                 self.showPermissionNotEnabledAlert(for: "Microphone")
-                self.setSpeechIndicatorColor(to: UIColor.red)
+                // TODO: PENSO-28 Play animation showing that we aren't able to record audio like how google does it.
             case .granted:
                 break
             case .undetermined:
-                self.setSpeechIndicatorColor(to: UIColor.red)
+                // TODO: PENSO-28 Play animation showing that we aren't able to record audio like how google does it.
+                break
             @unknown default:
                 break
             }

@@ -19,6 +19,7 @@
 		FF2F6018237FB83900F9608B /* TypeThoughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F6017237FB83900F9608B /* TypeThoughtViewController.swift */; };
 		FF483BE423B43884002D621D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483BE323B43884002D621D /* UIViewController+Extensions.swift */; };
 		FF483BE623B43D6F002D621D /* SiriShortcutSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483BE523B43D6F002D621D /* SiriShortcutSettingsViewController.swift */; };
+		FF48BDFB23D09B5B008666EF /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48BDFA23D09B5B008666EF /* Collection+Extensions.swift */; };
 		FF5851DE2324283A0099FD5C /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851DD2324283A0099FD5C /* UITableView+Extensions.swift */; };
 		FF5851E2232429DF0099FD5C /* ThoughtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E1232429DF0099FD5C /* ThoughtTableViewCell.swift */; };
 		FF5851E423242A750099FD5C /* ThoughtsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5851E323242A750099FD5C /* ThoughtsListViewController.swift */; };
@@ -45,6 +46,7 @@
 		FFD226D423BC0383004E69F0 /* SpeechDictationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD226D323BC0383004E69F0 /* SpeechDictationDelegate.swift */; };
 		FFD226D923BD3B6C004E69F0 /* SystemSettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */; };
 		FFD226DB23BD3CE1004E69F0 /* SystemSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */; };
+		FFD6BF4E23D5855A00377753 /* audio_visualizer.json in Resources */ = {isa = PBXBuildFile; fileRef = FFD6BF4D23D5855A00377753 /* audio_visualizer.json */; };
 		FFEB2581234A3C56003879F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEB2580234A3C56003879F6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +68,7 @@
 		E30423ECF2DAB8E3700A5F67 /* Pods-Penso ParloTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penso ParloTests.debug.xcconfig"; path = "Target Support Files/Pods-Penso ParloTests/Pods-Penso ParloTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF36DC2F76D3159B7A9EA182 /* Pods-Penso Parlo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penso Parlo.debug.xcconfig"; path = "Target Support Files/Pods-Penso Parlo/Pods-Penso Parlo.debug.xcconfig"; sourceTree = "<group>"; };
 		FF11A3E023A05FAE004B66DB /* AlertController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertController.xib; sourceTree = "<group>"; };
-		FF1E5B40232430BC00C794CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		FF1E5B40232430BC00C794CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "swiftlint-autocorrect.yml"; sourceTree = SOURCE_ROOT; };
 		FF1E5B5023255BC100C794CE /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		FF1FBAC723AEBE0600573C84 /* SiriShortcutActivityFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutActivityFactory.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		FF2F6017237FB83900F9608B /* TypeThoughtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeThoughtViewController.swift; sourceTree = "<group>"; };
 		FF483BE323B43884002D621D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FF483BE523B43D6F002D621D /* SiriShortcutSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutSettingsViewController.swift; sourceTree = "<group>"; };
+		FF48BDFA23D09B5B008666EF /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		FF5851DD2324283A0099FD5C /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		FF5851E1232429DF0099FD5C /* ThoughtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtTableViewCell.swift; sourceTree = "<group>"; };
 		FF5851E323242A750099FD5C /* ThoughtsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsListViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		FFD226D323BC0383004E69F0 /* SpeechDictationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationDelegate.swift; sourceTree = "<group>"; };
 		FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SystemSettingsButton.xib; sourceTree = "<group>"; };
 		FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsButton.swift; sourceTree = "<group>"; };
+		FFD6BF4D23D5855A00377753 /* audio_visualizer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = audio_visualizer.json; sourceTree = "<group>"; };
 		FFDDF4D723242EC50036A431 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDDF4D923242EC60036A431 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEB2580234A3C56003879F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,11 +179,9 @@
 		FF1E5B462324353000C794CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FFD6BF4F23D5872900377753 /* Buttons */,
+				FF6306E723CB8720001AD5E1 /* Lottie */,
 				FFEB2580234A3C56003879F6 /* Assets.xcassets */,
-				FFC29F162370E7D100D55F1F /* SpeakThoughtButton.xib */,
-				FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */,
-				FF5B6EE623B3EE8700781762 /* SettingsButton.xib */,
-				FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */,
 				FFBC07CE2296510E0001EAB1 /* Main.storyboard */,
 				FFBC07D3229651170001EAB1 /* LaunchScreen.storyboard */,
 				FF11A3E023A05FAE004B66DB /* AlertController.xib */,
@@ -216,8 +218,17 @@
 				FF5851DD2324283A0099FD5C /* UITableView+Extensions.swift */,
 				FF6EEEA323B42E50002C39E1 /* IndexPath+Extensions.swift */,
 				FF483BE323B43884002D621D /* UIViewController+Extensions.swift */,
+				FF48BDFA23D09B5B008666EF /* Collection+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF6306E723CB8720001AD5E1 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				FFD6BF4D23D5855A00377753 /* audio_visualizer.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		FF6EEEA723B435CB002C39E1 /* Settings */ = {
@@ -295,6 +306,17 @@
 				FFBC07E1229651170001EAB1 /* Info.plist */,
 			);
 			path = "Penso ParloTests";
+			sourceTree = "<group>";
+		};
+		FFD6BF4F23D5872900377753 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				FFC29F162370E7D100D55F1F /* SpeakThoughtButton.xib */,
+				FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */,
+				FF5B6EE623B3EE8700781762 /* SettingsButton.xib */,
+				FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +419,7 @@
 				FF5B6EE723B3EE8700781762 /* SettingsButton.xib in Resources */,
 				FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */,
 				FF5B6EF023B4136300781762 /* ThoughtsListNavigationBar.xib in Resources */,
+				FFD6BF4E23D5855A00377753 /* audio_visualizer.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +540,7 @@
 				FF5851E423242A750099FD5C /* ThoughtsListViewController.swift in Sources */,
 				FF2F6018237FB83900F9608B /* TypeThoughtViewController.swift in Sources */,
 				FF483BE623B43D6F002D621D /* SiriShortcutSettingsViewController.swift in Sources */,
+				FF48BDFB23D09B5B008666EF /* Collection+Extensions.swift in Sources */,
 				FF6EEEA623B431FE002C39E1 /* PensoNavigationController.swift in Sources */,
 				FF483BE423B43884002D621D /* UIViewController+Extensions.swift in Sources */,
 				FF5851E2232429DF0099FD5C /* ThoughtTableViewCell.swift in Sources */,
