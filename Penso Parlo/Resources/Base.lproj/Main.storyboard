@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Speak your mind, I'm listening" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-6P-fr5">
-                                <rect key="frame" x="20" y="20" width="374" height="567"/>
+                                <rect key="frame" x="20" y="20" width="374" height="417"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -30,25 +30,15 @@
                                     <constraint firstAttribute="width" constant="190" id="dMy-cK-7Fr"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvq-O8-Fek">
-                                <rect key="frame" x="87" y="673" width="240" height="50"/>
-                                <color key="backgroundColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Rhq-ee-Nng"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="soJ-cI-33J" firstAttribute="trailing" secondItem="Rvq-O8-Fek" secondAttribute="trailing" constant="87" id="05T-Fm-anB"/>
+                            <constraint firstItem="soJ-cI-33J" firstAttribute="bottom" secondItem="oEo-6P-fr5" secondAttribute="bottom" constant="371" id="02D-zb-tdt"/>
                             <constraint firstItem="oEo-6P-fr5" firstAttribute="top" secondItem="soJ-cI-33J" secondAttribute="top" constant="20" id="15A-4O-4T8"/>
                             <constraint firstItem="I2H-m4-704" firstAttribute="centerY" secondItem="Zui-Mj-BIA" secondAttribute="centerY" constant="-175" id="BFW-5t-i6f"/>
                             <constraint firstItem="oEo-6P-fr5" firstAttribute="leading" secondItem="soJ-cI-33J" secondAttribute="leading" constant="20" id="EyS-3H-U2E"/>
-                            <constraint firstItem="soJ-cI-33J" firstAttribute="bottom" secondItem="Rvq-O8-Fek" secondAttribute="bottom" constant="85" id="Fh0-2j-QZx"/>
                             <constraint firstItem="soJ-cI-33J" firstAttribute="trailing" secondItem="oEo-6P-fr5" secondAttribute="trailing" constant="20" id="WVh-cA-uFe"/>
-                            <constraint firstItem="Rvq-O8-Fek" firstAttribute="leading" secondItem="soJ-cI-33J" secondAttribute="leading" constant="87" id="aq2-gV-29w"/>
                             <constraint firstItem="I2H-m4-704" firstAttribute="centerX" secondItem="Zui-Mj-BIA" secondAttribute="centerX" id="tnn-i8-V08"/>
-                            <constraint firstItem="Rvq-O8-Fek" firstAttribute="top" secondItem="oEo-6P-fr5" secondAttribute="bottom" constant="86" id="wxJ-xq-Rj1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="soJ-cI-33J"/>
                     </view>
@@ -56,7 +46,6 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="detectedTextView" destination="oEo-6P-fr5" id="PoZ-BB-JnZ"/>
-                        <outlet property="speechIndicator" destination="Rvq-O8-Fek" id="zfA-cS-P0Y"/>
                         <outlet property="systemSettingsButton" destination="I2H-m4-704" id="ggM-8N-r0v"/>
                     </connections>
                 </viewController>

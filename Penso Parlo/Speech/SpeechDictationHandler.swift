@@ -6,13 +6,17 @@
 //  Copyright © 2019 BDCreative. All rights reserved.
 //
 
+import AVFoundation
 import Speech
+import os
 import UIKit
 
 /**
  This class handles all speech recognition duties
  */
-class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate {
+class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecorderDelegate {
+
+    // MARK: - Member Properties
 
     /// Used to generate and process audio signals and perform audio input and output.
     private let audioEngine = AVAudioEngine()
@@ -27,25 +31,138 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate {
     private var recognitionTask: SFSpeechRecognitionTask?
 
     /// Actions to perform when speech dictation is completed.
-    private var dictationCompleted: () -> Void
+    private var dictationCompletedBlock: () -> Void
+
+    /// The sum of appended decibel values from the microphone, used to gauge the rooms noise.
+    private var decibelBaseline = [Float]()
+
+    /// The audio recorder used to get decibel values when the user speaks into the microphone for the audio visualizer.
+    private var audioRecorder: AVAudioRecorder?
 
     /// The delegate to pass speech information to.
     private weak var delegate: SpeechDictationDelegate?
+
+    /// The document directory to store the users audio recording.
+    /// - Note: I tried to use a blank file, but would not let me. Not sure why we need this.
+    private var documentDirectory: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("recording.m4a")
+    }
 
     /**
      Initializes the class
 
      - parameter delegate: The delegate to pass speech dictation information to.
-     - parameter dictationCompleted: The actions to perform when speech dictation is complete.
+     - parameter dictationCompletedBlock: The actions to perform when speech dictation is complete.
      */
-    init(delegate: SpeechDictationDelegate, dictationCompleted: @escaping () -> Void) {
+    init(delegate: SpeechDictationDelegate, dictationCompletedBlock: @escaping () -> Void) {
         self.delegate = delegate
-        self.dictationCompleted = dictationCompleted
+        self.dictationCompletedBlock = dictationCompletedBlock
 
         super.init()
 
         self.speechRecognizer?.delegate = self
     }
+
+    // MARK: - Audio Visualizer Methods
+
+    /**
+     Sets up the audio recorder to measure input values from the users voice.
+
+     - throws: Error if the audio recorder is unable to be created.
+     */
+    private func setupAudioRecorder() throws {
+        try AVAudioSession.sharedInstance().setCategory(.record, mode: .measurement)
+        try AVAudioSession.sharedInstance().setActive(true)
+
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12_000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.min.rawValue // Using lowest quality since we are just using for audio animation.
+        ]
+
+        audioRecorder = try AVAudioRecorder(url: self.documentDirectory, settings: settings)
+        self.audioRecorder?.delegate = self
+    }
+
+    /**
+     Starts the run loop that updates the metering value from the microphone. Constantly receives values from the microphone when
+     audio recording is turned on.
+     */
+    private func startRunLoop() {
+        let displayLink: CADisplayLink = CADisplayLink(target: self, selector: #selector(self.updateAudioVisualizer))
+        displayLink.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
+    }
+
+    /**
+     Starts recording the user's audio session.
+     */
+    private func startRecording() {
+        do {
+            try self.setupAudioRecorder()
+            self.audioRecorder?.record()
+            self.startRunLoop()
+        } catch {
+            self.stopAudioRecoder(success: false)
+        }
+    }
+
+    /**
+     Gathers the audio data from the microphone and passes the new decibel value to the delegate to animate the audio visualizer.
+     - Note: The peak power value must be greater than the calculated baseline in order to get passed to the view.
+             Also, This method is called by the run loop and is called 60 frames per second.
+     */
+    @objc
+    private func updateAudioVisualizer() {
+        guard let audioRecorder = self.audioRecorder else {
+            // TODO: PENSO-28 Setup a backup animation for when the audio recorder can't be created.
+            os_log("The audio recorder is nil. We are not going to animate.",
+                   log: OSLog.default,
+                   type: .error)
+            return
+        }
+
+        // Have to call this method in order to get the decibel value from the microphone.
+        audioRecorder.updateMeters()
+        audioRecorder.isMeteringEnabled = true
+        let peakPower = audioRecorder.peakPower(forChannel: 0)
+
+        // I have no idea why this is happeneing but when I do != -120 or != -160 then it doesn't work, have to compare with ==.
+        // This check is to make sure that these generic values do not get calculated in the decibel baseline average. If they are
+        // calculated in the average, then the baseline value is too low.
+        if peakPower == -160.0 || peakPower == -120.0 {
+            return
+        }
+
+        // Gathers 30 samples of audio data.
+        guard self.decibelBaseline.count > 30 else {
+            self.decibelBaseline.append(peakPower)
+            return
+        }
+
+        // Adding 5 to the baseline average to decrease microphone/animation sensitivity.
+        // Only update the animation if the peakPower value is above the decibel baseline.
+        if peakPower > (self.decibelBaseline.average + 5) {
+            self.delegate?.updateAudioVisualizer(with: peakPower)
+        }
+    }
+
+    /**
+     Stops the audio recorder.
+     */
+    private func stopAudioRecoder(success: Bool = true) {
+        self.audioRecorder?.stop()
+        self.audioRecorder = nil
+
+        guard success else {
+            os_log("Error setting up the audio recorder for the audio visualizer animation",
+                   log: OSLog.default,
+                   type: .error)
+            return
+        }
+    }
+
+    // MARK: - Speech Dictation Methods
 
     /**
      Prepares the audio engine for speech recognition.
@@ -69,6 +186,7 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate {
      */
     func startSpeechDictation() {
         self.startAudioEngine()
+        self.startRecording()
 
         guard let speechRecognizer = self.speechRecognizer, speechRecognizer.isAvailable else {
             print("A speech recognizer is not available right now.")
@@ -76,7 +194,6 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate {
             return
         }
 
-        self.delegate?.setSpeechIndicatorColor(to: UIColor.green)
         self.recognitionTask = speechRecognizer.recognitionTask(with: self.request) { result, error in
             if let result = result {
                 let bestString = result.bestTranscription.formattedString
@@ -107,7 +224,7 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate {
     private func checkForStop(resultString: String) -> Bool {
         // TODO: PENSO-12 Handle speech timeout correctly.
         if resultString == "stop" { // Dont want to say stop because that may be a common word
-            self.performStop()
+            self.stopSpeechDictation()
             return true
         }
 
@@ -117,11 +234,11 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate {
     /**
      Turns off the audio engine and other tasks when speech dictation is ended.
      */
-    private func performStop() {
-        self.delegate?.setSpeechIndicatorColor(to: UIColor.red)
+    private func stopSpeechDictation() {
         self.audioEngine.stop()
         self.recognitionTask?.cancel()
-        self.dictationCompleted()
+        self.dictationCompletedBlock()
+        self.stopAudioRecoder()
     }
 
     // MARK: - Speech Recognizer Delegate Methods

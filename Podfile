@@ -6,9 +6,11 @@ target 'Penso Parlo' do
   use_frameworks!
     pod 'RealmSwift'
     pod 'SwiftLint'
+    pod 'lottie-ios'
   target 'Penso ParloTests' do
     inherit! :search_paths
     pod 'RealmSwift'
+    pod 'lottie-ios'
   end
 
 end

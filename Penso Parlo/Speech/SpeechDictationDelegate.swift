@@ -21,9 +21,9 @@ protocol SpeechDictationDelegate: class {
     func setDetectedText(to dictatedText: String)
 
     /**
-     The view that indicates that the microphone is listening
+     Animates the audio visualizer with the updated power value.
 
-     - parameter color: The color to change the view to based on if the microphone is listening or not
+     - parameter newPowerValue: The updated power value from the user voice level when speaking into the microphone.
      */
-    func setSpeechIndicatorColor(to color: UIColor)
+    func updateAudioVisualizer(with newPowerValue: Float)
 }
