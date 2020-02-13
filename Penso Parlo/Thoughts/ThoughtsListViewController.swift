@@ -8,10 +8,11 @@
 
 import Intents
 import RealmSwift
+import os
 import UIKit
 
 /**
- View controller for displaying note items.
+ View controller for displaying thought items.
  */
 class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -23,7 +24,11 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     /// The identifier for the segue to the Speech Detection View Controller
     private static let settingsViewSegue = "Settings"
 
+    /// The name of the segue that goes to the view where the user can add or edit their thought with text.
+    private static let typeThoughtViewSegue = "typeThought"
+
     /// The identifier for the segue to the Speech Detection View Controller
+    /// Keeping this internal so it can be accessed by siri shortcuts.
     static let speechDetectionViewSegue = "StartSpeaking"
 
     // MARK: - Member Properties
@@ -74,7 +79,8 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
                 tableView.reloadData()
             case .update(_, let deletions, let insertions, let updates):
                 tableView.applyChanges(deletions: deletions, insertions: insertions, updates: updates)
-            case .error: break
+            case .error:
+                break
             }
         }
     }
@@ -143,7 +149,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
         }
 
         self.typeThoughtButton.onButtonPressHandler = {
-            self.performSegue(withIdentifier: "typeThought", sender: self)
+            self.performSegue(withIdentifier: Self.typeThoughtViewSegue, sender: self)
         }
     }
 
@@ -159,7 +165,9 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
                 }
             }
         } else {
-            print("Unable to get a reference to a view controller to segue to.")
+            os_log("Unable to get a reference to a view controller to segue to.",
+                   log: OSLog.default,
+                   type: .debug)
         }
     }
 }

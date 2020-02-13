@@ -25,6 +25,9 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     /// permissions for speech dictation
     @IBOutlet private weak var systemSettingsButton: SystemSettingsButton!
 
+    /// The button that takes the user to the Group Selection View Controller.
+    @IBOutlet private weak var chooseGroupButton: ChooseGroupButton!
+
     // MARK: - Static Properties
 
     /// String displayed on the button that takes the user to the system settings when they do not have proper device permissions.
@@ -52,6 +55,9 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
 
     /// The first frame to play for the animation.
     private static let animationStartFrame: AnimationFrameTime = 0
+
+    /// The name of the segue that is used to segue to the Group Selection View Controller.
+    private static let chooseGroupViewSegue = "ChooseGroup"
 
     // MARK: - Member Properties
 
@@ -95,6 +101,7 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
         }
 
         self.speechDictationHandler?.startSpeechDictation()
+        self.setupButtonActions()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -158,6 +165,17 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
         self.animationView.contentMode = .scaleAspectFill
 
         self.view.addSubview(self.animationView)
+    }
+
+    // MARK: - Segue
+
+    /**
+     Helper method to setup the actions for the buttons on the view.
+     */
+    private func setupButtonActions() {
+        self.chooseGroupButton.onButtonPressHandler = {
+            self.performSegue(withIdentifier: Self.chooseGroupViewSegue, sender: self)
+        }
     }
 
     // MARK: - Permission Handling Methods
