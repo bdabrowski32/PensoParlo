@@ -28,21 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         SyncManager.shared.logLevel = .off
 
-        self.initializeRealm()
         return true
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         self.rootViewController?.performSegue(withIdentifier: ThoughtsListViewController.speechDetectionViewSegue, sender: self)
         return true
-    }
-
-    /**
-     Initializes Realm for persistence on launch.
-     */
-    private func initializeRealm() {
-        let realm = try! Realm()
-        guard realm.isEmpty else { return }
     }
 
     /**
