@@ -6,9 +6,10 @@
 //  Copyright © 2019 BDCreative. All rights reserved.
 //
 
+import Lottie
+import os
 import Speech
 import UIKit
-import Lottie
 
 /**
  This class displays the speech detection view within the storyboard.
@@ -26,7 +27,7 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     @IBOutlet private weak var systemSettingsButton: SystemSettingsButton!
 
     /// The button that takes the user to the Group Selection View Controller.
-    @IBOutlet private weak var chooseGroupButton: ChooseGroupButton!
+    @IBOutlet private weak var selectGroupButton: SelectGroupButton!
 
     // MARK: - Static Properties
 
@@ -68,7 +69,7 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     private var speechDictationHandler: SpeechDictationHandler?
 
     /// The animation to show on-screen
-    private var animationView = AnimationView(name: "audio_visualizer")
+    private var audioVisualizer = AnimationView(name: "audio_visualizer")
 
     /// The previous decibel power value that was used to animatie the audio visualizer.
     private var previousPowerValue: Float?
@@ -127,15 +128,25 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     func updateAudioVisualizer(with newPowerValue: Float) {
         if let previousPowerValue = self.previousPowerValue {
             if previousPowerValue < newPowerValue {
-                animationView.animationSpeed = Self.animationUpSpeed
+                self.audioVisualizer.animationSpeed = Self.animationUpSpeed
                 self.playAnimation(to: Self.animationEndFrame)
             } else if previousPowerValue > newPowerValue {
-                animationView.animationSpeed = Self.animationDownSpeed
+                audioVisualizer.animationSpeed = Self.animationDownSpeed
                 self.playAnimation(to: Self.animationStartFrame)
             }
         }
 
         self.previousPowerValue = newPowerValue
+    }
+
+    func currentlyDictating() {
+        self.audioVisualizer.isHidden = false
+        self.selectGroupButton.isHidden = true
+    }
+
+    func doneDictating() {
+        self.audioVisualizer.isHidden = true
+        self.selectGroupButton.isHidden = false
     }
 
     // MARK: - Audio Visualizer Helper Methods
@@ -147,10 +158,10 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
      - parameter frame: The animation frame to play the animation to.
      */
     private func playAnimation(to frame: AnimationFrameTime) {
-        self.animationView.play(fromFrame: self.animationView.realtimeAnimationFrame, toFrame: frame, loopMode: .playOnce) { animationCompleted in
+        self.audioVisualizer.play(fromFrame: self.audioVisualizer.realtimeAnimationFrame, toFrame: frame, loopMode: .playOnce) { animationCompleted in
             if animationCompleted {
-                self.animationView.animationSpeed = Self.animationDownSpeed
-                self.animationView.play(fromFrame: self.animationView.realtimeAnimationFrame, toFrame: Self.animationStartFrame, loopMode: .playOnce, completion: nil)
+                self.audioVisualizer.animationSpeed = Self.animationDownSpeed
+                self.audioVisualizer.play(fromFrame: self.audioVisualizer.realtimeAnimationFrame, toFrame: Self.animationStartFrame, loopMode: .playOnce, completion: nil)
             }
         }
     }
@@ -159,12 +170,12 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
      Positions the audio visualizer animation on the view.
      */
     private func setupAudioVisualizer() {
-        self.animationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        self.animationView.center.x = self.view.center.x
-        self.animationView.center.y = self.view.center.y + 200
-        self.animationView.contentMode = .scaleAspectFill
+        self.audioVisualizer.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        self.audioVisualizer.center.x = self.view.center.x
+        self.audioVisualizer.center.y = self.view.center.y + 200
+        self.audioVisualizer.contentMode = .scaleAspectFill
 
-        self.view.addSubview(self.animationView)
+        self.view.addSubview(self.audioVisualizer)
     }
 
     // MARK: - Segue
@@ -173,8 +184,18 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
      Helper method to setup the actions for the buttons on the view.
      */
     private func setupButtonActions() {
-        self.chooseGroupButton.onButtonPressHandler = {
+        self.selectGroupButton.onButtonPressHandler = {
             self.performSegue(withIdentifier: Self.chooseGroupViewSegue, sender: self)
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let groupSelectionViewController = segue.destination as? GroupSelectionViewController {
+            groupSelectionViewController.dictatedSpeech = self.detectedTextView.text
+        } else {
+            os_log("Unable to get a reference to the Group Selection View Controller.",
+                   log: OSLog.default,
+                   type: .debug)
         }
     }
 

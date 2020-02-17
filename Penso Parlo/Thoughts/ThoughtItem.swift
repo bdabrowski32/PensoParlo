@@ -76,7 +76,7 @@ class ThoughtItem: Object {
      */
     class func add(text: String, group: String = "Quick Thoughts") {
         guard let realm = RealmDatabaseManager.thoughtItem.realm else {
-            return ThoughtItem("", group: group)
+            return
         }
 
         let item = ThoughtItem(text, group: group)

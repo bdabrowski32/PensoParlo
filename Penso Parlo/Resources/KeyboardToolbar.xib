@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="fzZ-ZR-Zua" customClass="KeyboardToolbar" customModule="Penso_Parlo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <items>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="xgo-yO-HOT"/>
+                <barButtonItem image="keyboard.chevron.compact.down" catalog="system" style="done" id="4tc-P1-1hd">
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="fzZ-ZR-Zua" id="MKI-o2-FNW"/>
+                    </connections>
+                </barButtonItem>
+            </items>
+            <connections>
+                <outlet property="dismissButton" destination="4tc-P1-1hd" id="F77-OW-TvU"/>
+            </connections>
+            <point key="canvasLocation" x="154" y="8"/>
+        </toolbar>
+    </objects>
+    <resources>
+        <image name="keyboard.chevron.compact.down" catalog="system" width="64" height="44"/>
+    </resources>
+</document>

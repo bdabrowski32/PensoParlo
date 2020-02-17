@@ -39,6 +39,8 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
     /// The audio recorder used to get decibel values when the user speaks into the microphone for the audio visualizer.
     private var audioRecorder: AVAudioRecorder?
 
+    private var displayLink: CADisplayLink?
+
     /// The delegate to pass speech information to.
     private weak var delegate: SpeechDictationDelegate?
 
@@ -61,6 +63,7 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
         super.init()
 
         self.speechRecognizer?.delegate = self
+        self.displayLink = CADisplayLink(target: self, selector: #selector(self.updateAudioVisualizer))
     }
 
     // MARK: - Audio Visualizer Methods
@@ -90,8 +93,19 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
      audio recording is turned on.
      */
     private func startRunLoop() {
-        let displayLink: CADisplayLink = CADisplayLink(target: self, selector: #selector(self.updateAudioVisualizer))
+        guard let displayLink = self.displayLink else {
+            return
+        }
+
         displayLink.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
+    }
+
+    private func stopRunLoop() {
+        guard let displayLink = self.displayLink else {
+            return
+        }
+
+        displayLink.invalidate()
     }
 
     /**
@@ -185,6 +199,7 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
      Performs speech dictation and updates the labels on the view.
      */
     func startSpeechDictation() {
+        self.delegate?.currentlyDictating()
         self.startAudioEngine()
         self.startRecording()
 
@@ -238,8 +253,10 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
     private func stopSpeechDictation() {
         self.audioEngine.stop()
         self.recognitionTask?.cancel()
-        self.dictationCompletedBlock()
+//        self.dictationCompletedBlock()
         self.stopAudioRecoder()
+        self.stopRunLoop()
+        self.delegate?.doneDictating()
     }
 
     // MARK: - Speech Recognizer Delegate Methods

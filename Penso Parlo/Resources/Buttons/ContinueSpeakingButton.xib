@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="UnL-tz-03B" id="iVI-7Y-3Ro"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="gHf-of-yz4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="202" height="84"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnL-tz-03B">
+                    <rect key="frame" x="0.0" y="0.0" width="202" height="84"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="202" id="9DU-FT-IEU"/>
+                        <constraint firstAttribute="height" constant="84" id="xmf-Bo-WZJ"/>
+                    </constraints>
+                    <color key="tintColor" red="0.29411764705882354" green="0.69411764705882351" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
+                    <size key="titleShadowOffset" width="100" height="11"/>
+                    <state key="normal" image="ExtFAB_Speak">
+                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="43" scale="large"/>
+                    </state>
+                    <connections>
+                        <action selector="onTouchUpInside" destination="-1" eventType="touchUpInside" id="hCF-Lz-kiW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="UnL-tz-03B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Y73-3Y-Off"/>
+                <constraint firstItem="UnL-tz-03B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pRb-bF-LOE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-147.82608695652175" y="-230.35714285714283"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ExtFAB_Speak" width="203" height="85"/>
+    </resources>
+</document>
