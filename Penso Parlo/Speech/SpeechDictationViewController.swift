@@ -23,6 +23,8 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
     /// permissions for speech dictation
     @IBOutlet private weak var systemSettingsButton: SystemSettingsButton!
 
+    @IBOutlet private weak var continueThoughtButton: ContinueThoughtButton!
+
     // MARK: - Static Properties
 
     /// String displayed on the button that takes the user to the system settings when they do not have proper device permissions.
@@ -101,6 +103,7 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
 
         self.speechDictationHandler?.startSpeechDictation()
         self.setupDoneButtonActions()
+        self.setupContinueThoughtButtonActions()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -142,10 +145,12 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
     }
 
     func currentlyDictating() {
+        self.continueThoughtButton.isHidden = true
         self.audioVisualizer.isHidden = false
     }
 
     func doneDictating() {
+        self.continueThoughtButton.isHidden = false
         self.audioVisualizer.isHidden = true
     }
 

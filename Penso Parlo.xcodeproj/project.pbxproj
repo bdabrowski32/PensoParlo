@@ -40,6 +40,8 @@
 		FF8D06442401C40F0091897C /* KeyboardLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D06432401C40F0091897C /* KeyboardLayoutConstraints.swift */; };
 		FF8D06482403714C0091897C /* DoneButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8D06472403714C0091897C /* DoneButton.xib */; };
 		FF8D064A240371790091897C /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0649240371790091897C /* DoneButton.swift */; };
+		FF9D79DD240387BF0061A4C7 /* ContinueThoughtButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9D79DC240387BF0061A4C7 /* ContinueThoughtButton.xib */; };
+		FF9D79DF240387F50061A4C7 /* ContinueThoughtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D79DE240387F50061A4C7 /* ContinueThoughtButton.swift */; };
 		FFA817FF2311D64200426C8C /* SpeechDictationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */; };
 		FFB2D8AB23C2620900062078 /* TypeThoughtButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */; };
 		FFB2D8AD23C2642D00062078 /* TypeThoughtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */; };
@@ -109,6 +111,8 @@
 		FF8D06432401C40F0091897C /* KeyboardLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraints.swift; sourceTree = "<group>"; };
 		FF8D06472403714C0091897C /* DoneButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoneButton.xib; sourceTree = "<group>"; };
 		FF8D0649240371790091897C /* DoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		FF9D79DC240387BF0061A4C7 /* ContinueThoughtButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContinueThoughtButton.xib; sourceTree = "<group>"; };
+		FF9D79DE240387F50061A4C7 /* ContinueThoughtButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinueThoughtButton.swift; sourceTree = "<group>"; };
 		FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationViewController.swift; sourceTree = "<group>"; };
 		FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypeThoughtButton.xib; sourceTree = "<group>"; };
 		FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeThoughtButton.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			children = (
 				FF705CC623494A1500C527C0 /* MasterButton.swift */,
 				FF5B6EEB23B3F37A00781762 /* AddThoughtButton.swift */,
+				FF9D79DE240387F50061A4C7 /* ContinueThoughtButton.swift */,
 				FFD6BF5023D65D3D00377753 /* SelectGroupButton.swift */,
 				FF8D0649240371790091897C /* DoneButton.swift */,
 				FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */,
@@ -359,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				FFC29F162370E7D100D55F1F /* SpeakThoughtButton.xib */,
+				FF9D79DC240387BF0061A4C7 /* ContinueThoughtButton.xib */,
 				FFEF96F423F57E5900C8C1BB /* SelectGroupButton.xib */,
 				FF8D06472403714C0091897C /* DoneButton.xib */,
 				FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */,
@@ -469,6 +475,7 @@
 				FF8D06482403714C0091897C /* DoneButton.xib in Resources */,
 				FFEF96F523F57E5900C8C1BB /* SelectGroupButton.xib in Resources */,
 				FF5B6EE723B3EE8700781762 /* SettingsButton.xib in Resources */,
+				FF9D79DD240387BF0061A4C7 /* ContinueThoughtButton.xib in Resources */,
 				FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */,
 				FF5B6EF023B4136300781762 /* ThoughtsListNavigationBar.xib in Resources */,
 				FFD6BF4E23D5855A00377753 /* audio_visualizer.json in Resources */,
@@ -598,6 +605,7 @@
 				FF6EEEA623B431FE002C39E1 /* PensoNavigationController.swift in Sources */,
 				FF483BE423B43884002D621D /* UIViewController+Extensions.swift in Sources */,
 				FF5851E2232429DF0099FD5C /* ThoughtTableViewCell.swift in Sources */,
+				FF9D79DF240387F50061A4C7 /* ContinueThoughtButton.swift in Sources */,
 				FF8D06442401C40F0091897C /* KeyboardLayoutConstraints.swift in Sources */,
 				FF1FBAC823AEBE0600573C84 /* SiriShortcutActivityFactory.swift in Sources */,
 				FFB7E34923E63AD100EB0161 /* ThoughtGroup.swift in Sources */,

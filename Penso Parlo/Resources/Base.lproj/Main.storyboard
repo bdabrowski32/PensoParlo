@@ -47,13 +47,23 @@
                                     <constraint firstAttribute="height" constant="84" id="yYb-qc-sLJ"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0d2-07-trb" customClass="ContinueThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
+                                <rect key="frame" x="171" y="510" width="72" height="72"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="G7B-pJ-izM"/>
+                                    <constraint firstAttribute="height" constant="72" id="ekA-RC-3Kn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="I2H-m4-704" firstAttribute="centerY" secondItem="Zui-Mj-BIA" secondAttribute="centerY" constant="-175" id="BFW-5t-i6f"/>
                             <constraint firstItem="soJ-cI-33J" firstAttribute="bottom" secondItem="4DY-Lp-eXp" secondAttribute="bottom" constant="16" id="Bdz-Ku-oWW"/>
+                            <constraint firstItem="0d2-07-trb" firstAttribute="centerY" secondItem="Zui-Mj-BIA" secondAttribute="centerY" constant="125" id="Dwh-ec-sbp"/>
                             <constraint firstItem="oEo-6P-fr5" firstAttribute="top" secondItem="soJ-cI-33J" secondAttribute="top" constant="20" id="Eke-CL-pna"/>
                             <constraint firstItem="oEo-6P-fr5" firstAttribute="leading" secondItem="soJ-cI-33J" secondAttribute="leading" constant="20" id="EyS-3H-U2E"/>
+                            <constraint firstItem="0d2-07-trb" firstAttribute="centerX" secondItem="Zui-Mj-BIA" secondAttribute="centerX" id="MLa-i9-Lt3"/>
                             <constraint firstItem="soJ-cI-33J" firstAttribute="bottom" secondItem="90E-H3-JhM" secondAttribute="bottom" constant="16" id="WBA-AA-Ak0"/>
                             <constraint firstItem="soJ-cI-33J" firstAttribute="trailing" secondItem="oEo-6P-fr5" secondAttribute="trailing" constant="20" id="WVh-cA-uFe"/>
                             <constraint firstItem="90E-H3-JhM" firstAttribute="leading" secondItem="soJ-cI-33J" secondAttribute="leading" constant="16" id="asU-oE-uwI"/>
@@ -67,6 +77,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="contentTextView" destination="oEo-6P-fr5" id="XBm-4P-kMs"/>
+                        <outlet property="continueThoughtButton" destination="0d2-07-trb" id="qAb-PS-RgP"/>
                         <outlet property="doneButton" destination="90E-H3-JhM" id="cEe-ns-o6K"/>
                         <outlet property="selectGroupButton" destination="4DY-Lp-eXp" id="fa6-aA-XKf"/>
                         <outlet property="systemSettingsButton" destination="I2H-m4-704" id="ggM-8N-r0v"/>
