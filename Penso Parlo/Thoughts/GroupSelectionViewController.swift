@@ -19,13 +19,12 @@ class GroupSelectionViewController: UIViewController, UITableViewDataSource {
     /// The groups to display in the view.
     private var groups = ThoughtGroup.all()
 
-    var dictatedSpeech: String?
+    var thoughtItem: ThoughtItem?
 
     // MARK: - View Lifecycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hi BD! Dictated Speech: \(self.dictatedSpeech)")
     }
 
     // MARK: - Tableview Data Source Methods

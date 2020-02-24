@@ -223,9 +223,6 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
                 guard self.checkForStop(resultString: lastString) == false else {
                     let finalBestString = bestString.components(separatedBy: " ").dropLast().joined(separator: " ")
                     self.delegate?.setDetectedText(to: finalBestString)
-
-                    // TODO: PENSO-34 - Add buttons to navigate to group selection view
-                    ThoughtItem.add(text: finalBestString)
                     return
                 }
             } else if let error = error {

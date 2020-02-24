@@ -14,20 +14,14 @@ import UIKit
 /**
  This class displays the speech detection view within the storyboard.
  */
-class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
+class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDelegate {
 
     // MARK: - IBOutlets
-
-    /// Displays the text that the user says.
-    @IBOutlet private weak var detectedTextView: UITextView!
 
     /// The button that takes the user to the system settings when pressed
     /// Note: This is hidden by default and is only displayed when the user doesn't have the proper
     /// permissions for speech dictation
     @IBOutlet private weak var systemSettingsButton: SystemSettingsButton!
-
-    /// The button that takes the user to the Group Selection View Controller.
-    @IBOutlet private weak var selectGroupButton: SelectGroupButton!
 
     // MARK: - Static Properties
 
@@ -45,6 +39,12 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
                                                              value: "Cancel",
                                                              comment: "The button title to cancel the alert.")
 
+    private static let defaultUserPromptText = NSLocalizedString("DEFAULT_USER_PROMPT_TEXT",
+                                                             tableName: "PensoParlo",
+                                                             bundle: Bundle.main,
+                                                             value: "Whats on your mind?",
+                                                             comment: "The text that is displayed when the user opens the speech view.")
+
     /// The animation speed to play the animation when it is going up in frames.
     private static let animationUpSpeed: CGFloat = 3
 
@@ -56,9 +56,6 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
 
     /// The first frame to play for the animation.
     private static let animationStartFrame: AnimationFrameTime = 0
-
-    /// The name of the segue that is used to segue to the Group Selection View Controller.
-    private static let chooseGroupViewSegue = "ChooseGroup"
 
     // MARK: - Member Properties
 
@@ -92,6 +89,7 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.contentTextView.text = Self.defaultUserPromptText
         self.setupAudioVisualizer()
         self.speechDictationHandler = SpeechDictationHandler(delegate: self) { [weak self] in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -102,7 +100,7 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
         }
 
         self.speechDictationHandler?.startSpeechDictation()
-        self.setupButtonActions()
+        self.setupDoneButtonActions()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -122,7 +120,7 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     // MARK: - Speech Dictation Delegate
 
     func setDetectedText(to dictatedText: String) {
-        self.detectedTextView.text = dictatedText
+        self.contentTextView.text = dictatedText
     }
 
     func updateAudioVisualizer(with newPowerValue: Float) {
@@ -141,12 +139,14 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
 
     func currentlyDictating() {
         self.audioVisualizer.isHidden = false
-        self.selectGroupButton.isHidden = true
+
+        if !self.contentTextView.text.isEmpty {
+            self.selectGroupButton.isEnabled = true
+        }
     }
 
     func doneDictating() {
         self.audioVisualizer.isHidden = true
-        self.selectGroupButton.isHidden = false
     }
 
     // MARK: - Audio Visualizer Helper Methods
@@ -172,30 +172,21 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     private func setupAudioVisualizer() {
         self.audioVisualizer.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         self.audioVisualizer.center.x = self.view.center.x
-        self.audioVisualizer.center.y = self.view.center.y + 200
+        self.audioVisualizer.center.y = self.view.center.y + 100
         self.audioVisualizer.contentMode = .scaleAspectFill
 
         self.view.addSubview(self.audioVisualizer)
     }
 
-    // MARK: - Segue
+    // MARK: - Button Setup
 
-    /**
-     Helper method to setup the actions for the buttons on the view.
-     */
-    private func setupButtonActions() {
-        self.selectGroupButton.onButtonPressHandler = {
-            self.performSegue(withIdentifier: Self.chooseGroupViewSegue, sender: self)
-        }
-    }
+    override func setupDoneButtonActions() {
+        self.doneButton.onButtonPressHandler = {
+            if self.contentTextView.text != Self.defaultUserPromptText && !self.contentTextView.text.isEmpty {
+                self.addThoughtToQuickThoughts()
+            }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let groupSelectionViewController = segue.destination as? GroupSelectionViewController {
-            groupSelectionViewController.dictatedSpeech = self.detectedTextView.text
-        } else {
-            os_log("Unable to get a reference to the Group Selection View Controller.",
-                   log: OSLog.default,
-                   type: .debug)
+            super.setupDoneButtonActions()
         }
     }
 

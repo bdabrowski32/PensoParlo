@@ -21,6 +21,7 @@
                     </connections>
                 </barButtonItem>
             </items>
+            <color key="tintColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="dismissButton" destination="4tc-P1-1hd" id="F77-OW-TvU"/>
             </connections>

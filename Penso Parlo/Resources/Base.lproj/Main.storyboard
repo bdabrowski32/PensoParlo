@@ -13,32 +13,35 @@
             <objects>
                 <viewController storyboardIdentifier="SpeectDetectionViewController" title="Speech Dictation" id="FuE-uu-yA0" customClass="SpeechDictationViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zui-Mj-BIA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Speak your mind, I'm listening" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-6P-fr5">
-                                <rect key="frame" x="20" y="64" width="374" height="427"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="What's on your mind?" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-6P-fr5">
+                                <rect key="frame" x="20" y="20" width="374" height="418"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2H-m4-704" customClass="SystemSettingsButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="112" y="230.5" width="190" height="85"/>
+                                <rect key="frame" x="112" y="203.5" width="190" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="a6j-b3-2iY"/>
                                     <constraint firstAttribute="width" constant="190" id="dMy-cK-7Fr"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DY-Lp-eXp" customClass="SelectGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="196" y="762" width="202" height="84"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DY-Lp-eXp" customClass="SelectGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
+                                <rect key="frame" x="196" y="708" width="202" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="202" id="HSO-6D-UoX"/>
                                     <constraint firstAttribute="height" constant="84" id="y1l-Xo-ZYB"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90E-H3-JhM" customClass="ContinueSpeakingButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="16" y="762" width="202" height="84"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90E-H3-JhM" customClass="ContinueSpeakingButton" customModule="Penso_Parlo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="708" width="202" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="202" id="gRJ-Q2-S5c"/>
                                     <constraint firstAttribute="height" constant="84" id="yYb-qc-sLJ"/>
@@ -47,26 +50,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="soJ-cI-33J" firstAttribute="bottom" secondItem="oEo-6P-fr5" secondAttribute="bottom" constant="371" id="02D-zb-tdt"/>
-                            <constraint firstItem="oEo-6P-fr5" firstAttribute="top" secondItem="soJ-cI-33J" secondAttribute="top" constant="20" id="15A-4O-4T8"/>
                             <constraint firstItem="I2H-m4-704" firstAttribute="centerY" secondItem="Zui-Mj-BIA" secondAttribute="centerY" constant="-175" id="BFW-5t-i6f"/>
                             <constraint firstItem="soJ-cI-33J" firstAttribute="bottom" secondItem="4DY-Lp-eXp" secondAttribute="bottom" constant="16" id="Bdz-Ku-oWW"/>
+                            <constraint firstItem="oEo-6P-fr5" firstAttribute="top" secondItem="soJ-cI-33J" secondAttribute="top" constant="20" id="Eke-CL-pna"/>
                             <constraint firstItem="oEo-6P-fr5" firstAttribute="leading" secondItem="soJ-cI-33J" secondAttribute="leading" constant="20" id="EyS-3H-U2E"/>
                             <constraint firstItem="soJ-cI-33J" firstAttribute="bottom" secondItem="90E-H3-JhM" secondAttribute="bottom" constant="16" id="WBA-AA-Ak0"/>
                             <constraint firstItem="soJ-cI-33J" firstAttribute="trailing" secondItem="oEo-6P-fr5" secondAttribute="trailing" constant="20" id="WVh-cA-uFe"/>
                             <constraint firstItem="90E-H3-JhM" firstAttribute="leading" secondItem="soJ-cI-33J" secondAttribute="leading" constant="16" id="asU-oE-uwI"/>
                             <constraint firstItem="soJ-cI-33J" firstAttribute="trailing" secondItem="4DY-Lp-eXp" secondAttribute="trailing" constant="16" id="hCQ-wD-HUb"/>
                             <constraint firstItem="I2H-m4-704" firstAttribute="centerX" secondItem="Zui-Mj-BIA" secondAttribute="centerX" id="tnn-i8-V08"/>
+                            <constraint firstItem="4DY-Lp-eXp" firstAttribute="top" secondItem="oEo-6P-fr5" secondAttribute="bottom" constant="270" id="wa1-71-gCw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="soJ-cI-33J"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Thought" largeTitleDisplayMode="always" id="p75-MF-2Lx"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="detectedTextView" destination="oEo-6P-fr5" id="PoZ-BB-JnZ"/>
+                        <outlet property="contentTextView" destination="oEo-6P-fr5" id="XBm-4P-kMs"/>
+                        <outlet property="doneButton" destination="90E-H3-JhM" id="cEe-ns-o6K"/>
                         <outlet property="selectGroupButton" destination="4DY-Lp-eXp" id="fa6-aA-XKf"/>
                         <outlet property="systemSettingsButton" destination="I2H-m4-704" id="ggM-8N-r0v"/>
-                        <segue destination="n26-i5-CPu" kind="presentation" identifier="ChooseGroup" id="NVF-ll-q5X"/>
+                        <segue destination="n26-i5-CPu" kind="presentation" identifier="ChooseGroup" modalPresentationStyle="currentContext" modalTransitionStyle="flipHorizontal" id="NVF-ll-q5X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4n-R1-P06" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,7 +82,7 @@
             <objects>
                 <viewController id="n26-i5-CPu" customClass="GroupSelectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVZ-05-Jtc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Seo-vw-t5H">
@@ -113,7 +117,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="qai-aa-AKX"/>
+                                    <navigationItem title="Select Group" id="qai-aa-AKX"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -192,7 +196,7 @@
                                         <connections>
                                             <outlet property="button" destination="MTL-3k-9tc" id="lpt-8G-mkN"/>
                                             <outlet property="label" destination="9kL-ZH-HKO" id="tjV-1R-OiR"/>
-                                            <segue destination="FIX-JN-mGj" kind="show" identifier="typeThought" id="wlB-nf-PTy"/>
+                                            <segue destination="FIX-JN-mGj" kind="presentation" identifier="typeThought" id="wlB-nf-PTy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -250,7 +254,7 @@
                         <outlet property="speakThoughtButton" destination="5LN-2x-9kW" id="McN-Py-r6d"/>
                         <outlet property="tableView" destination="gDu-kG-7VF" id="ooc-TK-6yZ"/>
                         <outlet property="typeThoughtButton" destination="f0x-AJ-e01" id="Vgb-Zg-bRE"/>
-                        <segue destination="FuE-uu-yA0" kind="presentation" identifier="StartSpeaking" modalPresentationStyle="currentContext" id="bh1-Ia-0X6"/>
+                        <segue destination="FuE-uu-yA0" kind="presentation" identifier="StartSpeaking" modalPresentationStyle="pageSheet" id="bh1-Ia-0X6"/>
                         <segue destination="HOq-hD-QU8" kind="show" identifier="Settings" id="6wD-JQ-NrP"/>
                     </connections>
                 </viewController>
@@ -263,52 +267,58 @@
             <objects>
                 <viewController storyboardIdentifier="TypeThoughtView" title="Edit Thought" id="FIX-JN-mGj" customClass="TypeThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vWw-x9-xqA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Note Item Text View" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yN3-x3-zHb">
-                                <rect key="frame" x="20" y="0.0" width="374" height="658"/>
+                                <rect key="frame" x="20" y="20" width="374" height="680"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13m-60-dhM" customClass="SelectGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="196" y="674" width="202" height="84"/>
+                                <rect key="frame" x="196" y="724" width="202" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="f2d-eX-iGt"/>
                                     <constraint firstAttribute="width" constant="202" id="mgT-gM-z9A"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLz-je-AWg" customClass="ContinueSpeakingButton" customModule="Penso_Parlo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="724" width="202" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="tVT-k1-NNT"/>
+                                    <constraint firstAttribute="width" constant="202" id="tr7-4m-GZL"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="13m-60-dhM" firstAttribute="top" secondItem="yN3-x3-zHb" secondAttribute="bottom" constant="16" id="JMZ-Lw-v5p"/>
-                            <constraint firstItem="RRF-RS-VLR" firstAttribute="bottom" secondItem="13m-60-dhM" secondAttribute="bottom" constant="16" id="dhq-BH-9RJ"/>
+                            <constraint firstItem="RRF-RS-VLR" firstAttribute="bottom" secondItem="LLz-je-AWg" secondAttribute="bottom" id="2OP-ts-d9E" customClass="KeyboardLayoutConstraint" customModule="Penso_Parlo" customModuleProvider="target"/>
+                            <constraint firstItem="RRF-RS-VLR" firstAttribute="bottom" secondItem="yN3-x3-zHb" secondAttribute="bottom" constant="108" id="JMZ-Lw-v5p" customClass="KeyboardLayoutConstraint" customModule="Penso_Parlo" customModuleProvider="target"/>
+                            <constraint firstItem="LLz-je-AWg" firstAttribute="leading" secondItem="RRF-RS-VLR" secondAttribute="leading" constant="16" id="YY5-5e-DmF"/>
+                            <constraint firstItem="RRF-RS-VLR" firstAttribute="bottom" secondItem="13m-60-dhM" secondAttribute="bottom" id="dhq-BH-9RJ" customClass="KeyboardLayoutConstraint" customModule="Penso_Parlo" customModuleProvider="target"/>
                             <constraint firstItem="RRF-RS-VLR" firstAttribute="trailing" secondItem="yN3-x3-zHb" secondAttribute="trailing" constant="20" id="go9-D4-Wb9"/>
                             <constraint firstItem="RRF-RS-VLR" firstAttribute="trailing" secondItem="13m-60-dhM" secondAttribute="trailing" constant="16" id="lWb-kO-j5E"/>
-                            <constraint firstItem="yN3-x3-zHb" firstAttribute="top" secondItem="RRF-RS-VLR" secondAttribute="top" id="obo-qU-yql"/>
+                            <constraint firstItem="yN3-x3-zHb" firstAttribute="top" secondItem="RRF-RS-VLR" secondAttribute="top" constant="20" id="obo-qU-yql"/>
                             <constraint firstItem="yN3-x3-zHb" firstAttribute="leading" secondItem="RRF-RS-VLR" secondAttribute="leading" constant="20" id="pi7-7e-PZW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RRF-RS-VLR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Thought" largeTitleDisplayMode="never" id="A06-Fy-ifK">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" style="done" id="0CK-aT-khr">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="back:" destination="FIX-JN-mGj" id="kld-3S-LDQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Edit Thought" largeTitleDisplayMode="never" id="A06-Fy-ifK"/>
                     <connections>
                         <outlet property="contentTextView" destination="yN3-x3-zHb" id="U6M-Hb-BUp"/>
+                        <outlet property="doneButton" destination="LLz-je-AWg" id="g0O-wz-aQ1"/>
                         <outlet property="selectGroupButton" destination="13m-60-dhM" id="uP2-pZ-Hrx"/>
-                        <segue destination="n26-i5-CPu" kind="show" identifier="ChooseGroupAfterType" id="coG-M6-eH0"/>
+                        <segue destination="n26-i5-CPu" kind="presentation" identifier="ChooseGroup" modalPresentationStyle="currentContext" modalTransitionStyle="flipHorizontal" id="coG-M6-eH0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gT2-mV-cCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="-194"/>
+            <point key="canvasLocation" x="324.63768115942031" y="-194.19642857142856"/>
         </scene>
         <!--Penso Navigation Controller-->
         <scene sceneID="SON-Cj-X3E">
@@ -335,9 +345,8 @@
     </scenes>
     <resources>
         <image name="Box_Green" width="21.5" height="21.5"/>
-        <image name="chevron.left" catalog="system" width="48" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="coG-M6-eH0"/>
+        <segue reference="NVF-ll-q5X"/>
     </inferredMetricsTieBreakers>
 </document>

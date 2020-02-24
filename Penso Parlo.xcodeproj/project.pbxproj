@@ -10,6 +10,7 @@
 		5CDBDE58FA4F1642747168AC /* Pods_Penso_ParloTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9816240EEBB34CF5075ABAD /* Pods_Penso_ParloTests.framework */; };
 		E2F9B457644A9DA96AB4EE47 /* Pods_Penso_Parlo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EDD2A7F45945A92E60F6BF /* Pods_Penso_Parlo.framework */; };
 		FF11A3E123A05FAE004B66DB /* AlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF11A3E023A05FAE004B66DB /* AlertController.xib */; };
+		FF11B7F423FEA07600714957 /* AddThoughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11B7F323FEA07600714957 /* AddThoughtViewController.swift */; };
 		FF1E5B41232430BC00C794CE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B40232430BC00C794CE /* Podfile */; };
 		FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */; };
 		FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B5023255BC100C794CE /* swiftlint.yml */; };
@@ -38,6 +39,7 @@
 		FF6EEEA923B435EE002C39E1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6EEEA823B435EE002C39E1 /* SettingsViewController.swift */; };
 		FF705CC723494A1500C527C0 /* MasterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF705CC623494A1500C527C0 /* MasterButton.swift */; };
 		FF832D3823D93675007C3214 /* GroupSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF832D3723D93675007C3214 /* GroupSelectionViewController.swift */; };
+		FF8D06442401C40F0091897C /* KeyboardLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D06432401C40F0091897C /* KeyboardLayoutConstraints.swift */; };
 		FFA817FF2311D64200426C8C /* SpeechDictationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */; };
 		FFB2D8AB23C2620900062078 /* TypeThoughtButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */; };
 		FFB2D8AD23C2642D00062078 /* TypeThoughtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */; };
@@ -77,6 +79,7 @@
 		E30423ECF2DAB8E3700A5F67 /* Pods-Penso ParloTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penso ParloTests.debug.xcconfig"; path = "Target Support Files/Pods-Penso ParloTests/Pods-Penso ParloTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF36DC2F76D3159B7A9EA182 /* Pods-Penso Parlo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penso Parlo.debug.xcconfig"; path = "Target Support Files/Pods-Penso Parlo/Pods-Penso Parlo.debug.xcconfig"; sourceTree = "<group>"; };
 		FF11A3E023A05FAE004B66DB /* AlertController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertController.xib; sourceTree = "<group>"; };
+		FF11B7F323FEA07600714957 /* AddThoughtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtViewController.swift; sourceTree = "<group>"; };
 		FF1E5B40232430BC00C794CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "swiftlint-autocorrect.yml"; sourceTree = SOURCE_ROOT; };
 		FF1E5B5023255BC100C794CE /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = SOURCE_ROOT; };
@@ -105,6 +108,7 @@
 		FF6EEEA823B435EE002C39E1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FF705CC623494A1500C527C0 /* MasterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterButton.swift; sourceTree = "<group>"; };
 		FF832D3723D93675007C3214 /* GroupSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionViewController.swift; sourceTree = "<group>"; };
+		FF8D06432401C40F0091897C /* KeyboardLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraints.swift; sourceTree = "<group>"; };
 		FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationViewController.swift; sourceTree = "<group>"; };
 		FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypeThoughtButton.xib; sourceTree = "<group>"; };
 		FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeThoughtButton.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				FF2F6017237FB83900F9608B /* TypeThoughtViewController.swift */,
 				FF832D3723D93675007C3214 /* GroupSelectionViewController.swift */,
 				FFB7E34823E63AD100EB0161 /* ThoughtGroup.swift */,
+				FF11B7F323FEA07600714957 /* AddThoughtViewController.swift */,
 			);
 			path = Thoughts;
 			sourceTree = "<group>";
@@ -277,6 +282,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FF8D06422401C3FA0091897C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FF8D06432401C40F0091897C /* KeyboardLayoutConstraints.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		FFB7E34D23E6453E00EB0161 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +332,7 @@
 		FFBC07C92296510E0001EAB1 /* Penso Parlo */ = {
 			isa = PBXGroup;
 			children = (
+				FF8D06422401C3FA0091897C /* Utilities */,
 				FFB7E34D23E6453E00EB0161 /* Storage */,
 				FF6EEEA723B435CB002C39E1 /* Settings */,
 				FFBB7F9723918C400073F37B /* Siri Shortcuts */,
@@ -578,11 +592,13 @@
 				FF5851E423242A750099FD5C /* ThoughtsListViewController.swift in Sources */,
 				FF2F6018237FB83900F9608B /* TypeThoughtViewController.swift in Sources */,
 				FF483BE623B43D6F002D621D /* SiriShortcutSettingsViewController.swift in Sources */,
+				FF11B7F423FEA07600714957 /* AddThoughtViewController.swift in Sources */,
 				FF48BDFB23D09B5B008666EF /* Collection+Extensions.swift in Sources */,
 				FFB7E34F23E6459E00EB0161 /* RealmDatabaseManager.swift in Sources */,
 				FF6EEEA623B431FE002C39E1 /* PensoNavigationController.swift in Sources */,
 				FF483BE423B43884002D621D /* UIViewController+Extensions.swift in Sources */,
 				FF5851E2232429DF0099FD5C /* ThoughtTableViewCell.swift in Sources */,
+				FF8D06442401C40F0091897C /* KeyboardLayoutConstraints.swift in Sources */,
 				FF1FBAC823AEBE0600573C84 /* SiriShortcutActivityFactory.swift in Sources */,
 				FFB7E34923E63AD100EB0161 /* ThoughtGroup.swift in Sources */,
 				FFBB7F9923918C650073F37B /* SiriShortcutHandler.swift in Sources */,
