@@ -26,7 +26,7 @@
                     </constraints>
                     <color key="tintColor" red="0.29411764705882354" green="0.69411764705882351" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                     <size key="titleShadowOffset" width="100" height="11"/>
-                    <state key="normal" image="ExtFAB_Speak">
+                    <state key="normal" image="ExtFAB_Done_White_LessShadow">
                         <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="43" scale="large"/>
                     </state>
@@ -45,6 +45,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ExtFAB_Speak" width="203" height="85"/>
+        <image name="ExtFAB_Done_White_LessShadow" width="185" height="67"/>
     </resources>
 </document>

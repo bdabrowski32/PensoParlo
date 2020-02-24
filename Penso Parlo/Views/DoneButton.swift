@@ -1,5 +1,5 @@
 //
-//  ContinueSpeakingButton.swift
+//  DoneButton.swift
 //  Penso Parlo
 //
 //  Created by Dabrowski,Brendyn on 12/25/19.
@@ -12,15 +12,15 @@ import UIKit
  Button that handles starting speech dictation.
  */
 @IBDesignable
-public class ContinueSpeakingButton: MasterButton {
+public class DoneButton: MasterButton {
 
     /**
      Loads xib file and adds it to the view.
      */
     override func loadFromXib() {
-        let bundle = Bundle(for: ContinueSpeakingButton.self)
+        let bundle = Bundle(for: DoneButton.self)
 
-        bundle.loadNibNamed("ContinueSpeakingButton", owner: self, options: nil)
+        bundle.loadNibNamed("DoneButton", owner: self, options: nil)
         super.loadFromXib()
     }
 }

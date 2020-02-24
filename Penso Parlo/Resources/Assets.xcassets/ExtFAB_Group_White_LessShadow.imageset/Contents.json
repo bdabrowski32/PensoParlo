@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ExtFAB_Group.png",
+      "filename" : "ExtFAB_Group_White_LessShadow.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ExtFAB_Group@2x.png",
+      "filename" : "ExtFAB_Group_White_LessShadow@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ExtFAB_Group@3x.png",
+      "filename" : "ExtFAB_Group_White_LessShadow@3x.png",
       "scale" : "3x"
     }
   ],

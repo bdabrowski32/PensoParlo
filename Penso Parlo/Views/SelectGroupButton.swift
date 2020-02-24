@@ -1,5 +1,5 @@
 //
-//  ChooseGroupButton.swift
+//  SelectGroupButton.swift
 //  Penso Parlo
 //
 //  Created by Dabrowski,Brendyn on 12/25/19.
@@ -18,7 +18,7 @@ public class SelectGroupButton: MasterButton {
      Loads xib file and adds it to the view.
      */
     override func loadFromXib() {
-        let bundle = Bundle(for: SpeakThoughtButton.self)
+        let bundle = Bundle(for: SelectGroupButton.self)
 
         bundle.loadNibNamed("SelectGroupButton", owner: self, options: nil)
         super.loadFromXib()

@@ -17,7 +17,7 @@ class AddThoughtViewController: UIViewController, UITextViewDelegate {
     /// The button that takes the user to the Group Selection View Controller.
     @IBOutlet weak var selectGroupButton: SelectGroupButton!
 
-    @IBOutlet weak var doneButton: ContinueSpeakingButton!
+    @IBOutlet weak var doneButton: DoneButton!
 
      /// The name of the segue that is used to segue to the Group Selection View Controller.
     static let chooseGroupViewSegue = "ChooseGroup"

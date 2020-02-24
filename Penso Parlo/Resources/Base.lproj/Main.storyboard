@@ -40,7 +40,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90E-H3-JhM" customClass="ContinueSpeakingButton" customModule="Penso_Parlo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90E-H3-JhM" customClass="DoneButton" customModule="Penso_Parlo" customModuleProvider="target">
                                 <rect key="frame" x="16" y="708" width="202" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="202" id="gRJ-Q2-S5c"/>
@@ -287,7 +287,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLz-je-AWg" customClass="ContinueSpeakingButton" customModule="Penso_Parlo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLz-je-AWg" customClass="DoneButton" customModule="Penso_Parlo" customModuleProvider="target">
                                 <rect key="frame" x="16" y="724" width="202" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="tVT-k1-NNT"/>

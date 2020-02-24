@@ -39,11 +39,11 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
                                                              value: "Cancel",
                                                              comment: "The button title to cancel the alert.")
 
-    private static let defaultUserPromptText = NSLocalizedString("DEFAULT_USER_PROMPT_TEXT",
-                                                             tableName: "PensoParlo",
-                                                             bundle: Bundle.main,
-                                                             value: "Whats on your mind?",
-                                                             comment: "The text that is displayed when the user opens the speech view.")
+    private static let defaultPromptText = NSLocalizedString("DEFAULT_USER_PROMPT_TEXT",
+                                                                 tableName: "PensoParlo",
+                                                                 bundle: Bundle.main,
+                                                                 value: "Whats on your mind?",
+                                                                 comment: "The text that is displayed when the user opens the speech view.")
 
     /// The animation speed to play the animation when it is going up in frames.
     private static let animationUpSpeed: CGFloat = 3
@@ -89,7 +89,7 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.contentTextView.text = Self.defaultUserPromptText
+        self.contentTextView.text = Self.defaultPromptText
         self.setupAudioVisualizer()
         self.speechDictationHandler = SpeechDictationHandler(delegate: self) { [weak self] in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -121,6 +121,10 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
 
     func setDetectedText(to dictatedText: String) {
         self.contentTextView.text = dictatedText
+
+        if !self.contentTextView.text.isEmpty && self.contentTextView.text != Self.defaultPromptText {
+            self.selectGroupButton.isEnabled = true
+        }
     }
 
     func updateAudioVisualizer(with newPowerValue: Float) {
@@ -139,10 +143,6 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
 
     func currentlyDictating() {
         self.audioVisualizer.isHidden = false
-
-        if !self.contentTextView.text.isEmpty {
-            self.selectGroupButton.isEnabled = true
-        }
     }
 
     func doneDictating() {
@@ -182,7 +182,7 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
 
     override func setupDoneButtonActions() {
         self.doneButton.onButtonPressHandler = {
-            if self.contentTextView.text != Self.defaultUserPromptText && !self.contentTextView.text.isEmpty {
+            if self.contentTextView.text != Self.defaultPromptText && !self.contentTextView.text.isEmpty {
                 self.addThoughtToQuickThoughts()
             }
 

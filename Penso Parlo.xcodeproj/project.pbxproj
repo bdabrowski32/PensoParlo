@@ -14,8 +14,6 @@
 		FF1E5B41232430BC00C794CE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B40232430BC00C794CE /* Podfile */; };
 		FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */; };
 		FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF1E5B5023255BC100C794CE /* swiftlint.yml */; };
-		FF1F585A23F8C7BF00A7291A /* ContinueSpeakingButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F585923F8C7BF00A7291A /* ContinueSpeakingButton.xib */; };
-		FF1F585C23F8C82300A7291A /* ContinueSpeakingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F585B23F8C82300A7291A /* ContinueSpeakingButton.swift */; };
 		FF1F585E23F9D66100A7291A /* KeyboardToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F585D23F9D66100A7291A /* KeyboardToolbar.xib */; };
 		FF1F586023F9D75D00A7291A /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F585F23F9D75D00A7291A /* KeyboardToolbar.swift */; };
 		FF1FBAC823AEBE0600573C84 /* SiriShortcutActivityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBAC723AEBE0600573C84 /* SiriShortcutActivityFactory.swift */; };
@@ -40,6 +38,8 @@
 		FF705CC723494A1500C527C0 /* MasterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF705CC623494A1500C527C0 /* MasterButton.swift */; };
 		FF832D3823D93675007C3214 /* GroupSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF832D3723D93675007C3214 /* GroupSelectionViewController.swift */; };
 		FF8D06442401C40F0091897C /* KeyboardLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D06432401C40F0091897C /* KeyboardLayoutConstraints.swift */; };
+		FF8D06482403714C0091897C /* DoneButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8D06472403714C0091897C /* DoneButton.xib */; };
+		FF8D064A240371790091897C /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0649240371790091897C /* DoneButton.swift */; };
 		FFA817FF2311D64200426C8C /* SpeechDictationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */; };
 		FFB2D8AB23C2620900062078 /* TypeThoughtButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */; };
 		FFB2D8AD23C2642D00062078 /* TypeThoughtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */; };
@@ -83,8 +83,6 @@
 		FF1E5B40232430BC00C794CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FF1E5B4E23255BBB00C794CE /* swiftlint-autocorrect.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "swiftlint-autocorrect.yml"; sourceTree = SOURCE_ROOT; };
 		FF1E5B5023255BC100C794CE /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		FF1F585923F8C7BF00A7291A /* ContinueSpeakingButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContinueSpeakingButton.xib; sourceTree = "<group>"; };
-		FF1F585B23F8C82300A7291A /* ContinueSpeakingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinueSpeakingButton.swift; sourceTree = "<group>"; };
 		FF1F585D23F9D66100A7291A /* KeyboardToolbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardToolbar.xib; sourceTree = "<group>"; };
 		FF1F585F23F9D75D00A7291A /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		FF1FBAC723AEBE0600573C84 /* SiriShortcutActivityFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutActivityFactory.swift; sourceTree = "<group>"; };
@@ -109,6 +107,8 @@
 		FF705CC623494A1500C527C0 /* MasterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterButton.swift; sourceTree = "<group>"; };
 		FF832D3723D93675007C3214 /* GroupSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionViewController.swift; sourceTree = "<group>"; };
 		FF8D06432401C40F0091897C /* KeyboardLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraints.swift; sourceTree = "<group>"; };
+		FF8D06472403714C0091897C /* DoneButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoneButton.xib; sourceTree = "<group>"; };
+		FF8D0649240371790091897C /* DoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		FFA817FE2311D64200426C8C /* SpeechDictationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationViewController.swift; sourceTree = "<group>"; };
 		FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypeThoughtButton.xib; sourceTree = "<group>"; };
 		FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeThoughtButton.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 				FF705CC623494A1500C527C0 /* MasterButton.swift */,
 				FF5B6EEB23B3F37A00781762 /* AddThoughtButton.swift */,
 				FFD6BF5023D65D3D00377753 /* SelectGroupButton.swift */,
-				FF1F585B23F8C82300A7291A /* ContinueSpeakingButton.swift */,
+				FF8D0649240371790091897C /* DoneButton.swift */,
 				FFB2D8AC23C2642D00062078 /* TypeThoughtButton.swift */,
 				FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */,
 				FF5B6EED23B3F76B00781762 /* SettingsButton.swift */,
@@ -360,7 +360,7 @@
 			children = (
 				FFC29F162370E7D100D55F1F /* SpeakThoughtButton.xib */,
 				FFEF96F423F57E5900C8C1BB /* SelectGroupButton.xib */,
-				FF1F585923F8C7BF00A7291A /* ContinueSpeakingButton.xib */,
+				FF8D06472403714C0091897C /* DoneButton.xib */,
 				FFB2D8AA23C2620900062078 /* TypeThoughtButton.xib */,
 				FF5B6EE623B3EE8700781762 /* SettingsButton.xib */,
 				FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */,
@@ -466,11 +466,11 @@
 				FFB2D8AB23C2620900062078 /* TypeThoughtButton.xib in Resources */,
 				FFD226D923BD3B6C004E69F0 /* SystemSettingsButton.xib in Resources */,
 				FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */,
+				FF8D06482403714C0091897C /* DoneButton.xib in Resources */,
 				FFEF96F523F57E5900C8C1BB /* SelectGroupButton.xib in Resources */,
 				FF5B6EE723B3EE8700781762 /* SettingsButton.xib in Resources */,
 				FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */,
 				FF5B6EF023B4136300781762 /* ThoughtsListNavigationBar.xib in Resources */,
-				FF1F585A23F8C7BF00A7291A /* ContinueSpeakingButton.xib in Resources */,
 				FFD6BF4E23D5855A00377753 /* audio_visualizer.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,13 +606,13 @@
 				FF5851E623242B860099FD5C /* ThoughtItem.swift in Sources */,
 				FFB2D8AD23C2642D00062078 /* TypeThoughtButton.swift in Sources */,
 				FF5B6EEE23B3F76B00781762 /* SettingsButton.swift in Sources */,
-				FF1F585C23F8C82300A7291A /* ContinueSpeakingButton.swift in Sources */,
 				FFD226DB23BD3CE1004E69F0 /* SystemSettingsButton.swift in Sources */,
 				FF6EEEA423B42E50002C39E1 /* IndexPath+Extensions.swift in Sources */,
 				FF1FBACA23AEBE8A00573C84 /* SiriShortcutActivityType.swift in Sources */,
 				FFD226D423BC0383004E69F0 /* SpeechDictationDelegate.swift in Sources */,
 				FF6EEEA923B435EE002C39E1 /* SettingsViewController.swift in Sources */,
 				FF5851DE2324283A0099FD5C /* UITableView+Extensions.swift in Sources */,
+				FF8D064A240371790091897C /* DoneButton.swift in Sources */,
 				FFC2A46823BB775A00230093 /* SpeechDictationHandler.swift in Sources */,
 				FF1F586023F9D75D00A7291A /* KeyboardToolbar.swift in Sources */,
 				FF5B6EEC23B3F37A00781762 /* AddThoughtButton.swift in Sources */,
