@@ -1,32 +1,30 @@
 //
-//  SpeechDictationViewController.swift
+//  SpeakThoughtViewController.swift
 //  Penso Parlo
 //
 //  Created by Dabrowski,Brendyn on 8/24/19.
 //  Copyright © 2019 BDCreative. All rights reserved.
 //
 
+import Lottie
+import os
 import Speech
 import UIKit
-import Lottie
 
 /**
- This class displays the speech detection view within the storyboard.
+ This class displays the speak thought view within the storyboard.
  */
-class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
+class SpeakThoughtViewController: AddThoughtViewController, SpeechDictationDelegate {
 
     // MARK: - IBOutlets
-
-    /// Displays the text that the user says.
-    @IBOutlet private weak var detectedTextView: UITextView!
 
     /// The button that takes the user to the system settings when pressed
     /// Note: This is hidden by default and is only displayed when the user doesn't have the proper
     /// permissions for speech dictation
     @IBOutlet private weak var systemSettingsButton: SystemSettingsButton!
 
-    /// The button that takes the user to the Group Selection View Controller.
-    @IBOutlet private weak var chooseGroupButton: ChooseGroupButton!
+    /// Allows the user an option to continue speaking. Replaces the audio visualizer when the user is no longer speaking.
+    @IBOutlet private weak var continueThoughtButton: ContinueThoughtButton!
 
     // MARK: - Static Properties
 
@@ -44,6 +42,13 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
                                                              value: "Cancel",
                                                              comment: "The button title to cancel the alert.")
 
+    /// The text that is displayed before speech dictation has started.
+    private static let defaultPromptText = NSLocalizedString("DEFAULT_USER_PROMPT_TEXT",
+                                                             tableName: "PensoParlo",
+                                                             bundle: Bundle.main,
+                                                             value: "Whats on your mind?",
+                                                             comment: "The text that is displayed when the user opens the speech view.")
+
     /// The animation speed to play the animation when it is going up in frames.
     private static let animationUpSpeed: CGFloat = 3
 
@@ -56,9 +61,6 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     /// The first frame to play for the animation.
     private static let animationStartFrame: AnimationFrameTime = 0
 
-    /// The name of the segue that is used to segue to the Group Selection View Controller.
-    private static let chooseGroupViewSegue = "ChooseGroup"
-
     // MARK: - Member Properties
 
     /// Starts the siri shortcut workflow.
@@ -68,7 +70,7 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     private var speechDictationHandler: SpeechDictationHandler?
 
     /// The animation to show on-screen
-    private var animationView = AnimationView(name: "audio_visualizer")
+    private var audioVisualizer = AnimationView(name: "audio_visualizer")
 
     /// The previous decibel power value that was used to animatie the audio visualizer.
     private var previousPowerValue: Float?
@@ -91,17 +93,12 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.contentTextView.text = Self.defaultPromptText
         self.setupAudioVisualizer()
-        self.speechDictationHandler = SpeechDictationHandler(delegate: self) { [weak self] in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                 self?.dismiss(animated: true) {
-                     self?.addSiriShortcutPrompt?()
-                 }
-            }
-        }
+        self.speechDictationHandler = SpeechDictationHandler(delegate: self)
 
         self.speechDictationHandler?.startSpeechDictation()
-        self.setupButtonActions()
+        self.setupDoneButtonActions()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -121,21 +118,35 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
     // MARK: - Speech Dictation Delegate
 
     func setDetectedText(to dictatedText: String) {
-        self.detectedTextView.text = dictatedText
+        self.contentTextView.text = dictatedText
+
+        if !self.contentTextView.text.isEmpty && self.contentTextView.text != Self.defaultPromptText {
+            self.selectGroupButton.isEnabled = true
+        }
     }
 
     func updateAudioVisualizer(with newPowerValue: Float) {
         if let previousPowerValue = self.previousPowerValue {
             if previousPowerValue < newPowerValue {
-                animationView.animationSpeed = Self.animationUpSpeed
+                self.audioVisualizer.animationSpeed = Self.animationUpSpeed
                 self.playAnimation(to: Self.animationEndFrame)
             } else if previousPowerValue > newPowerValue {
-                animationView.animationSpeed = Self.animationDownSpeed
+                audioVisualizer.animationSpeed = Self.animationDownSpeed
                 self.playAnimation(to: Self.animationStartFrame)
             }
         }
 
         self.previousPowerValue = newPowerValue
+    }
+
+    func currentlyDictating() {
+        self.continueThoughtButton.isHidden = true
+        self.audioVisualizer.isHidden = false
+    }
+
+    func doneDictating() {
+        self.continueThoughtButton.isHidden = false
+        self.audioVisualizer.isHidden = true
     }
 
     // MARK: - Audio Visualizer Helper Methods
@@ -147,10 +158,10 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
      - parameter frame: The animation frame to play the animation to.
      */
     private func playAnimation(to frame: AnimationFrameTime) {
-        self.animationView.play(fromFrame: self.animationView.realtimeAnimationFrame, toFrame: frame, loopMode: .playOnce) { animationCompleted in
+        self.audioVisualizer.play(fromFrame: self.audioVisualizer.realtimeAnimationFrame, toFrame: frame, loopMode: .playOnce) { animationCompleted in
             if animationCompleted {
-                self.animationView.animationSpeed = Self.animationDownSpeed
-                self.animationView.play(fromFrame: self.animationView.realtimeAnimationFrame, toFrame: Self.animationStartFrame, loopMode: .playOnce, completion: nil)
+                self.audioVisualizer.animationSpeed = Self.animationDownSpeed
+                self.audioVisualizer.play(fromFrame: self.audioVisualizer.realtimeAnimationFrame, toFrame: Self.animationStartFrame, loopMode: .playOnce, completion: nil)
             }
         }
     }
@@ -159,22 +170,27 @@ class SpeechDictationViewController: UIViewController, SpeechDictationDelegate {
      Positions the audio visualizer animation on the view.
      */
     private func setupAudioVisualizer() {
-        self.animationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        self.animationView.center.x = self.view.center.x
-        self.animationView.center.y = self.view.center.y + 200
-        self.animationView.contentMode = .scaleAspectFill
+        self.audioVisualizer.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        self.audioVisualizer.center.x = self.view.center.x
+        self.audioVisualizer.center.y = self.view.center.y + 100
+        self.audioVisualizer.contentMode = .scaleAspectFill
 
-        self.view.addSubview(self.animationView)
+        self.view.addSubview(self.audioVisualizer)
     }
 
-    // MARK: - Segue
+    // MARK: - Button Setup
 
-    /**
-     Helper method to setup the actions for the buttons on the view.
-     */
-    private func setupButtonActions() {
-        self.chooseGroupButton.onButtonPressHandler = {
-            self.performSegue(withIdentifier: Self.chooseGroupViewSegue, sender: self)
+    override func setupDoneButtonActions(completion:(() -> Void)? = nil) {
+        self.doneButton.onButtonPressHandler = {
+            if self.contentTextView.text != Self.defaultPromptText && !self.contentTextView.text.isEmpty {
+                self.addThoughtToQuickThoughts()
+            }
+
+            super.setupDoneButtonActions {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.addSiriShortcutPrompt?()
+                }
+            }
         }
     }
 

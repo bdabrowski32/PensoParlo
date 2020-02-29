@@ -11,22 +11,22 @@ import UIKit
 /**
  View controller used to edit thoughts.
  */
-class TypeThoughtViewController: UIViewController {
+class TypeThoughtViewController: AddThoughtViewController {
 
     // MARK: - Static Properties
 
     /// The title of the view when the user is adding a thought.
     private static let newThoughtViewTitle = "Add Thought"
 
-    /// The editable thought text.
-    @IBOutlet private weak var contentTextView: UITextView!
+    // MARK: - Member Properties
 
     /// The thought item to edit.
     var thoughtItem: ThoughtItem?
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.setupView()
+        self.setupDoneButtonActions()
     }
 
     /**
@@ -37,33 +37,63 @@ class TypeThoughtViewController: UIViewController {
         return storyboard.instantiateViewController(withIdentifier: "TypeThoughtView") as? TypeThoughtViewController
     }
 
-    /**
-     If the user is typing a new thought, it will add a new thought to realm.
-     If the user is editing a thought this method updates the thought item and returns back to the previous view controller.
+    override func setupDoneButtonActions(completion: (() -> Void)? = nil) {
+        self.doneButton.onButtonPressHandler = {
+            if self.navigationItem.title == Self.newThoughtViewTitle && !self.contentTextView.text.isEmpty {
+                // Adding here if the user exits the view.
+                self.addThoughtToQuickThoughts()
+            } else {
+                self.thoughtItem?.update(text: self.contentTextView.text)
+            }
 
-      - parameter sender:The back button on the navigation controller.
-     */
-    @IBAction private func back(_ sender: UIBarButtonItem) {
-        if self.navigationItem.title == Self.newThoughtViewTitle && !self.contentTextView.text.isEmpty {
-            ThoughtItem.add(text: self.contentTextView.text)
-        } else {
-            self.thoughtItem?.update(text: self.contentTextView.text)
+            super.setupDoneButtonActions()
         }
+     }
 
-        self.navigationController?.popViewController(animated: true)
+    // MARK: - Text View Delegate Methods
+
+    /**
+     Responds to changes by the user in the text view. This does not respond to programmatic changes in the text view such
+     as when a user updates the text view with speech, since technically that is programmatically because they are not physically typing
+     into the text view.
+
+     - parameter textView: The text view to listen to.
+     */
+    func textViewDidChange(_ textView: UITextView) {
+        if !self.contentTextView.text.isEmpty {
+            self.selectGroupButton.isEnabled = true
+        } else {
+            self.selectGroupButton.isEnabled = false
+        }
     }
 
     /**
      Sets up this view based on if the user is adding a new thought or editing a thought.
      */
-    private func setupView() {
+    func setupView() {
         if let thoughtItem = self.thoughtItem {
             self.contentTextView.text = thoughtItem.text
+            self.selectGroupButton.isEnabled = true
         } else {
             self.contentTextView.text = ""
             self.navigationItem.title = Self.newThoughtViewTitle
         }
 
+        self.setupKeyboardDismissal()
+        self.contentTextView.delegate = self
         self.contentTextView.becomeFirstResponder()
+    }
+
+    /**
+     Dismisses the keyboard when the dismiss button is pressed on the keyboard toolbar.
+     */
+    private func setupKeyboardDismissal() {
+        let toolbar = UINib(nibName: "KeyboardToolbar", bundle: nil).instantiate(withOwner: nil, options: nil).first as? KeyboardToolbar
+
+        toolbar?.dismissButtonPressed = {
+            self.view.endEditing(true)
+        }
+
+        self.contentTextView.inputAccessoryView = toolbar
     }
 }

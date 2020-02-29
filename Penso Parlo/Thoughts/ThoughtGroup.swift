@@ -58,7 +58,7 @@ class ThoughtGroup: Object {
      */
     class func add(name: String) {
         guard let realm = RealmDatabaseManager.thoughtGroup.realm else {
-            return ThoughtGroup(name: "")
+            return
         }
 
         let group = ThoughtGroup(name: name)

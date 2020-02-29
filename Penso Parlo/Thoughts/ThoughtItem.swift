@@ -72,17 +72,20 @@ class ThoughtItem: Object {
      Adds a thought item to the realm.
 
      - parameter text: The text of the note item.
-     - parameter group: The group that the thought item is apart of.
+     - parameter group: The group that the thought item is apart of. Defaults to Quick Thoughts
      */
-    class func add(text: String, group: String = "Quick Thoughts") {
+    @discardableResult
+    class func add(text: String, group: String = "Quick Thoughts") -> ThoughtItem {
         guard let realm = RealmDatabaseManager.thoughtItem.realm else {
             return ThoughtItem("", group: group)
         }
 
-        let item = ThoughtItem(text, group: group)
+        let thoughtItem = ThoughtItem(text, group: group)
         try? realm.write {
-            realm.add(item)
+            realm.add(thoughtItem)
         }
+
+        return thoughtItem
     }
 
     func toggleCompleted() {

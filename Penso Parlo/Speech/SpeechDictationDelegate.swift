@@ -26,4 +26,14 @@ protocol SpeechDictationDelegate: class {
      - parameter newPowerValue: The updated power value from the user voice level when speaking into the microphone.
      */
     func updateAudioVisualizer(with newPowerValue: Float)
+
+    /**
+     Called when the user starts dictating speech to text.
+     */
+    func currentlyDictating()
+
+    /**
+     Called when the user is done dictating speech to text.
+     */
+    func doneDictating()
 }
