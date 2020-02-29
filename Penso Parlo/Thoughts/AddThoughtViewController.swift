@@ -23,6 +23,7 @@ class AddThoughtViewController: UIViewController, UITextViewDelegate {
     /// The button that takes the user to the Group Selection View Controller.
     @IBOutlet weak var selectGroupButton: SelectGroupButton!
 
+    /// The button that saves the thought and dismisses the view.
     @IBOutlet weak var doneButton: DoneButton!
 
     // MARK: - Static Properties
@@ -54,6 +55,8 @@ class AddThoughtViewController: UIViewController, UITextViewDelegate {
         completion?()
     }
 
+    // MARK: - Helper Methods
+
     /**
      Adds the thought to the quick thoughts group. This is added to quick thoughts group because no group is specified.
      The add method defaults to quick thoughts for the group.
@@ -61,6 +64,8 @@ class AddThoughtViewController: UIViewController, UITextViewDelegate {
     func addThoughtToQuickThoughts() {
         ThoughtItem.add(text: self.contentTextView.text)
     }
+
+    // MARK: - Segue
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let groupSelectionViewController = segue.destination as? GroupSelectionViewController {
