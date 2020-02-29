@@ -1,5 +1,5 @@
 //
-//  SpeechDictationViewController.swift
+//  SpeakThoughtViewController.swift
 //  Penso Parlo
 //
 //  Created by Dabrowski,Brendyn on 8/24/19.
@@ -12,9 +12,9 @@ import Speech
 import UIKit
 
 /**
- This class displays the speech detection view within the storyboard.
+ This class displays the speak thought view within the storyboard.
  */
-class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDelegate {
+class SpeakThoughtViewController: AddThoughtViewController, SpeechDictationDelegate {
 
     // MARK: - IBOutlets
 
@@ -23,6 +23,7 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
     /// permissions for speech dictation
     @IBOutlet private weak var systemSettingsButton: SystemSettingsButton!
 
+    /// Allows the user an option to continue speaking. Replaces the audio visualizer when the user is no longer speaking.
     @IBOutlet private weak var continueThoughtButton: ContinueThoughtButton!
 
     // MARK: - Static Properties
@@ -41,11 +42,12 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
                                                              value: "Cancel",
                                                              comment: "The button title to cancel the alert.")
 
+    /// The text that is displayed before speech dictation has started.
     private static let defaultPromptText = NSLocalizedString("DEFAULT_USER_PROMPT_TEXT",
-                                                                 tableName: "PensoParlo",
-                                                                 bundle: Bundle.main,
-                                                                 value: "Whats on your mind?",
-                                                                 comment: "The text that is displayed when the user opens the speech view.")
+                                                             tableName: "PensoParlo",
+                                                             bundle: Bundle.main,
+                                                             value: "Whats on your mind?",
+                                                             comment: "The text that is displayed when the user opens the speech view.")
 
     /// The animation speed to play the animation when it is going up in frames.
     private static let animationUpSpeed: CGFloat = 3
@@ -93,17 +95,10 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
 
         self.contentTextView.text = Self.defaultPromptText
         self.setupAudioVisualizer()
-        self.speechDictationHandler = SpeechDictationHandler(delegate: self) { [weak self] in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                 self?.dismiss(animated: true) {
-                     self?.addSiriShortcutPrompt?()
-                 }
-            }
-        }
+        self.speechDictationHandler = SpeechDictationHandler(delegate: self)
 
         self.speechDictationHandler?.startSpeechDictation()
         self.setupDoneButtonActions()
-        self.setupContinueThoughtButtonActions()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -185,13 +180,17 @@ class SpeechDictationViewController: AddThoughtViewController, SpeechDictationDe
 
     // MARK: - Button Setup
 
-    override func setupDoneButtonActions() {
+    override func setupDoneButtonActions(completion:(() -> Void)? = nil) {
         self.doneButton.onButtonPressHandler = {
             if self.contentTextView.text != Self.defaultPromptText && !self.contentTextView.text.isEmpty {
                 self.addThoughtToQuickThoughts()
             }
 
-            super.setupDoneButtonActions()
+            super.setupDoneButtonActions {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.addSiriShortcutPrompt?()
+                }
+            }
         }
     }
 

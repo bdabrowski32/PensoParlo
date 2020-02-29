@@ -7,8 +7,8 @@
 //
 
 import AVFoundation
-import Speech
 import os
+import Speech
 import UIKit
 
 /**
@@ -30,15 +30,14 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
     /// Task object used to monitor the speech recognition progress.
     private var recognitionTask: SFSpeechRecognitionTask?
 
-    /// Actions to perform when speech dictation is completed.
-    private var dictationCompletedBlock: () -> Void
-
     /// The sum of appended decibel values from the microphone, used to gauge the rooms noise.
     private var decibelBaseline = [Float]()
 
     /// The audio recorder used to get decibel values when the user speaks into the microphone for the audio visualizer.
     private var audioRecorder: AVAudioRecorder?
 
+    /// A timer object that allows the application to synchronize its drawing to the refresh rate of the display.
+    /// Used for animating the audio visualizer.
     private var displayLink: CADisplayLink?
 
     /// The delegate to pass speech information to.
@@ -54,11 +53,9 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
      Initializes the class
 
      - parameter delegate: The delegate to pass speech dictation information to.
-     - parameter dictationCompletedBlock: The actions to perform when speech dictation is complete.
      */
-    init(delegate: SpeechDictationDelegate, dictationCompletedBlock: @escaping () -> Void) {
+    init(delegate: SpeechDictationDelegate) {
         self.delegate = delegate
-        self.dictationCompletedBlock = dictationCompletedBlock
 
         super.init()
 
@@ -94,14 +91,23 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
      */
     private func startRunLoop() {
         guard let displayLink = self.displayLink else {
+            os_log("Unable to get a reference to a display link for the audio visualizer.",
+                   log: OSLog.default,
+                   type: .error)
             return
         }
 
         displayLink.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
     }
 
+    /**
+     Invalidates the display link. Once invalidated the microphone will no longer take in metering level (dB) for the audio visualizer.
+     */
     private func stopRunLoop() {
         guard let displayLink = self.displayLink else {
+            os_log("Display link is already nil. Not invalidating.",
+                   log: OSLog.default,
+                   type: .info)
             return
         }
 
@@ -250,7 +256,6 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
     private func stopSpeechDictation() {
         self.audioEngine.stop()
         self.recognitionTask?.cancel()
-//        self.dictationCompletedBlock()
         self.stopAudioRecoder()
         self.stopRunLoop()
         self.delegate?.doneDictating()

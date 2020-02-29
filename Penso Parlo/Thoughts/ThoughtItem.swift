@@ -72,7 +72,7 @@ class ThoughtItem: Object {
      Adds a thought item to the realm.
 
      - parameter text: The text of the note item.
-     - parameter group: The group that the thought item is apart of.
+     - parameter group: The group that the thought item is apart of. Defaults to Quick Thoughts
      */
     @discardableResult
     class func add(text: String, group: String = "Quick Thoughts") -> ThoughtItem {

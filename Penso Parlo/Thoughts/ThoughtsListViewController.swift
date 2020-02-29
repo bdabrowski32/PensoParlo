@@ -157,7 +157,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
         if let editThoughtViewController = segue.destination as? TypeThoughtViewController,
             let index = self.tableView.indexPathForSelectedRow?.row {
                 editThoughtViewController.thoughtItem = self.thoughtItems?[index]
-        } else if let speechDetectionViewController = segue.destination as? SpeechDictationViewController {
+        } else if let speechDetectionViewController = segue.destination as? SpeakThoughtViewController {
             self.siriShortcutHandler?.add(userActivity: .addThoughtActivityType, to: speechDetectionViewController)
             speechDetectionViewController.addSiriShortcutPrompt = {
                 if let showShortcut = self.siriShortcutHandler?.showCreateShortcutView(for: .addThoughtActivityType) {

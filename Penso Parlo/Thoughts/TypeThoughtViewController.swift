@@ -23,13 +23,9 @@ class TypeThoughtViewController: AddThoughtViewController {
     /// The thought item to edit.
     var thoughtItem: ThoughtItem?
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setupView()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupView()
         self.setupDoneButtonActions()
     }
 
@@ -41,7 +37,7 @@ class TypeThoughtViewController: AddThoughtViewController {
         return storyboard.instantiateViewController(withIdentifier: "TypeThoughtView") as? TypeThoughtViewController
     }
 
-    override func setupDoneButtonActions() {
+    override func setupDoneButtonActions(completion: (() -> Void)? = nil) {
         self.doneButton.onButtonPressHandler = {
             if self.navigationItem.title == Self.newThoughtViewTitle && !self.contentTextView.text.isEmpty {
                 // Adding here if the user exits the view.
@@ -54,6 +50,15 @@ class TypeThoughtViewController: AddThoughtViewController {
         }
      }
 
+    // MARK: - Text View Delegate Methods
+
+    /**
+     Responds to changes by the user in the text view. This does not respond to programmatic changes in the text view such
+     as when a user updates the text view with speech, since technically that is programmatically because they are not physically typing
+     into the text view.
+
+     - parameter textView: The text view to listen to.
+     */
     func textViewDidChange(_ textView: UITextView) {
         if !self.contentTextView.text.isEmpty {
             self.selectGroupButton.isEnabled = true
@@ -79,18 +84,16 @@ class TypeThoughtViewController: AddThoughtViewController {
         self.contentTextView.becomeFirstResponder()
     }
 
+    /**
+     Dismisses the keyboard when the dismiss button is pressed on the keyboard toolbar.
+     */
     private func setupKeyboardDismissal() {
         let toolbar = UINib(nibName: "KeyboardToolbar", bundle: nil).instantiate(withOwner: nil, options: nil).first as? KeyboardToolbar
 
-        toolbar?.buttonPressed = {
-            self.dismissKeyboardClicked()
+        toolbar?.dismissButtonPressed = {
+            self.view.endEditing(true)
         }
 
         self.contentTextView.inputAccessoryView = toolbar
-    }
-
-    @objc
-    private func dismissKeyboardClicked() {
-        self.view.endEditing(true)
     }
 }

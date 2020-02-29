@@ -8,13 +8,21 @@
 
 import UIKit
 
+/**
+ The toolbar that appears above the keyboard.
+ */
 class KeyboardToolbar: UIToolbar {
 
+    /// The button that dismisses the keyboard.
     @IBOutlet private weak var dismissButton: UIBarButtonItem!
 
-    var buttonPressed: (() -> Void)?
+    /// The action to perform when the dismiss button is pressed
+    var dismissButtonPressed: (() -> Void)?
 
+    /**
+     Dismisses the keyboard.
+     */
     @IBAction func dismissKeyboard(_ sender: UIBarButtonItem) {
-        self.buttonPressed?()
+        self.dismissButtonPressed?()
     }
 }

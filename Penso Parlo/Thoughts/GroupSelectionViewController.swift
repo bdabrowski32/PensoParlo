@@ -19,6 +19,7 @@ class GroupSelectionViewController: UIViewController, UITableViewDataSource {
     /// The groups to display in the view.
     private var groups = ThoughtGroup.all()
 
+    /// The thought item to update with the selected group.
     var thoughtItem: ThoughtItem?
 
     // MARK: - View Lifecycle Methods

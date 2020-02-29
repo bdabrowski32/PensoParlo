@@ -27,7 +27,13 @@ protocol SpeechDictationDelegate: class {
      */
     func updateAudioVisualizer(with newPowerValue: Float)
 
+    /**
+     Called when the user starts dictating speech to text.
+     */
     func currentlyDictating()
 
+    /**
+     Called when the user is done dictating speech to text.
+     */
     func doneDictating()
 }
