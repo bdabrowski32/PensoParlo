@@ -158,10 +158,16 @@ class SpeakThoughtViewController: AddThoughtViewController, SpeechDictationDeleg
      - parameter frame: The animation frame to play the animation to.
      */
     private func playAnimation(to frame: AnimationFrameTime) {
-        self.audioVisualizer.play(fromFrame: self.audioVisualizer.realtimeAnimationFrame, toFrame: frame, loopMode: .playOnce) { animationCompleted in
+        self.audioVisualizer.play(fromFrame: self.audioVisualizer.realtimeAnimationFrame,
+                                  toFrame: frame,
+                                  loopMode: .playOnce) { [weak self] animationCompleted in
+
             if animationCompleted {
-                self.audioVisualizer.animationSpeed = Self.animationDownSpeed
-                self.audioVisualizer.play(fromFrame: self.audioVisualizer.realtimeAnimationFrame, toFrame: Self.animationStartFrame, loopMode: .playOnce, completion: nil)
+                self?.audioVisualizer.animationSpeed = Self.animationDownSpeed
+                self?.audioVisualizer.play(fromFrame: self?.audioVisualizer.realtimeAnimationFrame,
+                                           toFrame: Self.animationStartFrame,
+                                           loopMode: .playOnce,
+                                           completion: nil)
             }
         }
     }
@@ -181,15 +187,25 @@ class SpeakThoughtViewController: AddThoughtViewController, SpeechDictationDeleg
     // MARK: - Button Setup
 
     override func setupDoneButtonActions(completion:(() -> Void)? = nil) {
-        self.doneButton.onButtonPressHandler = {
-            if self.contentTextView.text != Self.defaultPromptText && !self.contentTextView.text.isEmpty {
-                self.addThoughtToQuickThoughts()
+        self.doneButton.onButtonPressHandler = { [weak self] in
+            if self?.contentTextView.text != Self.defaultPromptText && self?.contentTextView.text.isEmpty == false {
+                self?.addThoughtToQuickThoughts()
             }
 
-            super.setupDoneButtonActions {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    self.addSiriShortcutPrompt?()
-                }
+            // Getting this error if I call super in a closure.
+            // Using 'super' in a closure where 'self' is explicitly captured is not yet supported
+            self?.setupDoneButtonActionsSuper()
+        }
+    }
+
+    /**
+     Adding this method because of compiler error. This is the best way to handle this in swift right now.
+     Error: Using 'super' in a closure where 'self' is explicitly captured is not yet supported
+     */
+    private func setupDoneButtonActionsSuper() {
+        super.setupDoneButtonActions { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                self?.addSiriShortcutPrompt?()
             }
         }
     }
@@ -252,17 +268,17 @@ class SpeakThoughtViewController: AddThoughtViewController, SpeechDictationDeleg
         let localizedAlertStrings = Self.localizedAlertStrings(for: permission)
 
         let alertVC = UIAlertController(title: localizedAlertStrings.title, message: localizedAlertStrings.message, preferredStyle: .actionSheet)
-        alertVC.addAction(UIAlertAction(title: Self.openSettingsButtonTitle, style: .default) { _ in
-            self.tappedOpenSystemSettingsButton()
+        alertVC.addAction(UIAlertAction(title: Self.openSettingsButtonTitle, style: .default) { [weak self] _ in
+            self?.tappedOpenSystemSettingsButton()
         })
 
-        alertVC.addAction(UIAlertAction(title: Self.cancelButtonTitle, style: .cancel) { _ in
+        alertVC.addAction(UIAlertAction(title: Self.cancelButtonTitle, style: .cancel) { [weak self] _ in
             // Displays permission not enabled message and button to go to system settings on the view when the cancel button is pressed.
-            self.setDetectedText(to: localizedAlertStrings.message)
-            self.systemSettingsButton.onButtonPressHandler = {
-                self.tappedOpenSystemSettingsButton()
+            self?.setDetectedText(to: localizedAlertStrings.message)
+            self?.systemSettingsButton.onButtonPressHandler = { [weak self] in
+                self?.tappedOpenSystemSettingsButton()
             }
-            self.systemSettingsButton.isHidden = false
+            self?.systemSettingsButton.isHidden = false
         })
 
         self.present(alertVC, animated: true, completion: nil)

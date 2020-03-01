@@ -26,6 +26,9 @@ class AddThoughtViewController: UIViewController, UITextViewDelegate {
     /// The button that saves the thought and dismisses the view.
     @IBOutlet weak var doneButton: DoneButton!
 
+    /// The button that dismisses the view without saving the thought.
+    @IBOutlet weak var closeButton: UIButton!
+
     // MARK: - Static Properties
 
      /// The name of the segue that is used to segue to the Group Selection View Controller.
@@ -42,8 +45,8 @@ class AddThoughtViewController: UIViewController, UITextViewDelegate {
      Sets the action to be performed when the Select Group button is pressed.
      */
     func setupGroupButtonActions() {
-        self.selectGroupButton.onButtonPressHandler = {
-            self.performSegue(withIdentifier: Self.chooseGroupViewSegue, sender: self)
+        self.selectGroupButton.onButtonPressHandler = { [weak self] in
+            self?.performSegue(withIdentifier: Self.chooseGroupViewSegue, sender: self)
         }
     }
 
@@ -53,6 +56,13 @@ class AddThoughtViewController: UIViewController, UITextViewDelegate {
     func setupDoneButtonActions(completion: (() -> Void)? = nil) {
         self.dismiss(animated: true)
         completion?()
+    }
+
+    /**
+     Dismisses the view when the x button is pressed. This method does not save the thought.
+     */
+    @IBAction func closeView(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
 
     // MARK: - Helper Methods

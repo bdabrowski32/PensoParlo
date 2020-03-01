@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// The navigation controller to use for presenting and navigating view.
     var navigationController: PensoNavigationController?
 
-    /// The first view to appear.
+    /// The first view to appear. This is the entry point of the app. It is not launched from storyboard or there will be multiple instances when launching through siri shortcuts.
     let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtsListViewController") as? ThoughtsListViewController
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

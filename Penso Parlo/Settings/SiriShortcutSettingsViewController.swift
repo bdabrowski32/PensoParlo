@@ -33,6 +33,11 @@ class SiriShortcutSettingsViewController: UITableViewController {
         self.tableView.setupTableView()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.siriShortcutHandler = nil
+        super.viewWillDisappear(animated)
+    }
+
     /**
       Updates the thought item and returns back to the previous view controller.
 

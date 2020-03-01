@@ -81,7 +81,7 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
             AVEncoderAudioQualityKey: AVAudioQuality.min.rawValue // Using lowest quality since we are just using for audio animation.
         ]
 
-        audioRecorder = try AVAudioRecorder(url: self.documentDirectory, settings: settings)
+        self.audioRecorder = try AVAudioRecorder(url: self.documentDirectory, settings: settings)
         self.audioRecorder?.delegate = self
     }
 
@@ -189,8 +189,8 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
      */
     private func startAudioEngine() {
         let node = self.audioEngine.inputNode
-        node.installTap(onBus: 0, bufferSize: 1_024, format: node.outputFormat(forBus: 0)) { buffer, _ in
-            self.request.append(buffer)
+        node.installTap(onBus: 0, bufferSize: 1_024, format: node.outputFormat(forBus: 0)) { [weak self] buffer, _ in
+            self?.request.append(buffer)
         }
 
         self.audioEngine.prepare()
@@ -215,10 +215,10 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
             return
         }
 
-        self.recognitionTask = speechRecognizer.recognitionTask(with: self.request) { result, error in
+        self.recognitionTask = speechRecognizer.recognitionTask(with: self.request) { [weak self] result, error in
             if let result = result {
                 let bestString = result.bestTranscription.formattedString
-                self.delegate?.setDetectedText(to: bestString)
+                self?.delegate?.setDetectedText(to: bestString)
 
                 var lastString = ""
                 for segment in result.bestTranscription.segments {
@@ -226,9 +226,9 @@ class SpeechDictationHandler: NSObject, SFSpeechRecognizerDelegate, AVAudioRecor
                     lastString = String(bestString[indexTo...])
                 }
 
-                guard self.checkForStop(resultString: lastString) == false else {
+                guard self?.checkForStop(resultString: lastString) == false else {
                     let finalBestString = bestString.components(separatedBy: " ").dropLast().joined(separator: " ")
-                    self.delegate?.setDetectedText(to: finalBestString)
+                    self?.delegate?.setDetectedText(to: finalBestString)
                     return
                 }
             } else if let error = error {

@@ -38,17 +38,27 @@ class TypeThoughtViewController: AddThoughtViewController {
     }
 
     override func setupDoneButtonActions(completion: (() -> Void)? = nil) {
-        self.doneButton.onButtonPressHandler = {
-            if self.navigationItem.title == Self.newThoughtViewTitle && !self.contentTextView.text.isEmpty {
+        self.doneButton.onButtonPressHandler = { [weak self] in
+            if self?.navigationItem.title == Self.newThoughtViewTitle && self?.contentTextView.text.isEmpty == false {
                 // Adding here if the user exits the view.
-                self.addThoughtToQuickThoughts()
+                self?.addThoughtToQuickThoughts()
             } else {
-                self.thoughtItem?.update(text: self.contentTextView.text)
+                self?.thoughtItem?.update(text: self?.contentTextView.text ?? "")
             }
 
-            super.setupDoneButtonActions()
+            // Getting this error if I call super in a closure.
+            // Using 'super' in a closure where 'self' is explicitly captured is not yet supported
+            self?.setupDoneButtonActionsSuper()
         }
      }
+
+    /**
+     Adding this method because of compiler error. This is the best way to handle this in swift right now.
+     Error: Using 'super' in a closure where 'self' is explicitly captured is not yet supported
+     */
+    private func setupDoneButtonActionsSuper() {
+        super.setupDoneButtonActions()
+    }
 
     // MARK: - Text View Delegate Methods
 
@@ -90,8 +100,8 @@ class TypeThoughtViewController: AddThoughtViewController {
     private func setupKeyboardDismissal() {
         let toolbar = UINib(nibName: "KeyboardToolbar", bundle: nil).instantiate(withOwner: nil, options: nil).first as? KeyboardToolbar
 
-        toolbar?.dismissButtonPressed = {
-            self.view.endEditing(true)
+        toolbar?.dismissButtonPressed = { [weak self] in
+            self?.view.endEditing(true)
         }
 
         self.contentTextView.inputAccessoryView = toolbar
