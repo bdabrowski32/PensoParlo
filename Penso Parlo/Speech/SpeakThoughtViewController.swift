@@ -204,7 +204,7 @@ class SpeakThoughtViewController: AddThoughtViewController, SpeechDictationDeleg
      */
     private func setupDoneButtonActionsSuper() {
         super.setupDoneButtonActions { [weak self] in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
                 self?.addSiriShortcutPrompt?()
             }
         }
