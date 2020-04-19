@@ -16,4 +16,8 @@ extension UIViewController {
     func setupViewController(largeTitle: UINavigationItem.LargeTitleDisplayMode = .never) {
         self.navigationItem.largeTitleDisplayMode = largeTitle
     }
+
+    func presentAlert(alert: UIAlertController) {
+        self.present(alert, animated: false, completion: nil)
+    }
 }

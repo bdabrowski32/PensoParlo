@@ -36,6 +36,9 @@ class PensoNavigationController: UINavigationController {
      */
     func configureTitle() {
         self.navigationBar.prefersLargeTitles = true
+        self.navigationBar.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.9607843137, blue: 0.9843137255, alpha: 1)
+        self.navigationBar.barTintColor = #colorLiteral(red: 0.9450980392, green: 0.9607843137, blue: 0.9843137255, alpha: 1)
+        self.navigationItem.largeTitleDisplayMode = .always
 
         // Set small title font and size
         UINavigationBar.appearance().titleTextAttributes =  [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 17)!]

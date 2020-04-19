@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="UnL-tz-03B" id="iVI-7Y-3Ro"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="gHf-of-yz4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnL-tz-03B">
+                    <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="72" id="9DU-FT-IEU"/>
+                        <constraint firstAttribute="height" constant="72" id="xmf-Bo-WZJ"/>
+                    </constraints>
+                    <state key="normal" image="AddGroupFAB"/>
+                    <connections>
+                        <action selector="onTouchUpInside" destination="-1" eventType="touchUpInside" id="hCF-Lz-kiW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="UnL-tz-03B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Y73-3Y-Off"/>
+                <constraint firstItem="UnL-tz-03B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pRb-bF-LOE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-114.49275362318842" y="-234.375"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="AddGroupFAB" width="137" height="137"/>
+    </resources>
+</document>

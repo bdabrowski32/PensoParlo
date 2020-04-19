@@ -46,7 +46,7 @@ class TypeThoughtViewController: AddThoughtViewController {
                 self?.thoughtItem?.update(text: self?.contentTextView.text ?? "")
             }
 
-            // Getting this error if I call super in a closure.
+            // Getting this error when calling super in a closure.
             // Using 'super' in a closure where 'self' is explicitly captured is not yet supported
             self?.setupDoneButtonActionsSuper()
         }
@@ -58,6 +58,16 @@ class TypeThoughtViewController: AddThoughtViewController {
      */
     private func setupDoneButtonActionsSuper() {
         super.setupDoneButtonActions()
+    }
+
+    override func setupGroupButtonActions() {
+        self.selectGroupButton.onButtonPressHandler = { [weak self] in
+            self?.setupGroupButtonActionsSuper()
+        }
+    }
+
+    private func setupGroupButtonActionsSuper() {
+        super.setupGroupButtonActions()
     }
 
     // MARK: - Text View Delegate Methods

@@ -51,20 +51,31 @@ class ThoughtGroup: Object {
         return realm.objects(ThoughtGroup.self).sorted(byKeyPath: ThoughtGroup.Property.name.rawValue)
     }
 
+    class func getThoughtGroup(byName name: String) -> ThoughtGroup? {
+        return ThoughtGroup.all()?.filter(NSPredicate(format: "name == %@", name)).first
+    }
+
+    class func getThoughtGroup(byId id: String) -> ThoughtGroup? {
+        return ThoughtGroup.all()?.first(where: { $0.id == id })
+    }
+
     /**
      Creates and adds the thought group object to realm.
 
      - parameter name: The name of the group to add.
      */
-    class func add(name: String) {
+    @discardableResult
+    class func add(name: String) -> ThoughtGroup {
         guard let realm = RealmDatabaseManager.thoughtGroup.realm else {
-            return
+            return ThoughtGroup()
         }
 
         let group = ThoughtGroup(name: name)
         try? realm.write {
             realm.add(group)
         }
+
+        return group
     }
 
     /**

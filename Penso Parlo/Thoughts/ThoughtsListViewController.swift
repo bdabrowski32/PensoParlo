@@ -33,6 +33,11 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
 
     // MARK: - Member Properties
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+
     /// The thought items displayed on the table view.
     private var thoughtItems: Results<ThoughtItem>?
 
@@ -71,7 +76,7 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        thoughtItemToken = thoughtItems?.observe { [weak tableView] changes in
+        self.thoughtItemToken = self.thoughtItems?.observe { [weak tableView] changes in
             guard let tableView = tableView else { return }
 
             switch changes {
@@ -130,7 +135,9 @@ class ThoughtsListViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard let item = self.thoughtItems?[indexPath.row], editingStyle == .delete else { return }
+        guard let item = self.thoughtItems?[indexPath.row], editingStyle == .delete else {
+            return
+        }
         self.deleteItem(item)
     }
 
