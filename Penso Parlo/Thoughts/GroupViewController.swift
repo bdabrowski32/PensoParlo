@@ -18,6 +18,8 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     let cellScale: CGFloat = 0.6
 
+    var indexPath: IndexPath?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,9 +59,15 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
             return
         }
 
-//        cell.unneededView.backgroundColor = .black
         cell.contentView.backgroundColor = .orange
-        print("hi bd! \(indexPath.item)")
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = self.collectionView.cellForItem(at: indexPath) as? GroupCollectionViewCell else {
+            return
+        }
+
+        cell.contentView.backgroundColor = .green
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -72,14 +80,48 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
         let index = (targetContentOffset.pointee.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
         let roundedIndex = round(index)
 
-        if Int(roundedIndex) == thoughtGroups.startIndex {
-            targetContentOffset.pointee = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
-        } else if Int(roundedIndex) == self.thoughtGroups.endIndex - 1 {
-            targetContentOffset.pointee = CGPoint(x: roundedIndex * cellWidthIncludingSpacing + scrollView.contentInset.right, y: scrollView.contentInset.top)
-        } else {
-            targetContentOffset.pointee = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left + (scrollView.contentInset.right / 2), y: scrollView.contentInset.top)
+        targetContentOffset.pointee = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left,
+                                              y: scrollView.contentInset.top)
+
+        self.indexPath = IndexPath(item: Int(roundedIndex), section: 0)
+
+        self.changeItemAppearance(for: self.indexPath, shouldHighlightItem: true)
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard let indexPath = self.indexPath else {
+            print("IndexPath is nil")
+            return
         }
 
-        self.collectionView(self.collectionView, didSelectItemAt: IndexPath(item: Int(roundedIndex), section: 0))
+        if self.collectionView.cellForItem(at: indexPath)?.isSelected == false {
+            self.changeItemAppearance(for: indexPath, shouldHighlightItem: true)
+        }
+    }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        guard let indexPath = self.indexPath else {
+            print("IndexPath is nil")
+            return
+        }
+
+        self.changeItemAppearance(for: indexPath, shouldHighlightItem: false)
+    }
+
+    func changeItemAppearance(for indexPath: IndexPath?, shouldHighlightItem: Bool) {
+        guard let indexPath = indexPath else {
+            print("IndexPath is nil")
+            return
+        }
+
+        guard let cell = self.collectionView.cellForItem(at: indexPath) as? GroupCollectionViewCell else {
+            return
+        }
+
+        if shouldHighlightItem {
+            cell.contentView.backgroundColor = .orange
+        } else {
+            cell.contentView.backgroundColor = .green
+        }
     }
 }

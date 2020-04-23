@@ -59,6 +59,8 @@
 		FFC29F172370E7D100D55F1F /* SpeakThoughtButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC29F162370E7D100D55F1F /* SpeakThoughtButton.xib */; };
 		FFC2A45723B715F500230093 /* SiriShortcutSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2A45623B715F500230093 /* SiriShortcutSettingsTableViewCell.swift */; };
 		FFC2A46823BB775A00230093 /* SpeechDictationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2A46723BB775A00230093 /* SpeechDictationHandler.swift */; };
+		FFCE1C76244CCCF5000A6B2E /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCE1C75244CCCF5000A6B2E /* GroupCollectionViewCell.swift */; };
+		FFCE1C78244CD1BE000A6B2E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCE1C77244CD1BE000A6B2E /* GroupViewController.swift */; };
 		FFD226D423BC0383004E69F0 /* SpeechDictationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD226D323BC0383004E69F0 /* SpeechDictationDelegate.swift */; };
 		FFD226D923BD3B6C004E69F0 /* SystemSettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */; };
 		FFD226DB23BD3CE1004E69F0 /* SystemSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */; };
@@ -139,6 +141,8 @@
 		FFC29F162370E7D100D55F1F /* SpeakThoughtButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakThoughtButton.xib; sourceTree = "<group>"; };
 		FFC2A45623B715F500230093 /* SiriShortcutSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		FFC2A46723BB775A00230093 /* SpeechDictationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationHandler.swift; sourceTree = "<group>"; };
+		FFCE1C75244CCCF5000A6B2E /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		FFCE1C77244CD1BE000A6B2E /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		FFD226D323BC0383004E69F0 /* SpeechDictationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationDelegate.swift; sourceTree = "<group>"; };
 		FFD226D823BD3B6C004E69F0 /* SystemSettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SystemSettingsButton.xib; sourceTree = "<group>"; };
 		FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsButton.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		FF1E5B462324353000C794CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FFCE1C74244CC1F8000A6B2E /* Fonts */,
 				FFD6BF4F23D5872900377753 /* Buttons */,
 				FF6306E723CB8720001AD5E1 /* Lottie */,
 				FFEB2580234A3C56003879F6 /* Assets.xcassets */,
@@ -250,6 +255,8 @@
 				FFB7E34823E63AD100EB0161 /* ThoughtGroup.swift */,
 				FF11B7F323FEA07600714957 /* AddThoughtViewController.swift */,
 				FF084635241D826600CCC21D /* GroupCellDelegate.swift */,
+				FFCE1C75244CCCF5000A6B2E /* GroupCollectionViewCell.swift */,
+				FFCE1C77244CD1BE000A6B2E /* GroupViewController.swift */,
 			);
 			path = Thoughts;
 			sourceTree = "<group>";
@@ -372,6 +379,13 @@
 				FFBC07E1229651170001EAB1 /* Info.plist */,
 			);
 			path = "Penso ParloTests";
+			sourceTree = "<group>";
+		};
+		FFCE1C74244CC1F8000A6B2E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FFD6BF4F23D5872900377753 /* Buttons */ = {
@@ -635,6 +649,8 @@
 				FF5B6EEE23B3F76B00781762 /* SettingsButton.swift in Sources */,
 				FFD226DB23BD3CE1004E69F0 /* SystemSettingsButton.swift in Sources */,
 				FF6EEEA423B42E50002C39E1 /* IndexPath+Extensions.swift in Sources */,
+				FFCE1C78244CD1BE000A6B2E /* GroupViewController.swift in Sources */,
+				FFCE1C76244CCCF5000A6B2E /* GroupCollectionViewCell.swift in Sources */,
 				FF1FBACA23AEBE8A00573C84 /* SiriShortcutActivityType.swift in Sources */,
 				FFD226D423BC0383004E69F0 /* SpeechDictationDelegate.swift in Sources */,
 				FF6EEEA923B435EE002C39E1 /* SettingsViewController.swift in Sources */,
