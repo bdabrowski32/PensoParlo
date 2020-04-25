@@ -8,67 +8,108 @@
 
 import UIKit
 
+/**
+ ViewController for displaying the groups created by the user.
+ */
 class GroupViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: - Static Properties
+
+    /// The reuseIdentifier for the cells in the collectionView.
+    private static let groupCollectionViewCell = "GroupCollectionViewCell"
+
+    // MARK: - Instance Properties
 
     var thoughtGroups = [ThoughtGroup(name: "QuickThoughts"),
                          ThoughtGroup(name: "CaroleIsCrazy"),
                          ThoughtGroup(name: "Apps")]
 
-    let cellScale: CGFloat = 0.6
+    /// The center-most displaying cell. Defaults to the most left cell in the collection.
+    private var currentCellIndexPath = IndexPath(item: 0, section: 0)
 
-    var indexPath: IndexPath?
+    // MARK: - IBOutlets
+
+    /// The collectionView that displays the user's thought groups.
+    @IBOutlet private weak var collectionView: UICollectionView!
+
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let screenSize = UIScreen.main.bounds.size
-        let cellWidth = floor(screenSize.width * cellScale)
-//        let cellHeight = floor(screenSize.height * cellScale)
-        let insetX: CGFloat = (view.bounds.width - cellWidth) / 2.0
-        let insetY: CGFloat = 0//(view.bounds.height - cellHeight) / 2.0
-
-//        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        collectionView.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
-
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        self.configureCollectionView()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.shouldHighlightCell(true)
+    }
+
+    // MARK: - Helper Methods
+
+    /**
+     Configures the collectionView's insets, dataSource and delegates.
+     */
+    private func configureCollectionView() {
+        let insetX: CGFloat = (self.view.bounds.width - GroupCollectionViewCell.unhighlightedCellSize.width) / 2.0
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: insetX, bottom: 0, right: insetX)
+
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+    }
+
+    /**
+     Tells the cell if it should be highlighted or not.
+
+     - parameter shouldHighlightCell: Determines if the cell should be highlighted or not.
+     - parameter indexPath: The indexPath to identify the cell that should be highlighted or unhighlighted.
+     */
+    private func shouldHighlightCell(_ shouldHighlightCell: Bool, at indexPath: IndexPath? = nil) {
+        if let cell = self.collectionView.cellForItem(at: indexPath ?? self.currentCellIndexPath) as? GroupCollectionViewCell {
+            guard shouldHighlightCell else {
+                cell.unhighlight()
+                return
+            }
+
+            cell.highlight()
+        }
+
+        // Setting this in order to keep track of the currently highlighted cell for use by other functions in the class.
+        self.currentCellIndexPath = indexPath ?? self.currentCellIndexPath
+    }
+
+    // MARK: - UICollectionView Methods
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return thoughtGroups.count
+        return self.thoughtGroups.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupCollectionViewCell", for: indexPath) as? GroupCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Self.groupCollectionViewCell, for: indexPath) as? GroupCollectionViewCell else {
             return UICollectionViewCell()
         }
 
-        cell.thoughtGroup = thoughtGroups[indexPath.item]
+        cell.thoughtGroup = self.thoughtGroups[indexPath.item]
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return GroupCollectionViewCell.unhighlightedCellSize
+    }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = self.collectionView.cellForItem(at: indexPath) as? GroupCollectionViewCell else {
-            return
-        }
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
 
-        cell.contentView.backgroundColor = .orange
+        // Unhighlights the previously selected cell.
+        self.shouldHighlightCell(false)
+        // Highlights the newly selected cell.
+        self.shouldHighlightCell(true, at: indexPath)
     }
 
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        guard let cell = self.collectionView.cellForItem(at: indexPath) as? GroupCollectionViewCell else {
-            return
-        }
-
-        cell.contentView.backgroundColor = .green
-    }
+    // MARK: - UIScrollView Methods
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         guard let collectionViewLayout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout else {
@@ -76,52 +117,25 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
 
         let cellWidthIncludingSpacing = collectionViewLayout.itemSize.width + collectionViewLayout.minimumLineSpacing
+        let roundedIndex = round((targetContentOffset.pointee.x + scrollView.contentInset.left) / cellWidthIncludingSpacing)
 
-        let index = (targetContentOffset.pointee.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
-        let roundedIndex = round(index)
-
+        // This is used to give the scrollview that snapping into place feeling.
         targetContentOffset.pointee = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left,
                                               y: scrollView.contentInset.top)
 
-        self.indexPath = IndexPath(item: Int(roundedIndex), section: 0)
-
-        self.changeItemAppearance(for: self.indexPath, shouldHighlightItem: true)
+        // This uses the currentCellIndexPath above.
+        self.shouldHighlightCell(true, at: IndexPath(item: Int(roundedIndex), section: 0))
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        guard let indexPath = self.indexPath else {
-            print("IndexPath is nil")
-            return
-        }
-
-        if self.collectionView.cellForItem(at: indexPath)?.isSelected == false {
-            self.changeItemAppearance(for: indexPath, shouldHighlightItem: true)
+        // If scrollViewWillEndDragging doesn't highlight the cell (which happens sometimes) then this method is a fallback to make
+        // sure the cell gets highlighted indefinitely.
+        if self.collectionView.cellForItem(at: self.currentCellIndexPath)?.isSelected == false {
+            self.shouldHighlightCell(true)
         }
     }
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        guard let indexPath = self.indexPath else {
-            print("IndexPath is nil")
-            return
-        }
-
-        self.changeItemAppearance(for: indexPath, shouldHighlightItem: false)
-    }
-
-    func changeItemAppearance(for indexPath: IndexPath?, shouldHighlightItem: Bool) {
-        guard let indexPath = indexPath else {
-            print("IndexPath is nil")
-            return
-        }
-
-        guard let cell = self.collectionView.cellForItem(at: indexPath) as? GroupCollectionViewCell else {
-            return
-        }
-
-        if shouldHighlightItem {
-            cell.contentView.backgroundColor = .orange
-        } else {
-            cell.contentView.backgroundColor = .green
-        }
+        self.shouldHighlightCell(false)
     }
 }

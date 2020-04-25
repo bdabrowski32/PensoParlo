@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f5c-qq-94h">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -14,25 +14,25 @@
             <objects>
                 <viewController storyboardIdentifier="SpeectDetectionViewController" title="Speech Dictation" id="FuE-uu-yA0" customClass="SpeakThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zui-Mj-BIA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="What's on your mind?" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-6P-fr5">
-                                <rect key="frame" x="50" y="40" width="314" height="376"/>
+                                <rect key="frame" x="50" y="40" width="275" height="292"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2H-m4-704" customClass="SystemSettingsButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="112" y="203.66666666666666" width="190" height="84.999999999999972"/>
+                                <rect key="frame" x="92.666666666666686" y="161.66666666666666" width="190" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="a6j-b3-2iY"/>
                                     <constraint firstAttribute="width" constant="190" id="dMy-cK-7Fr"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DY-Lp-eXp" customClass="SelectGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="240" y="686" width="158" height="57"/>
+                                <rect key="frame" x="201" y="602" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="HSO-6D-UoX"/>
                                     <constraint firstAttribute="height" constant="57" id="wSa-AE-DYk"/>
@@ -42,14 +42,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90E-H3-JhM" customClass="DoneButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="16" y="686" width="158" height="57"/>
+                                <rect key="frame" x="16" y="602" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="gRJ-Q2-S5c"/>
                                     <constraint firstAttribute="height" constant="57" id="yYb-qc-sLJ"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0d2-07-trb" customClass="ContinueThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="171" y="510" width="72" height="72"/>
+                                <rect key="frame" x="151.66666666666666" y="468" width="72" height="72"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="G7B-pJ-izM"/>
@@ -107,22 +107,22 @@
             <objects>
                 <viewController id="n26-i5-CPu" customClass="GroupSelectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVZ-05-Jtc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Seo-vw-t5H">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="88" id="Ygz-dL-89Z" customClass="GroupTableViewCell" customModule="Penso_Parlo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="88"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ygz-dL-89Z" id="fUO-x8-Kbr">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sNx-WI-LJw">
-                                                    <rect key="frame" x="20" y="22" width="320" height="44"/>
+                                                    <rect key="frame" x="15" y="22" width="291" height="44"/>
                                                     <color key="tintColor" red="0.29411764709999999" green="0.69411764710000001" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="YL2-DX-eko"/>
@@ -132,7 +132,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no" returnKeyType="done" textContentType="name"/>
                                                 </textField>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKr-cY-hfp">
-                                                    <rect key="frame" x="350" y="22" width="44" height="44"/>
+                                                    <rect key="frame" x="316" y="22" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="MWA-fv-PCo"/>
                                                         <constraint firstAttribute="height" constant="44" id="r4r-AJ-pku"/>
@@ -143,7 +143,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wL1-Qn-iHu">
-                                                    <rect key="frame" x="350" y="22" width="44" height="44"/>
+                                                    <rect key="frame" x="316" y="22" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="PXm-Z0-9IE"/>
                                                         <constraint firstAttribute="height" constant="44" id="SAa-Vn-kVB"/>
@@ -177,7 +177,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-Zd-rd4" customClass="NewGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="326" y="652" width="72" height="72"/>
+                                <rect key="frame" x="287" y="568" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="VCl-M3-qhg"/>
                                     <constraint firstAttribute="height" constant="72" id="j75-RW-RfM"/>
@@ -221,25 +221,25 @@
             <objects>
                 <viewController storyboardIdentifier="ThoughtsListViewController" title="My Thoughts" id="Pjl-fH-0iz" customClass="ThoughtsListViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9UG-5i-ySa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-kG-7VF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThoughtCell" rowHeight="80" id="ebR-G2-d9i" customClass="ThoughtTableViewCell" customModule="Penso_Parlo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ebR-G2-d9i" id="tKG-DD-Wcz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yId-2k-hRi">
-                                                    <rect key="frame" x="16" y="28.333333333333336" width="382" height="23.333333333333336"/>
+                                                    <rect key="frame" x="16" y="28.333333333333336" width="343" height="23.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-ZH-HKO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="23.333333333333332"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="311" height="23.333333333333332"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Label">
                                                                     <attributes>
@@ -250,7 +250,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTL-3k-9tc">
-                                                            <rect key="frame" x="350" y="0.0" width="32" height="23.333333333333332"/>
+                                                            <rect key="frame" x="311" y="0.0" width="32" height="23.333333333333332"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="32" id="1M1-X4-oae"/>
                                                             </constraints>
@@ -282,14 +282,14 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-2x-9kW" customClass="SpeakThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="326" y="686" width="72" height="72"/>
+                                <rect key="frame" x="287" y="602" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="aA3-Cq-j3s"/>
                                     <constraint firstAttribute="width" constant="72" id="mVe-j9-Ia6"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0x-AJ-e01" userLabel="Type Thought Button" customClass="TypeThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="327" y="609" width="72" height="72"/>
+                                <rect key="frame" x="288" y="525" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="ggL-gp-t9b"/>
                                     <constraint firstAttribute="height" constant="72" id="ivJ-VF-gVc"/>
@@ -312,7 +312,7 @@
                     <navigationItem key="navigationItem" title="My Thoughts" id="Pdx-fp-VEe">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Ist-Fr-jrG">
                             <view key="customView" contentMode="scaleToFill" id="uAE-KP-9Nc" customClass="SettingsButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="350" y="0.0" width="44" height="44"/>
+                                <rect key="frame" x="315" y="0.0" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9gE-bQ-cBa"/>
@@ -343,46 +343,49 @@
             <objects>
                 <viewController storyboardIdentifier="ThoughtCollection" title="ThoughtCollection" id="f5c-qq-94h" customClass="GroupViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K8r-0f-v65">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="irh-Hj-MYt">
-                                <rect key="frame" x="0.0" y="302" width="414" height="440"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="236" width="375" height="424"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="424" id="52T-aY-YnI"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="20" id="HX2-jD-CP1">
-                                    <size key="itemSize" width="238" height="414"/>
+                                    <size key="itemSize" width="224" height="389"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCollectionViewCell" id="bi4-n7-JFw" customClass="GroupCollectionViewCell" customModule="Penso_Parlo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="20" width="200" height="400"/>
+                                        <rect key="frame" x="0.0" y="17.666666666666668" width="224" height="389"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mgh-fE-hej">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="224" height="389"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aQ-j3-Dtt">
-                                                    <rect key="frame" x="42" y="79" width="116" height="242"/>
+                                                    <rect key="frame" x="54" y="73.666666666666686" width="116" height="242"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="207"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkS-Sy-SRs">
-                                                    <rect key="frame" x="24" y="18" width="36" height="20.333333333333329"/>
+                                                    <rect key="frame" x="24" y="18" width="36" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thought Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2B-hx-GLm">
-                                                    <rect key="frame" x="49" y="351" width="117" height="21"/>
+                                                    <rect key="frame" x="73" y="340" width="117" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.089999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="tkS-Sy-SRs" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="24" id="H1s-ca-4u0"/>
                                                 <constraint firstItem="1aQ-j3-Dtt" firstAttribute="centerX" secondItem="Mgh-fE-hej" secondAttribute="centerX" id="NwE-o6-ss8"/>
@@ -392,7 +395,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="Q2B-hx-GLm" secondAttribute="trailing" constant="34" id="akM-sP-3a8"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="200" height="400"/>
+                                        <size key="customSize" width="224" height="389"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="tkS-Sy-SRs" id="ltr-GN-Yd5"/>
                                             <outlet property="groupNameLabel" destination="Q2B-hx-GLm" id="2R5-xP-i2g"/>
@@ -402,7 +405,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngs-fD-MiA">
-                                <rect key="frame" x="18" y="784" width="154" height="58"/>
+                                <rect key="frame" x="18" y="700" width="154" height="58"/>
                                 <color key="backgroundColor" red="0.49755101470000002" green="0.78732115359999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="YFF-XL-99M"/>
@@ -411,7 +414,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybq-Qb-u01">
-                                <rect key="frame" x="240" y="784" width="154" height="58"/>
+                                <rect key="frame" x="201" y="700" width="154" height="58"/>
                                 <color key="backgroundColor" red="0.49755101470000002" green="0.78732115359999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="8yI-PV-aps"/>
@@ -420,42 +423,41 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thought Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc7-rD-aJH">
-                                <rect key="frame" x="20" y="237" width="238" height="41"/>
+                                <rect key="frame" x="20" y="171" width="238" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWd-ch-7Nf">
-                                <rect key="frame" x="20" y="188" width="93" height="41"/>
+                                <rect key="frame" x="20" y="122" width="93" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-pN-5Mi">
-                                <rect key="frame" x="348" y="60" width="46" height="30"/>
+                                <rect key="frame" x="309" y="60" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGG-yA-209">
-                                <rect key="frame" x="348" y="124" width="46" height="30"/>
+                                <rect key="frame" x="309" y="124" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.16255530709999999" green="0.22821676730000001" blue="0.3600770847917808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="irh-Hj-MYt" firstAttribute="top" secondItem="Xc7-rD-aJH" secondAttribute="bottom" constant="24" id="1jm-3b-FXK"/>
                             <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="fGG-yA-209" secondAttribute="trailing" constant="20" id="5Td-le-2fM"/>
                             <constraint firstItem="oWd-ch-7Nf" firstAttribute="leading" secondItem="FHo-N9-6Qq" secondAttribute="leading" constant="20" id="6uW-by-tm6"/>
+                            <constraint firstItem="irh-Hj-MYt" firstAttribute="top" secondItem="Xc7-rD-aJH" secondAttribute="bottom" constant="24" id="7zA-je-xgc"/>
+                            <constraint firstItem="oWd-ch-7Nf" firstAttribute="top" secondItem="FHo-N9-6Qq" secondAttribute="top" priority="250" constant="78" id="9lq-kq-WTy"/>
                             <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="irh-Hj-MYt" secondAttribute="trailing" id="G3h-vj-wXv"/>
                             <constraint firstItem="FHo-N9-6Qq" firstAttribute="bottom" secondItem="ybq-Qb-u01" secondAttribute="bottom" constant="20" id="GXS-FR-ph1"/>
                             <constraint firstItem="Xc7-rD-aJH" firstAttribute="leading" secondItem="FHo-N9-6Qq" secondAttribute="leading" constant="20" id="UOe-SS-sBm"/>
-                            <constraint firstItem="Ngs-fD-MiA" firstAttribute="top" secondItem="irh-Hj-MYt" secondAttribute="bottom" constant="42" id="eXQ-UZ-e5J"/>
                             <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="ybq-Qb-u01" secondAttribute="trailing" constant="20" id="hk7-Ib-6oB"/>
                             <constraint firstItem="Xc7-rD-aJH" firstAttribute="top" secondItem="oWd-ch-7Nf" secondAttribute="bottom" constant="8" id="jIH-tY-x6G"/>
                             <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="Ax1-pN-5Mi" secondAttribute="trailing" constant="20" id="jXk-mi-iqp"/>
                             <constraint firstItem="FHo-N9-6Qq" firstAttribute="bottom" secondItem="Ngs-fD-MiA" secondAttribute="bottom" constant="20" id="plV-Xm-Kdj"/>
                             <constraint firstItem="Ax1-pN-5Mi" firstAttribute="top" secondItem="FHo-N9-6Qq" secondAttribute="top" constant="16" id="r3T-N4-fB0"/>
                             <constraint firstItem="irh-Hj-MYt" firstAttribute="leading" secondItem="FHo-N9-6Qq" secondAttribute="leading" id="ulO-lW-2XV"/>
-                            <constraint firstItem="oWd-ch-7Nf" firstAttribute="top" secondItem="FHo-N9-6Qq" secondAttribute="top" constant="144" id="wqy-AB-uBo"/>
                             <constraint firstItem="Ngs-fD-MiA" firstAttribute="leading" secondItem="FHo-N9-6Qq" secondAttribute="leading" constant="18" id="yaO-jw-Gxz"/>
                             <constraint firstItem="fGG-yA-209" firstAttribute="top" secondItem="Ax1-pN-5Mi" secondAttribute="bottom" constant="34" id="z64-rb-Fas"/>
                         </constraints>
@@ -474,11 +476,11 @@
             <objects>
                 <viewController storyboardIdentifier="TypeThoughtView" title="Edit Thought" id="FIX-JN-mGj" customClass="TypeThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vWw-x9-xqA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Note Item Text View" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yN3-x3-zHb">
-                                <rect key="frame" x="40" y="40" width="324" height="626"/>
+                                <rect key="frame" x="40" y="40" width="285" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" red="0.29411764709999999" green="0.69411764710000001" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -486,7 +488,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13m-60-dhM" customClass="SelectGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="240" y="717" width="158" height="57"/>
+                                <rect key="frame" x="201" y="633" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="f2d-eX-iGt"/>
                                     <constraint firstAttribute="width" constant="158" id="mgT-gM-z9A"/>
@@ -496,7 +498,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLz-je-AWg" customClass="DoneButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="16" y="717" width="158" height="57"/>
+                                <rect key="frame" x="16" y="633" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="tVT-k1-NNT"/>
                                     <constraint firstAttribute="width" constant="158" id="tr7-4m-GZL"/>
@@ -545,7 +547,7 @@
             <objects>
                 <navigationController storyboardIdentifier="PensoNavigationController" id="oFg-y6-PUe" customClass="PensoNavigationController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WWX-Lf-4Oc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
