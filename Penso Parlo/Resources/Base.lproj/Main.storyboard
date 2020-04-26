@@ -8,6 +8,17 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PrimaryFontExtraBlack.otf">
+            <string>NeueHaasUnicaW1G-XBlack</string>
+        </array>
+        <array key="PrimaryFontLight.otf">
+            <string>NeueHaasUnicaW1G-Light</string>
+        </array>
+        <array key="SecondaryFontThin.otf">
+            <string>Serifa-Thi</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Speech Dictation-->
         <scene sceneID="JMC-Ri-h2U">
@@ -366,40 +377,64 @@
                                             <rect key="frame" x="0.0" y="0.0" width="224" height="389"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aQ-j3-Dtt">
-                                                    <rect key="frame" x="54" y="73.666666666666686" width="116" height="242"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="207"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkS-Sy-SRs">
+                                                    <rect key="frame" x="23.999999999999996" y="18" width="32.666666666666657" height="25.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-XBlack" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkS-Sy-SRs">
-                                                    <rect key="frame" x="24" y="18" width="36" height="20.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ew7-nx-8jo">
+                                                    <rect key="frame" x="23.999999999999996" y="59.333333333333336" width="32.666666666666657" height="25.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ap3-Ba-Kkx">
+                                                    <rect key="frame" x="24" y="38.666666666666664" width="49" height="25.666666666666664"/>
+                                                    <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                                    <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thought Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2B-hx-GLm">
-                                                    <rect key="frame" x="73" y="340" width="117" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="87" y="335.33333333333331" width="113" height="25.666666666666686"/>
+                                                    <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaH-gb-Vos">
+                                                    <rect key="frame" x="8" y="112" width="208" height="239"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="239" id="OYv-BB-L9I"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Serifa-Thi" family="Serifa" pointSize="207"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.089999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="tkS-Sy-SRs" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="24" id="H1s-ca-4u0"/>
-                                                <constraint firstItem="1aQ-j3-Dtt" firstAttribute="centerX" secondItem="Mgh-fE-hej" secondAttribute="centerX" id="NwE-o6-ss8"/>
-                                                <constraint firstItem="tkS-Sy-SRs" firstAttribute="top" secondItem="Mgh-fE-hej" secondAttribute="top" constant="18" id="QWc-VN-vxs"/>
-                                                <constraint firstItem="1aQ-j3-Dtt" firstAttribute="centerY" secondItem="Mgh-fE-hej" secondAttribute="centerY" id="TL3-2T-CGa"/>
+                                                <constraint firstItem="TaH-gb-Vos" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="8" id="6ZR-43-aSC"/>
+                                                <constraint firstItem="TaH-gb-Vos" firstAttribute="top" secondItem="Ew7-nx-8jo" secondAttribute="bottom" constant="27" id="FWO-N5-fXn"/>
+                                                <constraint firstItem="ap3-Ba-Kkx" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="24" id="RnZ-yN-G2S"/>
+                                                <constraint firstItem="tkS-Sy-SRs" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="24" id="UVD-Ib-LXM"/>
                                                 <constraint firstAttribute="bottom" secondItem="Q2B-hx-GLm" secondAttribute="bottom" constant="28" id="YGS-bU-Kce"/>
-                                                <constraint firstAttribute="trailing" secondItem="Q2B-hx-GLm" secondAttribute="trailing" constant="34" id="akM-sP-3a8"/>
+                                                <constraint firstItem="ap3-Ba-Kkx" firstAttribute="top" secondItem="tkS-Sy-SRs" secondAttribute="bottom" constant="-5" id="Z8S-hP-BqJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q2B-hx-GLm" secondAttribute="trailing" constant="24" identifier="groupNameLabelTrailingConstraint" id="akM-sP-3a8"/>
+                                                <constraint firstItem="Ew7-nx-8jo" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="24" id="dfq-uV-sEC"/>
+                                                <constraint firstItem="Ew7-nx-8jo" firstAttribute="top" secondItem="ap3-Ba-Kkx" secondAttribute="bottom" constant="-5" id="ga1-bG-jhW"/>
+                                                <constraint firstItem="tkS-Sy-SRs" firstAttribute="top" secondItem="Mgh-fE-hej" secondAttribute="top" constant="18" id="oaV-BF-wat"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ew7-nx-8jo" secondAttribute="trailing" constant="20" symbolic="YES" id="uMD-Tb-wKQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="TaH-gb-Vos" secondAttribute="trailing" constant="8" id="v1O-wD-RyI"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="224" height="389"/>
                                         <connections>
-                                            <outlet property="dateLabel" destination="tkS-Sy-SRs" id="ltr-GN-Yd5"/>
+                                            <outlet property="dayLabel" destination="tkS-Sy-SRs" id="DW4-eV-Xeb"/>
                                             <outlet property="groupNameLabel" destination="Q2B-hx-GLm" id="2R5-xP-i2g"/>
-                                            <outlet property="thoughtItemCountLabel" destination="1aQ-j3-Dtt" id="xwi-gO-HAP"/>
+                                            <outlet property="monthLabel" destination="ap3-Ba-Kkx" id="vh7-fd-qn1"/>
+                                            <outlet property="thoughtItemCountLabel" destination="TaH-gb-Vos" id="Yvb-CZ-48i"/>
+                                            <outlet property="yearLabel" destination="Ew7-nx-8jo" id="2b4-c6-Z6x"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -469,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7L-Vh-SRB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-578.26086956521749" y="-197.54464285714286"/>
+            <point key="canvasLocation" x="-578.39999999999998" y="-198.02955665024632"/>
         </scene>
         <!--Edit Thought-->
         <scene sceneID="ai6-F2-ZgZ">

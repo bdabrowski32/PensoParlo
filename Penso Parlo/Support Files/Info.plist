@@ -22,6 +22,10 @@
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Your speech will be detected after tapping the microphone button.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SecondaryFont.otf</string>
+	</array>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>The app uses speech recognition for dictating notes.</string>
 	<key>NSUserActivityTypes</key>
