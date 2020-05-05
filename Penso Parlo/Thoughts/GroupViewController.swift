@@ -98,6 +98,8 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewFrameHeight = self.collectionView.frame.height
+
+        // This allows space for the cell to be scaled up and not be clipped when selected.
         var cellHeightToFit = collectionViewFrameHeight * 0.90
 
         // The cells are too stretched if they grow any taller than this.
