@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f5c-qq-94h">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -25,25 +25,25 @@
             <objects>
                 <viewController storyboardIdentifier="SpeectDetectionViewController" title="Speech Dictation" id="FuE-uu-yA0" customClass="SpeakThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zui-Mj-BIA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="What's on your mind?" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-6P-fr5">
-                                <rect key="frame" x="50" y="40" width="275" height="292"/>
+                                <rect key="frame" x="50" y="40" width="314" height="376"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2H-m4-704" customClass="SystemSettingsButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="92.666666666666686" y="161.66666666666666" width="190" height="85"/>
+                                <rect key="frame" x="112" y="203.66666666666666" width="190" height="84.999999999999972"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="a6j-b3-2iY"/>
                                     <constraint firstAttribute="width" constant="190" id="dMy-cK-7Fr"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DY-Lp-eXp" customClass="SelectGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="201" y="602" width="158" height="57"/>
+                                <rect key="frame" x="240" y="686" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="HSO-6D-UoX"/>
                                     <constraint firstAttribute="height" constant="57" id="wSa-AE-DYk"/>
@@ -53,14 +53,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90E-H3-JhM" customClass="DoneButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="16" y="602" width="158" height="57"/>
+                                <rect key="frame" x="16" y="686" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="gRJ-Q2-S5c"/>
                                     <constraint firstAttribute="height" constant="57" id="yYb-qc-sLJ"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0d2-07-trb" customClass="ContinueThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="151.66666666666666" y="468" width="72" height="72"/>
+                                <rect key="frame" x="171" y="510" width="72" height="72"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="G7B-pJ-izM"/>
@@ -118,22 +118,22 @@
             <objects>
                 <viewController id="n26-i5-CPu" customClass="GroupSelectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVZ-05-Jtc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Seo-vw-t5H">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="88" id="Ygz-dL-89Z" customClass="GroupTableViewCell" customModule="Penso_Parlo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ygz-dL-89Z" id="fUO-x8-Kbr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sNx-WI-LJw">
-                                                    <rect key="frame" x="15" y="22" width="291" height="44"/>
+                                                    <rect key="frame" x="20" y="22" width="320" height="44"/>
                                                     <color key="tintColor" red="0.29411764709999999" green="0.69411764710000001" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="YL2-DX-eko"/>
@@ -143,7 +143,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no" returnKeyType="done" textContentType="name"/>
                                                 </textField>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKr-cY-hfp">
-                                                    <rect key="frame" x="316" y="22" width="44" height="44"/>
+                                                    <rect key="frame" x="350" y="22" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="MWA-fv-PCo"/>
                                                         <constraint firstAttribute="height" constant="44" id="r4r-AJ-pku"/>
@@ -154,7 +154,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wL1-Qn-iHu">
-                                                    <rect key="frame" x="316" y="22" width="44" height="44"/>
+                                                    <rect key="frame" x="350" y="22" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="PXm-Z0-9IE"/>
                                                         <constraint firstAttribute="height" constant="44" id="SAa-Vn-kVB"/>
@@ -188,7 +188,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-Zd-rd4" customClass="NewGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="287" y="568" width="72" height="72"/>
+                                <rect key="frame" x="326" y="652" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="VCl-M3-qhg"/>
                                     <constraint firstAttribute="height" constant="72" id="j75-RW-RfM"/>
@@ -232,25 +232,25 @@
             <objects>
                 <viewController storyboardIdentifier="ThoughtsListViewController" title="My Thoughts" id="Pjl-fH-0iz" customClass="ThoughtsListViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9UG-5i-ySa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-kG-7VF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThoughtCell" rowHeight="80" id="ebR-G2-d9i" customClass="ThoughtTableViewCell" customModule="Penso_Parlo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ebR-G2-d9i" id="tKG-DD-Wcz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yId-2k-hRi">
-                                                    <rect key="frame" x="16" y="28.333333333333336" width="343" height="23.333333333333336"/>
+                                                    <rect key="frame" x="16" y="28.333333333333336" width="382" height="23.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-ZH-HKO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="311" height="23.333333333333332"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="23.333333333333332"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Label">
                                                                     <attributes>
@@ -261,7 +261,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTL-3k-9tc">
-                                                            <rect key="frame" x="311" y="0.0" width="32" height="23.333333333333332"/>
+                                                            <rect key="frame" x="350" y="0.0" width="32" height="23.333333333333332"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="32" id="1M1-X4-oae"/>
                                                             </constraints>
@@ -293,14 +293,14 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-2x-9kW" customClass="SpeakThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="287" y="602" width="72" height="72"/>
+                                <rect key="frame" x="326" y="686" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="aA3-Cq-j3s"/>
                                     <constraint firstAttribute="width" constant="72" id="mVe-j9-Ia6"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0x-AJ-e01" userLabel="Type Thought Button" customClass="TypeThoughtButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="288" y="525" width="72" height="72"/>
+                                <rect key="frame" x="327" y="609" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="ggL-gp-t9b"/>
                                     <constraint firstAttribute="height" constant="72" id="ivJ-VF-gVc"/>
@@ -323,7 +323,7 @@
                     <navigationItem key="navigationItem" title="My Thoughts" id="Pdx-fp-VEe">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Ist-Fr-jrG">
                             <view key="customView" contentMode="scaleToFill" id="uAE-KP-9Nc" customClass="SettingsButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="315" y="0.0" width="44" height="44"/>
+                                <rect key="frame" x="350" y="0.0" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9gE-bQ-cBa"/>
@@ -354,16 +354,20 @@
             <objects>
                 <viewController storyboardIdentifier="ThoughtCollection" title="ThoughtCollection" id="f5c-qq-94h" customClass="GroupViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K8r-0f-v65">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" fixedFrame="YES" image="Side_Menu_Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="s3t-X5-df7">
+                                <rect key="frame" x="0.0" y="-20" width="414" height="916"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="Background_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-En-tWb">
+                                <rect key="frame" x="-20" y="64" width="169.66666666666666" height="187"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="irh-Hj-MYt">
-                                <rect key="frame" x="0.0" y="236" width="375" height="424"/>
+                                <rect key="frame" x="0.0" y="213.33333333333331" width="414" height="555.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="424" id="52T-aY-YnI"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="20" id="HX2-jD-CP1">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="20" id="HX2-jD-CP1">
                                     <size key="itemSize" width="224" height="389"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -371,64 +375,64 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCollectionViewCell" id="bi4-n7-JFw" customClass="GroupCollectionViewCell" customModule="Penso_Parlo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="17.666666666666668" width="224" height="389"/>
+                                        <rect key="frame" x="0.0" y="83.333333333333329" width="127.33333333333333" height="389"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mgh-fE-hej">
-                                            <rect key="frame" x="0.0" y="0.0" width="224" height="389"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nwA-Tv-nPS">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="389"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkS-Sy-SRs">
-                                                    <rect key="frame" x="23.999999999999996" y="18" width="32.666666666666657" height="25.666666666666671"/>
+                                                    <rect key="frame" x="24" y="18" width="29.666666666666671" height="20"/>
                                                     <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-XBlack" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ew7-nx-8jo">
-                                                    <rect key="frame" x="23.999999999999996" y="59.333333333333336" width="32.666666666666657" height="25.666666666666664"/>
+                                                    <rect key="frame" x="24.000000000000004" y="48" width="33.333333333333343" height="20"/>
                                                     <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ap3-Ba-Kkx">
-                                                    <rect key="frame" x="24" y="38.666666666666664" width="49" height="25.666666666666664"/>
+                                                    <rect key="frame" x="24" y="33" width="49" height="20"/>
                                                     <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                                     <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thought Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2B-hx-GLm">
-                                                    <rect key="frame" x="87" y="335.33333333333331" width="113" height="25.666666666666686"/>
+                                                    <rect key="frame" x="-12" y="341" width="115.33333333333333" height="20"/>
                                                     <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaH-gb-Vos">
-                                                    <rect key="frame" x="8" y="112" width="208" height="239"/>
+                                                    <rect key="frame" x="8" y="115" width="111.33333333333333" height="239"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="239" id="OYv-BB-L9I"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Serifa-Thi" family="Serifa" pointSize="207"/>
+                                                    <fontDescription key="fontDescription" name="Serifa-Thi" family="Serifa" pointSize="200"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.089999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="TaH-gb-Vos" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="8" id="6ZR-43-aSC"/>
-                                                <constraint firstItem="TaH-gb-Vos" firstAttribute="top" secondItem="Ew7-nx-8jo" secondAttribute="bottom" constant="27" id="FWO-N5-fXn"/>
-                                                <constraint firstItem="ap3-Ba-Kkx" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="24" id="RnZ-yN-G2S"/>
-                                                <constraint firstItem="tkS-Sy-SRs" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="24" id="UVD-Ib-LXM"/>
+                                                <constraint firstItem="TaH-gb-Vos" firstAttribute="centerX" secondItem="nwA-Tv-nPS" secondAttribute="centerX" id="26I-23-mOX"/>
+                                                <constraint firstItem="TaH-gb-Vos" firstAttribute="leading" secondItem="nwA-Tv-nPS" secondAttribute="leading" constant="8" id="6ZR-43-aSC"/>
+                                                <constraint firstItem="TaH-gb-Vos" firstAttribute="centerY" secondItem="nwA-Tv-nPS" secondAttribute="centerY" constant="40" id="Ddz-pj-bV4"/>
+                                                <constraint firstItem="ap3-Ba-Kkx" firstAttribute="leading" secondItem="nwA-Tv-nPS" secondAttribute="leading" constant="24" id="RnZ-yN-G2S"/>
+                                                <constraint firstItem="tkS-Sy-SRs" firstAttribute="leading" secondItem="nwA-Tv-nPS" secondAttribute="leading" constant="24" id="UVD-Ib-LXM"/>
                                                 <constraint firstAttribute="bottom" secondItem="Q2B-hx-GLm" secondAttribute="bottom" constant="28" id="YGS-bU-Kce"/>
                                                 <constraint firstItem="ap3-Ba-Kkx" firstAttribute="top" secondItem="tkS-Sy-SRs" secondAttribute="bottom" constant="-5" id="Z8S-hP-BqJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Q2B-hx-GLm" secondAttribute="trailing" constant="24" identifier="groupNameLabelTrailingConstraint" id="akM-sP-3a8"/>
-                                                <constraint firstItem="Ew7-nx-8jo" firstAttribute="leading" secondItem="Mgh-fE-hej" secondAttribute="leading" constant="24" id="dfq-uV-sEC"/>
+                                                <constraint firstItem="Ew7-nx-8jo" firstAttribute="leading" secondItem="nwA-Tv-nPS" secondAttribute="leading" constant="24" id="dfq-uV-sEC"/>
                                                 <constraint firstItem="Ew7-nx-8jo" firstAttribute="top" secondItem="ap3-Ba-Kkx" secondAttribute="bottom" constant="-5" id="ga1-bG-jhW"/>
-                                                <constraint firstItem="tkS-Sy-SRs" firstAttribute="top" secondItem="Mgh-fE-hej" secondAttribute="top" constant="18" id="oaV-BF-wat"/>
+                                                <constraint firstItem="tkS-Sy-SRs" firstAttribute="top" secondItem="nwA-Tv-nPS" secondAttribute="top" constant="18" id="oaV-BF-wat"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ew7-nx-8jo" secondAttribute="trailing" constant="20" symbolic="YES" id="uMD-Tb-wKQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="TaH-gb-Vos" secondAttribute="trailing" constant="8" id="v1O-wD-RyI"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="224" height="389"/>
                                         <connections>
                                             <outlet property="dayLabel" destination="tkS-Sy-SRs" id="DW4-eV-Xeb"/>
                                             <outlet property="groupNameLabel" destination="Q2B-hx-GLm" id="2R5-xP-i2g"/>
@@ -439,62 +443,73 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngs-fD-MiA">
-                                <rect key="frame" x="18" y="700" width="154" height="58"/>
-                                <color key="backgroundColor" red="0.49755101470000002" green="0.78732115359999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngs-fD-MiA">
+                                <rect key="frame" x="18" y="784" width="154" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="YFF-XL-99M"/>
                                     <constraint firstAttribute="width" constant="154" id="fHe-5q-cre"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button" image="Type_Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybq-Qb-u01">
-                                <rect key="frame" x="201" y="700" width="154" height="58"/>
-                                <color key="backgroundColor" red="0.49755101470000002" green="0.78732115359999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybq-Qb-u01">
+                                <rect key="frame" x="242" y="784" width="154" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="8yI-PV-aps"/>
                                     <constraint firstAttribute="height" constant="58" id="Wvo-fT-1O6"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button" image="Speak_Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thought Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc7-rD-aJH">
-                                <rect key="frame" x="20" y="171" width="238" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Thought Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc7-rD-aJH">
+                                <rect key="frame" x="19.999999999999986" y="158.66666666666666" width="247.66666666666663" height="39.666666666666657"/>
+                                <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWd-ch-7Nf">
-                                <rect key="frame" x="20" y="122" width="93" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <rect key="frame" x="20.000000000000007" y="129" width="97.666666666666686" height="39.666666666666657"/>
+                                <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="34"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-pN-5Mi">
-                                <rect key="frame" x="309" y="60" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-pN-5Mi">
+                                <rect key="frame" x="363" y="60" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="9Gd-I7-6P6"/>
+                                    <constraint firstAttribute="height" constant="44" id="LeA-8j-C8a"/>
+                                </constraints>
+                                <state key="normal" image="Menu_Icon"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGG-yA-209">
-                                <rect key="frame" x="309" y="124" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGG-yA-209">
+                                <rect key="frame" x="363" y="110" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="lao-uE-GLK"/>
+                                    <constraint firstAttribute="width" constant="44" id="pHL-a7-CZc"/>
+                                </constraints>
+                                <state key="normal" image="Add_Group_Icon"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16255530709999999" green="0.22821676730000001" blue="0.3600770847917808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="fGG-yA-209" secondAttribute="trailing" constant="20" id="5Td-le-2fM"/>
+                            <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="fGG-yA-209" secondAttribute="trailing" constant="7" id="5Td-le-2fM"/>
                             <constraint firstItem="oWd-ch-7Nf" firstAttribute="leading" secondItem="FHo-N9-6Qq" secondAttribute="leading" constant="20" id="6uW-by-tm6"/>
-                            <constraint firstItem="irh-Hj-MYt" firstAttribute="top" secondItem="Xc7-rD-aJH" secondAttribute="bottom" constant="24" id="7zA-je-xgc"/>
-                            <constraint firstItem="oWd-ch-7Nf" firstAttribute="top" secondItem="FHo-N9-6Qq" secondAttribute="top" priority="250" constant="78" id="9lq-kq-WTy"/>
+                            <constraint firstItem="irh-Hj-MYt" firstAttribute="top" secondItem="Xc7-rD-aJH" secondAttribute="bottom" constant="15" id="BFZ-08-Y5a"/>
                             <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="irh-Hj-MYt" secondAttribute="trailing" id="G3h-vj-wXv"/>
                             <constraint firstItem="FHo-N9-6Qq" firstAttribute="bottom" secondItem="ybq-Qb-u01" secondAttribute="bottom" constant="20" id="GXS-FR-ph1"/>
+                            <constraint firstItem="Ngs-fD-MiA" firstAttribute="leading" secondItem="FHo-N9-6Qq" secondAttribute="leading" priority="1" constant="35" id="Gb8-7i-QYf"/>
                             <constraint firstItem="Xc7-rD-aJH" firstAttribute="leading" secondItem="FHo-N9-6Qq" secondAttribute="leading" constant="20" id="UOe-SS-sBm"/>
-                            <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="ybq-Qb-u01" secondAttribute="trailing" constant="20" id="hk7-Ib-6oB"/>
-                            <constraint firstItem="Xc7-rD-aJH" firstAttribute="top" secondItem="oWd-ch-7Nf" secondAttribute="bottom" constant="8" id="jIH-tY-x6G"/>
-                            <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="Ax1-pN-5Mi" secondAttribute="trailing" constant="20" id="jXk-mi-iqp"/>
+                            <constraint firstItem="Ngs-fD-MiA" firstAttribute="top" secondItem="irh-Hj-MYt" secondAttribute="bottom" constant="15" id="beA-Sl-ea1"/>
+                            <constraint firstItem="TBA-En-tWb" firstAttribute="leading" secondItem="K8r-0f-v65" secondAttribute="leading" constant="-20" id="csx-FO-wiQ"/>
+                            <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="ybq-Qb-u01" secondAttribute="trailing" constant="18" id="hk7-Ib-6oB"/>
+                            <constraint firstItem="Xc7-rD-aJH" firstAttribute="top" secondItem="oWd-ch-7Nf" secondAttribute="bottom" constant="-10" id="jIH-tY-x6G"/>
+                            <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="Ax1-pN-5Mi" secondAttribute="trailing" constant="7" id="jXk-mi-iqp"/>
+                            <constraint firstItem="FHo-N9-6Qq" firstAttribute="trailing" secondItem="ybq-Qb-u01" secondAttribute="trailing" priority="1" constant="35" id="lp2-Ow-TxA"/>
                             <constraint firstItem="FHo-N9-6Qq" firstAttribute="bottom" secondItem="Ngs-fD-MiA" secondAttribute="bottom" constant="20" id="plV-Xm-Kdj"/>
                             <constraint firstItem="Ax1-pN-5Mi" firstAttribute="top" secondItem="FHo-N9-6Qq" secondAttribute="top" constant="16" id="r3T-N4-fB0"/>
                             <constraint firstItem="irh-Hj-MYt" firstAttribute="leading" secondItem="FHo-N9-6Qq" secondAttribute="leading" id="ulO-lW-2XV"/>
                             <constraint firstItem="Ngs-fD-MiA" firstAttribute="leading" secondItem="FHo-N9-6Qq" secondAttribute="leading" constant="18" id="yaO-jw-Gxz"/>
-                            <constraint firstItem="fGG-yA-209" firstAttribute="top" secondItem="Ax1-pN-5Mi" secondAttribute="bottom" constant="34" id="z64-rb-Fas"/>
+                            <constraint firstItem="TBA-En-tWb" firstAttribute="top" secondItem="FHo-N9-6Qq" secondAttribute="top" constant="20" id="yd7-3K-cfV"/>
+                            <constraint firstItem="fGG-yA-209" firstAttribute="top" secondItem="Ax1-pN-5Mi" secondAttribute="bottom" constant="6" id="z64-rb-Fas"/>
+                            <constraint firstItem="oWd-ch-7Nf" firstAttribute="top" secondItem="FHo-N9-6Qq" secondAttribute="top" constant="85" id="zFg-Hk-M85"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FHo-N9-6Qq"/>
                     </view>
@@ -504,18 +519,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7L-Vh-SRB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-578.39999999999998" y="-198.02955665024632"/>
+            <point key="canvasLocation" x="-579.71014492753625" y="-198.21428571428569"/>
         </scene>
         <!--Edit Thought-->
         <scene sceneID="ai6-F2-ZgZ">
             <objects>
                 <viewController storyboardIdentifier="TypeThoughtView" title="Edit Thought" id="FIX-JN-mGj" customClass="TypeThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vWw-x9-xqA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Note Item Text View" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yN3-x3-zHb">
-                                <rect key="frame" x="40" y="40" width="285" height="542"/>
+                                <rect key="frame" x="40" y="40" width="324" height="626"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" red="0.29411764709999999" green="0.69411764710000001" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -523,7 +538,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13m-60-dhM" customClass="SelectGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="201" y="633" width="158" height="57"/>
+                                <rect key="frame" x="240" y="717" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="f2d-eX-iGt"/>
                                     <constraint firstAttribute="width" constant="158" id="mgT-gM-z9A"/>
@@ -533,7 +548,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLz-je-AWg" customClass="DoneButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="16" y="633" width="158" height="57"/>
+                                <rect key="frame" x="16" y="717" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="tVT-k1-NNT"/>
                                     <constraint firstAttribute="width" constant="158" id="tr7-4m-GZL"/>
@@ -582,7 +597,7 @@
             <objects>
                 <navigationController storyboardIdentifier="PensoNavigationController" id="oFg-y6-PUe" customClass="PensoNavigationController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WWX-Lf-4Oc">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
@@ -603,8 +618,14 @@
         <segue reference="coG-M6-eH0"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Add_Group_Icon" width="17.333333969116211" height="18"/>
+        <image name="Background_Icon" width="169.33332824707031" height="187"/>
         <image name="Box_Green" width="21.333333969116211" height="21.333333969116211"/>
         <image name="EditButton_Gradient" width="13.666666984558105" height="13.666666984558105"/>
+        <image name="Menu_Icon" width="18" height="12.333333015441895"/>
+        <image name="Side_Menu_Gradient" width="375" height="811"/>
+        <image name="Speak_Button" width="154" height="58"/>
+        <image name="Type_Button" width="154" height="58"/>
         <image name="close" width="20" height="20"/>
     </resources>
 </document>
