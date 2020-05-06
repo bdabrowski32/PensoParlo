@@ -44,6 +44,9 @@
 		FF8D06442401C40F0091897C /* KeyboardLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D06432401C40F0091897C /* KeyboardLayoutConstraints.swift */; };
 		FF8D06482403714C0091897C /* DoneButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8D06472403714C0091897C /* DoneButton.xib */; };
 		FF8D064A240371790091897C /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0649240371790091897C /* DoneButton.swift */; };
+		FF90AE622455FD89003A68A1 /* PrimaryFontLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF90AE5F2455FD89003A68A1 /* PrimaryFontLight.otf */; };
+		FF90AE632455FD89003A68A1 /* PrimaryFontExtraBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF90AE602455FD89003A68A1 /* PrimaryFontExtraBlack.otf */; };
+		FF90AE642455FD89003A68A1 /* PrimaryFontRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF90AE612455FD89003A68A1 /* PrimaryFontRegular.otf */; };
 		FF9D79DD240387BF0061A4C7 /* ContinueThoughtButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9D79DC240387BF0061A4C7 /* ContinueThoughtButton.xib */; };
 		FF9D79DF240387F50061A4C7 /* ContinueThoughtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D79DE240387F50061A4C7 /* ContinueThoughtButton.swift */; };
 		FFA817FF2311D64200426C8C /* SpeakThoughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA817FE2311D64200426C8C /* SpeakThoughtViewController.swift */; };
@@ -66,6 +69,7 @@
 		FFD226DB23BD3CE1004E69F0 /* SystemSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */; };
 		FFD6BF4E23D5855A00377753 /* audio_visualizer.json in Resources */ = {isa = PBXBuildFile; fileRef = FFD6BF4D23D5855A00377753 /* audio_visualizer.json */; };
 		FFD6BF5123D65D3E00377753 /* SelectGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD6BF5023D65D3D00377753 /* SelectGroupButton.swift */; };
+		FFD8FD012454D04C00A068E0 /* SecondaryFontThin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFD8FD002454D04B00A068E0 /* SecondaryFontThin.otf */; };
 		FFEB2581234A3C56003879F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEB2580234A3C56003879F6 /* Assets.xcassets */; };
 		FFEF96F523F57E5900C8C1BB /* SelectGroupButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEF96F423F57E5900C8C1BB /* SelectGroupButton.xib */; };
 /* End PBXBuildFile section */
@@ -122,6 +126,9 @@
 		FF8D06432401C40F0091897C /* KeyboardLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraints.swift; sourceTree = "<group>"; };
 		FF8D06472403714C0091897C /* DoneButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoneButton.xib; sourceTree = "<group>"; };
 		FF8D0649240371790091897C /* DoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		FF90AE5F2455FD89003A68A1 /* PrimaryFontLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrimaryFontLight.otf; sourceTree = "<group>"; };
+		FF90AE602455FD89003A68A1 /* PrimaryFontExtraBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrimaryFontExtraBlack.otf; sourceTree = "<group>"; };
+		FF90AE612455FD89003A68A1 /* PrimaryFontRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrimaryFontRegular.otf; sourceTree = "<group>"; };
 		FF9D79DC240387BF0061A4C7 /* ContinueThoughtButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContinueThoughtButton.xib; sourceTree = "<group>"; };
 		FF9D79DE240387F50061A4C7 /* ContinueThoughtButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinueThoughtButton.swift; sourceTree = "<group>"; };
 		FFA817FE2311D64200426C8C /* SpeakThoughtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakThoughtViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +155,7 @@
 		FFD226DA23BD3CE0004E69F0 /* SystemSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsButton.swift; sourceTree = "<group>"; };
 		FFD6BF4D23D5855A00377753 /* audio_visualizer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = audio_visualizer.json; sourceTree = "<group>"; };
 		FFD6BF5023D65D3D00377753 /* SelectGroupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGroupButton.swift; sourceTree = "<group>"; };
+		FFD8FD002454D04B00A068E0 /* SecondaryFontThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SecondaryFontThin.otf; sourceTree = "<group>"; };
 		FFDDF4D723242EC50036A431 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDDF4D923242EC60036A431 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEB2580234A3C56003879F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -384,6 +392,10 @@
 		FFCE1C74244CC1F8000A6B2E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				FF90AE602455FD89003A68A1 /* PrimaryFontExtraBlack.otf */,
+				FF90AE5F2455FD89003A68A1 /* PrimaryFontLight.otf */,
+				FF90AE612455FD89003A68A1 /* PrimaryFontRegular.otf */,
+				FFD8FD002454D04B00A068E0 /* SecondaryFontThin.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -494,6 +506,7 @@
 				FFBC07D5229651170001EAB1 /* LaunchScreen.storyboard in Resources */,
 				FF5B6EF223B41FDE00781762 /* Settings.storyboard in Resources */,
 				FF1E5B5123255BC100C794CE /* swiftlint.yml in Resources */,
+				FF90AE622455FD89003A68A1 /* PrimaryFontLight.otf in Resources */,
 				FF1F585E23F9D66100A7291A /* KeyboardToolbar.xib in Resources */,
 				FF1E5B41232430BC00C794CE /* Podfile in Resources */,
 				FFEB2581234A3C56003879F6 /* Assets.xcassets in Resources */,
@@ -501,9 +514,12 @@
 				FF82EB78240B42B000660B9C /* NewGroupButton.xib in Resources */,
 				FFB2D8AB23C2620900062078 /* TypeThoughtButton.xib in Resources */,
 				FFD226D923BD3B6C004E69F0 /* SystemSettingsButton.xib in Resources */,
+				FFD8FD012454D04C00A068E0 /* SecondaryFontThin.otf in Resources */,
 				FF1E5B4F23255BBB00C794CE /* swiftlint-autocorrect.yml in Resources */,
+				FF90AE632455FD89003A68A1 /* PrimaryFontExtraBlack.otf in Resources */,
 				FF8D06482403714C0091897C /* DoneButton.xib in Resources */,
 				FFEF96F523F57E5900C8C1BB /* SelectGroupButton.xib in Resources */,
+				FF90AE642455FD89003A68A1 /* PrimaryFontRegular.otf in Resources */,
 				FF5B6EE723B3EE8700781762 /* SettingsButton.xib in Resources */,
 				FF9D79DD240387BF0061A4C7 /* ContinueThoughtButton.xib in Resources */,
 				FFBC07D02296510E0001EAB1 /* Main.storyboard in Resources */,
