@@ -21,10 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navigationController: PensoNavigationController?
 
     /// The first view to appear. This is the entry point of the app. It is not launched from storyboard or there will be multiple instances when launching through siri shortcuts.
-    let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtsListViewController") as? ThoughtsListViewController
+//    let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtsListViewController") as? ThoughtsListViewController
+    let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtCollection")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.setupRootViewController()
+//        self.setupRootViewController()
 
         SyncManager.shared.logLevel = .off
 
@@ -32,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        self.rootViewController?.performSegue(withIdentifier: ThoughtsListViewController.speechDetectionViewSegue, sender: self)
+//        self.rootViewController?.performSegue(withIdentifier: ThoughtsListViewController.speechDetectionViewSegue, sender: self)
         return true
     }
 
@@ -40,15 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Configures view hierarchy.
      */
     private func setupRootViewController() {
-        guard let thoughtsListViewController = self.rootViewController else {
-            os_log("Unable to setup Thoughts List View Controller.",
-                   log: OSLog.default,
-                   type: .error)
-            return
-        }
+//        guard let thoughtsListViewController = self.rootViewController else {
+//            os_log("Unable to setup Thoughts List View Controller.",
+//                   log: OSLog.default,
+//                   type: .error)
+//            return
+//        }
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.navigationController = PensoNavigationController(rootViewController: thoughtsListViewController)
+//        self.navigationController = PensoNavigationController(rootViewController: thoughtsListViewController)
+        self.navigationController = PensoNavigationController(rootViewController: rootViewController)
         self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
     }

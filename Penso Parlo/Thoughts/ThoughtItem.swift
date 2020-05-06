@@ -110,10 +110,11 @@ class ThoughtItem: Object {
 
      - parameter text: The text to update the thought item with.
      */
-    func update(text: String) {
+    func update(text: String, group: String? = nil) {
         guard let realm = RealmDatabaseManager.thoughtItem.realm else { return }
         try? realm.write {
             self.text = text
+            self.group = group ?? self.group
         }
     }
 }
