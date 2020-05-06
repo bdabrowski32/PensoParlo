@@ -27,6 +27,13 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
     /// The center-most displaying cell. Defaults to the most left cell in the collection.
     private var currentCellIndexPath = IndexPath(item: 0, section: 0)
 
+    // MARK: - Computed Properties
+
+    /// Since this is the root view controller, this will set the status bar style for the whole app.
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     // MARK: - IBOutlets
 
     /// The collectionView that displays the user's thought groups.
