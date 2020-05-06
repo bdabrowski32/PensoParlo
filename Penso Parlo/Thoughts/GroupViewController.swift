@@ -11,7 +11,7 @@ import UIKit
 /**
  ViewController for displaying the groups created by the user.
  */
-class GroupViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
+class GroupViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Static Properties
 
@@ -26,6 +26,13 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     /// The center-most displaying cell. Defaults to the most left cell in the collection.
     private var currentCellIndexPath = IndexPath(item: 0, section: 0)
+
+    // MARK: - Computed Properties
+
+    /// Since this is the root view controller, this will set the status bar style for the whole app.
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     // MARK: - IBOutlets
 
@@ -97,7 +104,20 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return GroupCollectionViewCell.unhighlightedCellSize
+        let collectionViewFrameHeight = self.collectionView.frame.height
+
+        // This allows space for the cell to be scaled up and not be clipped when selected.
+        var cellHeightToFit = collectionViewFrameHeight * 0.90
+
+        // The cells are too stretched if they grow any taller than this.
+        let maximumCellHeight: CGFloat = 389
+
+        // This prevents the cell from being clipped by the collectionView.
+        if collectionViewFrameHeight > maximumCellHeight {
+            cellHeightToFit = maximumCellHeight
+        }
+
+        return CGSize(width: 224, height: cellHeightToFit)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
