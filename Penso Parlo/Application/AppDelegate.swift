@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Configures view hierarchy.
      */
     private func setupRootViewController() {
-        guard let thoughtGroupViewController = self.rootViewController else {
+        guard let groupViewController = self.rootViewController else {
             os_log("Unable to setup Thoughts List View Controller.",
                    log: OSLog.default,
                    type: .error)
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.navigationController = PensoNavigationController(rootViewController: thoughtGroupViewController)
+        self.navigationController = PensoNavigationController(rootViewController: groupViewController)
         self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
     }
