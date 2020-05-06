@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f5c-qq-94h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PQg-ak-BFm">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -118,11 +118,11 @@
             <objects>
                 <viewController id="n26-i5-CPu" customClass="GroupSelectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVZ-05-Jtc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Seo-vw-t5H">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="88" id="Ygz-dL-89Z" customClass="GroupTableViewCell" customModule="Penso_Parlo" customModuleProvider="target">
@@ -188,7 +188,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-Zd-rd4" customClass="NewGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="326" y="652" width="72" height="72"/>
+                                <rect key="frame" x="326" y="686" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="VCl-M3-qhg"/>
                                     <constraint firstAttribute="height" constant="72" id="j75-RW-RfM"/>
@@ -349,10 +349,26 @@
             </objects>
             <point key="canvasLocation" x="324.63768115942031" y="-966.96428571428567"/>
         </scene>
-        <!--ThoughtCollection-->
+        <!--Penso Navigation Controller-->
+        <scene sceneID="DX6-nr-Qym">
+            <objects>
+                <navigationController id="PQg-ak-BFm" customClass="PensoNavigationController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BG7-ST-XvE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="f5c-qq-94h" kind="relationship" relationship="rootViewController" id="RTW-BZ-VfQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hd7-P2-GkS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1549" y="-198"/>
+        </scene>
+        <!--Group View Controller-->
         <scene sceneID="acf-wz-i78">
             <objects>
-                <viewController storyboardIdentifier="ThoughtCollection" title="ThoughtCollection" id="f5c-qq-94h" customClass="GroupViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupViewController" id="f5c-qq-94h" customClass="GroupViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K8r-0f-v65">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -362,10 +378,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="Background_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-En-tWb">
-                                <rect key="frame" x="-20" y="64" width="169.66666666666666" height="187"/>
+                                <rect key="frame" x="-20" y="108" width="169.66666666666666" height="187"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="irh-Hj-MYt">
-                                <rect key="frame" x="0.0" y="213.33333333333331" width="414" height="555.66666666666674"/>
+                                <rect key="frame" x="0.0" y="280.66666666666674" width="414" height="488.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="20" id="HX2-jD-CP1">
                                     <size key="itemSize" width="224" height="389"/>
@@ -375,39 +391,39 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCollectionViewCell" id="bi4-n7-JFw" customClass="GroupCollectionViewCell" customModule="Penso_Parlo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="83.333333333333329" width="127.33333333333333" height="389"/>
+                                        <rect key="frame" x="0.0" y="49.666666666666664" width="216" height="389"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nwA-Tv-nPS">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="389"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="216" height="389"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkS-Sy-SRs">
-                                                    <rect key="frame" x="24" y="18" width="29.666666666666671" height="20"/>
+                                                    <rect key="frame" x="23.999999999999996" y="18" width="32.666666666666657" height="25.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-XBlack" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ew7-nx-8jo">
-                                                    <rect key="frame" x="24.000000000000004" y="48" width="33.333333333333343" height="20"/>
+                                                    <rect key="frame" x="23.999999999999996" y="59.333333333333336" width="32.666666666666657" height="25.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ap3-Ba-Kkx">
-                                                    <rect key="frame" x="24" y="33" width="49" height="20"/>
+                                                    <rect key="frame" x="24" y="38.666666666666664" width="49" height="25.666666666666664"/>
                                                     <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                                     <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thought Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2B-hx-GLm">
-                                                    <rect key="frame" x="-12" y="341" width="115.33333333333333" height="20"/>
+                                                    <rect key="frame" x="79" y="335.33333333333331" width="113" height="25.666666666666686"/>
                                                     <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaH-gb-Vos">
-                                                    <rect key="frame" x="8" y="115" width="111.33333333333333" height="239"/>
+                                                    <rect key="frame" x="8" y="115" width="200" height="239"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="239" id="OYv-BB-L9I"/>
                                                     </constraints>
@@ -460,19 +476,19 @@
                                 <state key="normal" title="Button" image="Speak_Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Thought Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc7-rD-aJH">
-                                <rect key="frame" x="19.999999999999986" y="158.66666666666666" width="247.66666666666663" height="39.666666666666657"/>
+                                <rect key="frame" x="20.000000000000014" y="214.33333333333334" width="242.33333333333337" height="51.333333333333343"/>
                                 <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWd-ch-7Nf">
-                                <rect key="frame" x="20.000000000000007" y="129" width="97.666666666666686" height="39.666666666666657"/>
+                                <rect key="frame" x="20" y="173" width="93" height="51.333333333333343"/>
                                 <fontDescription key="fontDescription" name="NeueHaasUnicaW1G-Light" family="Neue Haas Unica W1G" pointSize="34"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-pN-5Mi">
-                                <rect key="frame" x="363" y="60" width="44" height="44"/>
+                                <rect key="frame" x="363" y="104" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="9Gd-I7-6P6"/>
                                     <constraint firstAttribute="height" constant="44" id="LeA-8j-C8a"/>
@@ -480,7 +496,7 @@
                                 <state key="normal" image="Menu_Icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGG-yA-209">
-                                <rect key="frame" x="363" y="110" width="44" height="44"/>
+                                <rect key="frame" x="363" y="154" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="lao-uE-GLK"/>
                                     <constraint firstAttribute="width" constant="44" id="pHL-a7-CZc"/>
@@ -513,6 +529,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FHo-N9-6Qq"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Uy0-sp-Q35"/>
                     <connections>
                         <outlet property="collectionView" destination="irh-Hj-MYt" id="4yp-4r-EpG"/>
                     </connections>
@@ -615,7 +632,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="coG-M6-eH0"/>
+        <segue reference="NVF-ll-q5X"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Add_Group_Icon" width="17.333333969116211" height="18"/>
