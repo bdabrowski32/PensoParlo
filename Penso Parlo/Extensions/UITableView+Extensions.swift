@@ -29,3 +29,12 @@ extension UITableView {
         self.separatorStyle = .none
     }
 }
+
+extension UICollectionView {
+
+    func applyChanges(deletions: [Int], insertions: [Int], updates: [Int]) {
+        self.deleteItems(at: deletions.map(IndexPath.fromRow))
+        self.insertItems(at: insertions.map(IndexPath.fromRow))
+        self.reloadItems(at: updates.map(IndexPath.fromRow))
+    }
+}

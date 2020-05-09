@@ -106,23 +106,22 @@
                         <outlet property="doneButton" destination="90E-H3-JhM" id="cEe-ns-o6K"/>
                         <outlet property="selectGroupButton" destination="4DY-Lp-eXp" id="fa6-aA-XKf"/>
                         <outlet property="systemSettingsButton" destination="I2H-m4-704" id="ggM-8N-r0v"/>
-                        <segue destination="n26-i5-CPu" kind="showDetail" identifier="ChooseGroup" id="NVF-ll-q5X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4n-R1-P06" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2423.1999999999998" y="-966.56671664167925"/>
+            <point key="canvasLocation" x="81" y="1252"/>
         </scene>
         <!--Select Group-->
         <scene sceneID="WbR-L0-6wy">
             <objects>
                 <viewController id="n26-i5-CPu" customClass="GroupSelectionViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVZ-05-Jtc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Seo-vw-t5H">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="88" id="Ygz-dL-89Z" customClass="GroupTableViewCell" customModule="Penso_Parlo" customModuleProvider="target">
@@ -188,7 +187,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-Zd-rd4" customClass="NewGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="326" y="686" width="72" height="72"/>
+                                <rect key="frame" x="326" y="740" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="VCl-M3-qhg"/>
                                     <constraint firstAttribute="height" constant="72" id="j75-RW-RfM"/>
@@ -225,7 +224,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o22-xM-1Rr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1363" y="-1096"/>
+            <point key="canvasLocation" x="83" y="354"/>
         </scene>
         <!--My Thoughts-->
         <scene sceneID="Jl4-KY-pHA">
@@ -283,7 +282,6 @@
                                         <connections>
                                             <outlet property="button" destination="MTL-3k-9tc" id="lpt-8G-mkN"/>
                                             <outlet property="label" destination="9kL-ZH-HKO" id="tjV-1R-OiR"/>
-                                            <segue destination="FIX-JN-mGj" kind="show" identifier="typeThought" id="wlB-nf-PTy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -341,8 +339,6 @@
                         <outlet property="speakThoughtButton" destination="5LN-2x-9kW" id="McN-Py-r6d"/>
                         <outlet property="tableView" destination="gDu-kG-7VF" id="ooc-TK-6yZ"/>
                         <outlet property="typeThoughtButton" destination="f0x-AJ-e01" id="Vgb-Zg-bRE"/>
-                        <segue destination="FuE-uu-yA0" kind="presentation" identifier="StartSpeaking" modalPresentationStyle="pageSheet" id="bh1-Ia-0X6"/>
-                        <segue destination="HOq-hD-QU8" kind="show" identifier="Settings" id="6wD-JQ-NrP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIw-6V-9QA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,7 +359,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hd7-P2-GkS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1549" y="-198"/>
+            <point key="canvasLocation" x="-1554" y="528"/>
         </scene>
         <!--Group View Controller-->
         <scene sceneID="acf-wz-i78">
@@ -453,7 +449,7 @@
                                             <outlet property="dayLabel" destination="tkS-Sy-SRs" id="DW4-eV-Xeb"/>
                                             <outlet property="groupNameLabel" destination="Q2B-hx-GLm" id="2R5-xP-i2g"/>
                                             <outlet property="monthLabel" destination="ap3-Ba-Kkx" id="vh7-fd-qn1"/>
-                                            <outlet property="thoughtItemCountLabel" destination="TaH-gb-Vos" id="Yvb-CZ-48i"/>
+                                            <outlet property="thoughtItemCountLabel" destination="TaH-gb-Vos" id="4Sg-UO-3Rx"/>
                                             <outlet property="yearLabel" destination="Ew7-nx-8jo" id="2b4-c6-Z6x"/>
                                         </connections>
                                     </collectionViewCell>
@@ -466,6 +462,9 @@
                                     <constraint firstAttribute="width" constant="154" id="fHe-5q-cre"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Type_Button"/>
+                                <connections>
+                                    <segue destination="FIX-JN-mGj" kind="presentation" modalPresentationStyle="pageSheet" id="Ztc-qa-h9B"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybq-Qb-u01">
                                 <rect key="frame" x="242" y="784" width="154" height="58"/>
@@ -474,6 +473,9 @@
                                     <constraint firstAttribute="height" constant="58" id="Wvo-fT-1O6"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Speak_Button"/>
+                                <connections>
+                                    <segue destination="FuE-uu-yA0" kind="presentation" modalPresentationStyle="pageSheet" id="LYy-pL-Kfm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Thought Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc7-rD-aJH">
                                 <rect key="frame" x="20.000000000000014" y="214.33333333333334" width="242.33333333333337" height="51.333333333333343"/>
@@ -494,6 +496,9 @@
                                     <constraint firstAttribute="height" constant="44" id="LeA-8j-C8a"/>
                                 </constraints>
                                 <state key="normal" image="Menu_Icon"/>
+                                <connections>
+                                    <segue destination="HOq-hD-QU8" kind="show" identifier="Settings" id="rX1-o9-xOm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGG-yA-209">
                                 <rect key="frame" x="363" y="154" width="44" height="44"/>
@@ -536,18 +541,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7L-Vh-SRB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-579.71014492753625" y="-198.21428571428569"/>
+            <point key="canvasLocation" x="-668.11594202898561" y="527.67857142857144"/>
         </scene>
         <!--Edit Thought-->
         <scene sceneID="ai6-F2-ZgZ">
             <objects>
                 <viewController storyboardIdentifier="TypeThoughtView" title="Edit Thought" id="FIX-JN-mGj" customClass="TypeThoughtViewController" customModule="Penso_Parlo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vWw-x9-xqA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Note Item Text View" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yN3-x3-zHb">
-                                <rect key="frame" x="40" y="40" width="324" height="626"/>
+                                <rect key="frame" x="40" y="40" width="324" height="660"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" red="0.29411764709999999" green="0.69411764710000001" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -555,7 +560,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13m-60-dhM" customClass="SelectGroupButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="240" y="717" width="158" height="57"/>
+                                <rect key="frame" x="240" y="751" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="f2d-eX-iGt"/>
                                     <constraint firstAttribute="width" constant="158" id="mgT-gM-z9A"/>
@@ -565,7 +570,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLz-je-AWg" customClass="DoneButton" customModule="Penso_Parlo" customModuleProvider="target">
-                                <rect key="frame" x="16" y="717" width="158" height="57"/>
+                                <rect key="frame" x="16" y="751" width="158" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="tVT-k1-NNT"/>
                                     <constraint firstAttribute="width" constant="158" id="tr7-4m-GZL"/>
@@ -602,12 +607,11 @@
                         <outlet property="contentTextView" destination="yN3-x3-zHb" id="U6M-Hb-BUp"/>
                         <outlet property="doneButton" destination="LLz-je-AWg" id="g0O-wz-aQ1"/>
                         <outlet property="selectGroupButton" destination="13m-60-dhM" id="uP2-pZ-Hrx"/>
-                        <segue destination="n26-i5-CPu" kind="show" identifier="ChooseGroup" id="coG-M6-eH0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gT2-mV-cCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324.63768115942031" y="-194.19642857142856"/>
+            <point key="canvasLocation" x="1030" y="528"/>
         </scene>
         <!--Penso Navigation Controller-->
         <scene sceneID="SON-Cj-X3E">
@@ -631,9 +635,6 @@
             <point key="canvasLocation" x="-649" y="-965"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="NVF-ll-q5X"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Add_Group_Icon" width="17.333333969116211" height="18"/>
         <image name="Background_Icon" width="169.33332824707031" height="187"/>

@@ -6,6 +6,7 @@
 //  Copyright © 2020 BDCreative. All rights reserved.
 //
 
+import RealmSwift
 import UIKit
 
 /**
@@ -20,9 +21,11 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     // MARK: - Instance Properties
 
-    var thoughtGroups = [ThoughtGroup(name: "QuickThoughts"),
-                         ThoughtGroup(name: "CaroleIsCrazy"),
-                         ThoughtGroup(name: "Apps")]
+    /// The groups to display in the view.
+    private var thoughtGroups: Results<ThoughtGroup>?
+
+    /// Listens to changes in the ThoughtsGroups realm.
+    private var thoughtGroupToken: NotificationToken?
 
     /// The center-most displaying cell. Defaults to the most left cell in the collection.
     private var currentCellIndexPath = IndexPath(item: 0, section: 0)
@@ -43,6 +46,7 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.thoughtGroups = ThoughtGroup.all()
         self.configureCollectionView()
     }
 
@@ -53,6 +57,25 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     // MARK: - Helper Methods
 
+    func observeTableViewChanges(initialAction: (() -> Void)?) {
+        self.thoughtGroupToken = self.thoughtGroups?.observe { changes in
+            guard let collectionView = self.collectionView else {
+                return
+            }
+
+            switch changes {
+            case .initial:
+                print("initial called")
+                // Reloads tableview with new empty cell.
+                collectionView.reloadData()
+                initialAction?()
+            case .update(_, let deletions, let insertions, let updates):
+                collectionView.applyChanges(deletions: deletions, insertions: insertions, updates: updates)
+            case .error:
+                break
+            }
+        }
+    }
     /**
      Configures the collectionView's insets, dataSource and delegates.
      */
@@ -91,7 +114,7 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.thoughtGroups.count
+        return self.thoughtGroups?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -99,7 +122,7 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
             return UICollectionViewCell()
         }
 
-        cell.thoughtGroup = self.thoughtGroups[indexPath.item]
+        cell.thoughtGroup = self.thoughtGroups?[indexPath.item]
         return cell
     }
 
@@ -157,5 +180,9 @@ class GroupViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.shouldHighlightCell(false)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // TODO: PENSO-55: Transfer siri shortcut handler code in prepare for segue to here.
     }
 }
